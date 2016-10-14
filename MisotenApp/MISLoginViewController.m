@@ -8,7 +8,7 @@
 
 #import "MISLoginViewController.h"
 #import "SVProgressHUD/SVProgressHUD.h"
-#import "MISMainViewController.h"
+#import "MISMapViewController.h"
 @import FirebaseAuth;
 
 @interface MISLoginViewController ()
@@ -20,6 +20,11 @@
 @end
 
 @implementation MISLoginViewController
+#warning debug
+- (IBAction)debug:(id)sender {
+    _mailAddressTextField.text = @"aadachi@gmail.com";
+    _passwordTextField.text = @"hogehoge";
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,13 +38,13 @@
 
 - (IBAction)loginButtonTapped:(id)sender {
     if(_mailAddressTextField.text.length == 0) {
-        NSLog(@"メールアドレスを入力してください");
+        _mailAddressTextField.backgroundColor = [UIColor redColor];
         _mailError = YES;
     } else {
         _mailError = NO;
     }
     if(_passwordTextField.text.length == 0) {
-        NSLog(@"パスワードを入力してください");
+        _passwordTextField.backgroundColor = [UIColor redColor];
         _passwordError = YES;
     } else {
         _passwordError = NO;
@@ -61,8 +66,13 @@
                          completion:^(FIRUser *user, NSError *error) {
                              if(!error) {
                                  [SVProgressHUD dismiss];
+                                 
+//                                 UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//                                 UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"MainNav"];
+//                                 [self presentViewController: navigationController animated:YES completion: nil];
+                                 
                                  UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                                 MISMainViewController *mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"Main"];
+                                 MISMapViewController *mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainNav"];
                                  [self presentViewController: mainViewController animated:YES completion: nil];
                              } else {
                                  [SVProgressHUD setMinimumDismissTimeInterval:1.0f];

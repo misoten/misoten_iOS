@@ -15,8 +15,10 @@
 		374A38901DAE35D1008C8CC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 374A388E1DAE35D1008C8CC2 /* LaunchScreen.storyboard */; };
 		374A38991DAE36F4008C8CC2 /* MISSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374A38981DAE36F4008C8CC2 /* MISSignUpViewController.m */; };
 		374A389C1DAE3712008C8CC2 /* MISLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374A389B1DAE3712008C8CC2 /* MISLoginViewController.m */; };
-		374A389F1DAE372D008C8CC2 /* MISMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374A389E1DAE372D008C8CC2 /* MISMainViewController.m */; };
+		374A389F1DAE372D008C8CC2 /* MISMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374A389E1DAE372D008C8CC2 /* MISMapViewController.m */; };
 		374A38A11DAE37E1008C8CC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 374A38A01DAE37E1008C8CC2 /* GoogleService-Info.plist */; };
+		374A38A41DAF38C0008C8CC2 /* MISLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374A38A31DAF38C0008C8CC2 /* MISLeftMenuViewController.m */; };
+		374A38AA1DAF949C008C8CC2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374A38A91DAF949C008C8CC2 /* CoreLocation.framework */; };
 		68D0D39CBDFD2A187D8F4740 /* Pods_MisotenApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A350D3BE7DEB4A1329177E7B /* Pods_MisotenApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,9 +37,12 @@
 		374A38981DAE36F4008C8CC2 /* MISSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISSignUpViewController.m; sourceTree = "<group>"; };
 		374A389A1DAE3712008C8CC2 /* MISLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISLoginViewController.h; sourceTree = "<group>"; };
 		374A389B1DAE3712008C8CC2 /* MISLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISLoginViewController.m; sourceTree = "<group>"; };
-		374A389D1DAE372D008C8CC2 /* MISMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISMainViewController.h; sourceTree = "<group>"; };
-		374A389E1DAE372D008C8CC2 /* MISMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISMainViewController.m; sourceTree = "<group>"; };
+		374A389D1DAE372D008C8CC2 /* MISMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISMapViewController.h; sourceTree = "<group>"; };
+		374A389E1DAE372D008C8CC2 /* MISMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISMapViewController.m; sourceTree = "<group>"; };
 		374A38A01DAE37E1008C8CC2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		374A38A21DAF38C0008C8CC2 /* MISLeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISLeftMenuViewController.h; sourceTree = "<group>"; };
+		374A38A31DAF38C0008C8CC2 /* MISLeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISLeftMenuViewController.m; sourceTree = "<group>"; };
+		374A38A91DAF949C008C8CC2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A350D3BE7DEB4A1329177E7B /* Pods_MisotenApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MisotenApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E2A8A71100F77E16EFAAC9 /* Pods-MisotenApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MisotenApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MisotenApp/Pods-MisotenApp.debug.xcconfig"; sourceTree = "<group>"; };
 		EDD44E68ADC2A6E5C7756096 /* Pods-MisotenApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MisotenApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MisotenApp/Pods-MisotenApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -48,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				374A38AA1DAF949C008C8CC2 /* CoreLocation.framework in Frameworks */,
 				68D0D39CBDFD2A187D8F4740 /* Pods_MisotenApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,6 +64,7 @@
 		0852C9BA48B0EE4BC8DC9890 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				374A38A91DAF949C008C8CC2 /* CoreLocation.framework */,
 				A350D3BE7DEB4A1329177E7B /* Pods_MisotenApp.framework */,
 			);
 			name = Frameworks;
@@ -86,19 +93,10 @@
 			children = (
 				374A38831DAE35D0008C8CC2 /* AppDelegate.h */,
 				374A38841DAE35D0008C8CC2 /* AppDelegate.m */,
-				374A38861DAE35D0008C8CC2 /* ViewController.h */,
-				374A38871DAE35D0008C8CC2 /* ViewController.m */,
-				374A38971DAE36F4008C8CC2 /* MISSignUpViewController.h */,
-				374A38981DAE36F4008C8CC2 /* MISSignUpViewController.m */,
-				374A389A1DAE3712008C8CC2 /* MISLoginViewController.h */,
-				374A389B1DAE3712008C8CC2 /* MISLoginViewController.m */,
-				374A389D1DAE372D008C8CC2 /* MISMainViewController.h */,
-				374A389E1DAE372D008C8CC2 /* MISMainViewController.m */,
-				374A38891DAE35D0008C8CC2 /* Main.storyboard */,
-				374A388C1DAE35D1008C8CC2 /* Assets.xcassets */,
-				374A388E1DAE35D1008C8CC2 /* LaunchScreen.storyboard */,
-				374A38911DAE35D1008C8CC2 /* Info.plist */,
-				374A38A01DAE37E1008C8CC2 /* GoogleService-Info.plist */,
+				374A38A71DAF8C0A008C8CC2 /* Model */,
+				374A38A51DAF8BEB008C8CC2 /* View */,
+				374A38A61DAF8BF8008C8CC2 /* ViewController */,
+				374A38A81DAF8C26008C8CC2 /* Assets */,
 				374A38801DAE35D0008C8CC2 /* Supporting Files */,
 			);
 			path = MisotenApp;
@@ -107,9 +105,52 @@
 		374A38801DAE35D0008C8CC2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				374A38911DAE35D1008C8CC2 /* Info.plist */,
+				374A38A01DAE37E1008C8CC2 /* GoogleService-Info.plist */,
 				374A38811DAE35D0008C8CC2 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		374A38A51DAF8BEB008C8CC2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		374A38A61DAF8BF8008C8CC2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				374A38861DAE35D0008C8CC2 /* ViewController.h */,
+				374A38871DAE35D0008C8CC2 /* ViewController.m */,
+				374A38971DAE36F4008C8CC2 /* MISSignUpViewController.h */,
+				374A38981DAE36F4008C8CC2 /* MISSignUpViewController.m */,
+				374A389A1DAE3712008C8CC2 /* MISLoginViewController.h */,
+				374A389B1DAE3712008C8CC2 /* MISLoginViewController.m */,
+				374A389D1DAE372D008C8CC2 /* MISMapViewController.h */,
+				374A389E1DAE372D008C8CC2 /* MISMapViewController.m */,
+				374A38A21DAF38C0008C8CC2 /* MISLeftMenuViewController.h */,
+				374A38A31DAF38C0008C8CC2 /* MISLeftMenuViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		374A38A71DAF8C0A008C8CC2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		374A38A81DAF8C26008C8CC2 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				374A38891DAE35D0008C8CC2 /* Main.storyboard */,
+				374A388E1DAE35D1008C8CC2 /* LaunchScreen.storyboard */,
+				374A388C1DAE35D1008C8CC2 /* Assets.xcassets */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		E8E2FCBFC0613861E5B15095 /* Pods */ = {
@@ -246,11 +287,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				374A38881DAE35D0008C8CC2 /* ViewController.m in Sources */,
-				374A389F1DAE372D008C8CC2 /* MISMainViewController.m in Sources */,
+				374A389F1DAE372D008C8CC2 /* MISMapViewController.m in Sources */,
 				374A389C1DAE3712008C8CC2 /* MISLoginViewController.m in Sources */,
 				374A38851DAE35D0008C8CC2 /* AppDelegate.m in Sources */,
 				374A38991DAE36F4008C8CC2 /* MISSignUpViewController.m in Sources */,
 				374A38821DAE35D0008C8CC2 /* main.m in Sources */,
+				374A38A41DAF38C0008C8CC2 /* MISLeftMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

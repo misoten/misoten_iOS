@@ -7,5 +7,8 @@ target 'MisotenApp' do
 pod 'Firebase'
 pod 'Firebase/Auth'
 pod 'SVProgressHUD', '~> 2.0.3'
+pod 'GoogleMaps'
+pod 'FrameAccessor'
+pod 'RESideMenu', '~> 4.0.7'
 end
 
