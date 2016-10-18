@@ -84,11 +84,17 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-MisotenApp/ActionSheetPicker_3_0.framework"
+  install_framework "Pods-MisotenApp/EAIntroView.framework"
+  install_framework "Pods-MisotenApp/EARestrictedScrollView.framework"
   install_framework "Pods-MisotenApp/FrameAccessor.framework"
   install_framework "Pods-MisotenApp/RESideMenu.framework"
   install_framework "Pods-MisotenApp/SVProgressHUD.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-MisotenApp/ActionSheetPicker_3_0.framework"
+  install_framework "Pods-MisotenApp/EAIntroView.framework"
+  install_framework "Pods-MisotenApp/EARestrictedScrollView.framework"
   install_framework "Pods-MisotenApp/FrameAccessor.framework"
   install_framework "Pods-MisotenApp/RESideMenu.framework"
   install_framework "Pods-MisotenApp/SVProgressHUD.framework"

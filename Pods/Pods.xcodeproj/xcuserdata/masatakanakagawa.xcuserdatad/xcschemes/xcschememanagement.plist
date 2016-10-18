@@ -4,6 +4,21 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>ActionSheetPicker-3.0.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>EAIntroView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>EARestrictedScrollView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FrameAccessor.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,7 +42,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>54C947EFC4970BC15FD4E9241A8EF406</key>
+		<key>21907884EF4CA51E75933C68861F26CD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -37,12 +52,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A53064E8832614422C08EA020F432AF9</key>
+		<key>8FA6690A70E2223F6DA59CB8C5B6294B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EAAB693308F08055BFC2199D8AA93002</key>
+		<key>AB045440E0FF21FA9AA0E0A151C95FDB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C5A8E29AAE38E55A23B5A28B8C2B837A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CE0A701D8A271EFE0065667D13272921</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D8BF146EAE696DCA97C90C51BE045947</key>
 		<dict>
 			<key>primary</key>
 			<true/>

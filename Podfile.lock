@@ -1,4 +1,8 @@
 PODS:
+  - ActionSheetPicker-3.0 (2.2.0)
+  - EAIntroView (2.9.0):
+    - EARestrictedScrollView (~> 1.1.0)
+  - EARestrictedScrollView (1.1.0)
   - Firebase (3.7.1):
     - Firebase/Core (= 3.7.1)
   - Firebase/Auth (3.7.1):
@@ -37,6 +41,8 @@ PODS:
   - SVProgressHUD (2.0.3)
 
 DEPENDENCIES:
+  - ActionSheetPicker-3.0 (~> 2.2.0)
+  - EAIntroView (~> 2.9.0)
   - Firebase
   - Firebase/Auth
   - FrameAccessor
@@ -45,6 +51,9 @@ DEPENDENCIES:
   - SVProgressHUD (~> 2.0.3)
 
 SPEC CHECKSUMS:
+  ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
+  EAIntroView: 76f68cc56242f2e25359419e6ecc2344ee7e1756
+  EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
   Firebase: be473484f0d515e72ffd04acf22f981773c23e58
   FirebaseAnalytics: 0533a00b681e08fd0b2cd0444b7ddf0ef9fd7a1a
   FirebaseAuth: 75a062bbf2d3c97d1e6e55bbc110e13a6853e25d

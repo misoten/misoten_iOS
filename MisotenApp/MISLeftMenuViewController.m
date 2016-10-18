@@ -8,6 +8,7 @@
 
 #import "MISLeftMenuViewController.h"
 #import "MISMapViewController.h"
+#import "MISMapSettingViewController.h"
 #import "RESideMenu.h"
 
 @interface MISLeftMenuViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -37,7 +38,6 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    NSLog(@"hoge");
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -60,9 +60,13 @@
             break;
             
         case 3:
+        {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            MISMapSettingViewController *mapSettingViewController = [storyboard instantiateViewControllerWithIdentifier:@"mapSettingView"];
+            [self presentViewController: mapSettingViewController animated:YES completion: nil];
             [self.sideMenuViewController hideMenuViewController];
             break;
-            
+        }
         default:
             break;
     }
