@@ -1,13 +1,13 @@
 //
-//  MISMapSearchView.h
+//  MISMapSettingView.h
 //  MisotenApp
 //
-//  Created by Masataka Nakagawa on 2016/10/15.
+//  Created by Masataka Nakagawa on 2016/10/20.
 //  Copyright © 2016年 Masataka Nakagawa. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface MISMapSearchView : UIView
+@interface MISMapSettingView : UIView
 
 @end

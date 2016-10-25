@@ -10,22 +10,16 @@
 #import "RESideMenu.h"
 #import "MISLeftMenuViewController.h"
 #import "FrameAccessor.h"
-#import "MISMapSearchView.h"
-#import "MISMapSearchItem.h"
-#import "MISMapSearchItemCollectionViewCell.h"
-#import "MISMapSettingModel.h"
+#import "MISMapSearchViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
 
-@interface MISMapViewController () <GMSMapViewDelegate, CLLocationManagerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface MISMapViewController () <GMSMapViewDelegate, CLLocationManagerDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) RESideMenu *sideMenuViewController;
 @property (nonatomic, assign, getter=isFollow) BOOL follow;
-@property (nonatomic, strong) MISMapSearchView * searchView;
-@property (weak, nonatomic) IBOutlet UICollectionView *searchMenuCollectionView;
-@property (nonatomic, strong) MISMapSearchItemCollectionViewCell *cell;
-@property (nonatomic, strong) MISMapSettingModel *settings;
+
 @end
 
 @implementation MISMapViewController
@@ -36,9 +30,7 @@
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255 green:255 blue:255 alpha:0.5];
     self.navigationController.navigationBar.alpha = 0.7;
     self.navigationController.navigationBar.translucent  = YES;
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    _searchMenuCollectionView.showsVerticalScrollIndicator = NO;
-    _searchMenuCollectionView.alpha = 0;
+
     [self initializeSideMenu];
     
     if(self.locationManager == nil) {
@@ -95,52 +87,16 @@
 - (IBAction)menuOpen:(id)sender {
     [self.sideMenuViewController presentLeftMenuViewController];
 }
-- (IBAction)showSearchView:(id)sender {
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
-    self.tabBarController.tabBar.hidden = YES;
-    [UIView animateWithDuration:0.25f animations:^{
-        _searchMenuCollectionView.alpha = 1.0;
-        _mapView.alpha = 0;
-        
+
+- (IBAction)openSearchMenu:(id)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    MISMapSearchViewController *mapSearchViewController = [storyboard instantiateViewControllerWithIdentifier:@"mapSearchVC"];
+    
+    [UIView animateWithDuration:0.75 animations:^{
+        [self presentViewController: mapSearchViewController animated:YES completion: nil];
     }];
+    
 }
-- (IBAction)closeSearchView:(id)sender {
-    [UIView animateWithDuration:0.25f animations:^{
-        _searchMenuCollectionView.alpha = 0;
-        _mapView.alpha = 1.0;
-        [self.navigationController setNavigationBarHidden:NO animated:YES];
-        self.tabBarController.tabBar.hidden = NO;
-    }];
-}
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    return 1;
-}
-
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 9;
-}
-
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSArray *iconArray = [MISMapSearchItem searchItemIconArray];
-    NSArray *stringArray = [MISMapSearchItem searchItemStringArray];
-    _cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    _cell.tag = indexPath.row;
-    _cell.layer.cornerRadius = 10.0f;
-    _cell.iconImageView.image = [UIImage imageNamed:iconArray[indexPath.row]];
-    _cell.itemLabel.text = stringArray[indexPath.row];
-    return _cell;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    _cell = (MISMapSearchItemCollectionViewCell *)[_searchMenuCollectionView cellForItemAtIndexPath:indexPath];
-    CGFloat r = (arc4random_uniform(255) + 1) / 255.0;
-    CGFloat g = (arc4random_uniform(255) + 1) / 255.0;
-    CGFloat b = (arc4random_uniform(255) + 1) / 255.0;
-    UIColor *color = [UIColor colorWithRed:r green:g blue:b alpha:1.0];
-    _cell.backgroundColor = color;
-}
-
 
 
 - (void)didReceiveMemoryWarning {
