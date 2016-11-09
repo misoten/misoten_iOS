@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 @import GoogleMaps;
+@import GooglePlaces;
 @import Firebase;
 
 @interface AppDelegate ()
@@ -20,6 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [FIRApp configure];
     [GMSServices provideAPIKey:@"AIzaSyBLGR7saz7kYL7zTDpHR4pIx7x9WlzkpS0"];
+    [GMSPlacesClient provideAPIKey:@"AIzaSyB0SWHv1pINFHqVQJGtT0fkyLFlbqLFYa4"];
     return YES;
 }
 

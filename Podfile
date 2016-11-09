@@ -12,5 +12,6 @@ pod 'FrameAccessor'
 pod 'RESideMenu', '~> 4.0.7'
 pod 'ActionSheetPicker-3.0', '~> 2.2.0'
 pod 'EAIntroView', '~> 2.9.0'
+pod 'GooglePlaces'
 end
 

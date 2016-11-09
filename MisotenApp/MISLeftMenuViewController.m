@@ -7,8 +7,7 @@
 //
 
 #import "MISLeftMenuViewController.h"
-#import "MISMapViewController.h"
-#import "MISMapSettingViewController.h"
+//#import "MISMapSettingView.h"
 #import "RESideMenu.h"
 
 @interface MISLeftMenuViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -61,10 +60,6 @@
             
         case 3:
         {
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            MISMapSettingViewController *mapSettingViewController = [storyboard instantiateViewControllerWithIdentifier:@"mapSettingView"];
-            [self presentViewController: mapSettingViewController animated:YES completion: nil];
-            [self.sideMenuViewController hideMenuViewController];
             break;
         }
         default:

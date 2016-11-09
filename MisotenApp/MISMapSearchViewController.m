@@ -11,6 +11,8 @@
 #import "MISMapSearchItem.h"
 #import "MISMapViewController.h"
 
+#import "MISDetailViewController.h"
+
 @interface MISMapSearchViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *searchMenuCollectionView;
@@ -50,6 +52,11 @@
     _cell.layer.cornerRadius = 10.0f;
     _cell.iconImageView.image = [UIImage imageNamed:iconArray[indexPath.row]];
     _cell.itemLabel.text = stringArray[indexPath.row];
+    CGFloat r = (arc4random_uniform(255) + 1) / 255.0;
+    CGFloat g = (arc4random_uniform(255) + 1) / 255.0;
+    CGFloat b = (arc4random_uniform(255) + 1) / 255.0;
+    UIColor *color = [UIColor colorWithRed:r green:g blue:b alpha:1.0];
+    _cell.backgroundColor = color;
     return _cell;
 }
 
@@ -60,6 +67,11 @@
     CGFloat b = (arc4random_uniform(255) + 1) / 255.0;
     UIColor *color = [UIColor colorWithRed:r green:g blue:b alpha:1.0];
     _cell.backgroundColor = color;
+    
+    MISDetailViewController *vc = [[MISDetailViewController alloc] init];
+    vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    vc.firstFrame = _cell.frame;
+    [self presentViewController:vc animated:YES completion:nil];
 }
 - (IBAction)closeSearchMenu:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

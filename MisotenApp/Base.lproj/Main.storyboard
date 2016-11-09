@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sW1-kJ-PwZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gqo-T0-vnf">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -192,10 +192,10 @@
             </objects>
             <point key="canvasLocation" x="2900" y="143"/>
         </scene>
-        <!--Map Setting View Controller-->
+        <!--View Controller-->
         <scene sceneID="yGF-Te-Ra9">
             <objects>
-                <viewController storyboardIdentifier="mapSettingView" id="dzT-xD-Abl" customClass="MISMapSettingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mapSettingView" id="dzT-xD-Abl" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nE4-bF-xEi"/>
                         <viewControllerLayoutGuide type="bottom" id="xy4-x8-3L6"/>
@@ -309,17 +309,28 @@
                     <navigationItem key="navigationItem" id="cAW-cc-9pw">
                         <barButtonItem key="leftBarButtonItem" image="Settings" id="hed-b0-on7">
                             <connections>
-                                <action selector="menuOpen:" destination="6Oy-Al-9Hx" id="Ebv-G9-fog"/>
+                                <action selector="showSettingView:" destination="6Oy-Al-9Hx" id="JIw-Ie-ObV"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="ZyG-ah-CO8">
+                        <barButtonItem key="rightBarButtonItem" image="Xbox" id="ZyG-ah-CO8">
                             <connections>
                                 <action selector="openSearchMenu:" destination="6Oy-Al-9Hx" id="bh4-MW-WP3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="lVQ-Oc-GXX" id="RkK-aF-CeK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wa5-Rf-u1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="lVQ-Oc-GXX">
+                    <connections>
+                        <outlet property="delegate" destination="6Oy-Al-9Hx" id="IHW-Ox-jnF"/>
+                        <outlet property="searchContentsController" destination="6Oy-Al-9Hx" id="Bgh-Lc-gJ5"/>
+                        <outlet property="searchResultsDataSource" destination="6Oy-Al-9Hx" id="dQ9-2V-OzQ"/>
+                        <outlet property="searchResultsDelegate" destination="6Oy-Al-9Hx" id="VFt-5h-IWf"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="5522" y="-364"/>
         </scene>
@@ -344,7 +355,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fukidashi" translatesAutoresizingMaskIntoConstraints="NO" id="rA1-qz-1LP">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="112" id="fq0-ps-Iml"/>
-                                    <constraint firstAttribute="width" constant="208" id="kxC-bN-2KA"/>
                                 </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xeG-q7-QMa">
@@ -414,6 +424,7 @@
                             <constraint firstAttribute="trailing" secondItem="xeG-q7-QMa" secondAttribute="trailing" id="5RG-6b-ayd"/>
                             <constraint firstItem="jgZ-RL-v7S" firstAttribute="top" secondItem="13Y-oR-aas" secondAttribute="top" constant="34" id="EBG-AK-sNu"/>
                             <constraint firstAttribute="trailing" secondItem="4ta-hT-BZn" secondAttribute="trailing" id="FUL-0s-uUk"/>
+                            <constraint firstAttribute="trailing" secondItem="rA1-qz-1LP" secondAttribute="trailing" constant="20" id="G9y-VH-ZLQ"/>
                             <constraint firstAttribute="bottom" secondItem="xeG-q7-QMa" secondAttribute="bottom" id="Wke-xS-Koq"/>
                             <constraint firstItem="4ta-hT-BZn" firstAttribute="top" secondItem="13Y-oR-aas" secondAttribute="top" constant="30" id="c69-dK-G46"/>
                             <constraint firstItem="rA1-qz-1LP" firstAttribute="bottom" secondItem="jgZ-RL-v7S" secondAttribute="bottom" id="hPs-iR-f7w"/>
@@ -430,6 +441,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uge-vQ-Nnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6213.6000000000004" y="-365.66716641679164"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fvc-Xf-NL3">
+            <objects>
+                <viewController id="DlL-gz-fRb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cug-oc-2Mx"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z00-9N-ZOP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RMe-cC-KWV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F4X-SN-4ki" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6929" y="-364"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="vcg-4x-kuF">
@@ -512,7 +541,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xuU-x1-PPV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" image="Map" selectedImage="MapSeleced" id="ZRp-Cq-jOC"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="cJw-D2-OnK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cJw-D2-OnK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -534,5 +563,6 @@
         <image name="Map" width="40" height="40"/>
         <image name="MapSeleced" width="60" height="60"/>
         <image name="Settings" width="30" height="30"/>
+        <image name="Xbox" width="90" height="90"/>
     </resources>
 </document>

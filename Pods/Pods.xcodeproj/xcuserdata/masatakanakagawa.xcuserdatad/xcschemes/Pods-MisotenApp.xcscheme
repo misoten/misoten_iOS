@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'ED7C419632CB9472120EF9FD'
+               BlueprintIdentifier = '97C4B44474401A1541FD36CB'
                BlueprintName = 'Pods-MisotenApp'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_MisotenApp.framework'>
