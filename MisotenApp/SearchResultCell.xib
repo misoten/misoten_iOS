@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="94" id="Xwk-rY-dn5" customClass="MISSearchResultCell">
+            <rect key="frame" x="0.0" y="0.0" width="475" height="94"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xwk-rY-dn5" id="gBv-Sa-mXW">
+                <frame key="frameInset" width="475" height="93"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IZm-nb-Wgp">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="jfr-Tb-m2e"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Er3-WP-qX8">
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Er3-WP-qX8" firstAttribute="centerY" secondItem="gBv-Sa-mXW" secondAttribute="centerY" id="Gkb-OH-RB7"/>
+                    <constraint firstItem="IZm-nb-Wgp" firstAttribute="top" secondItem="gBv-Sa-mXW" secondAttribute="top" id="N2T-69-P4R"/>
+                    <constraint firstItem="Er3-WP-qX8" firstAttribute="leading" secondItem="IZm-nb-Wgp" secondAttribute="trailing" constant="34" id="gwt-gr-muO"/>
+                    <constraint firstItem="IZm-nb-Wgp" firstAttribute="leading" secondItem="gBv-Sa-mXW" secondAttribute="leading" id="lyI-Nr-h4V"/>
+                    <constraint firstAttribute="bottom" secondItem="IZm-nb-Wgp" secondAttribute="bottom" id="qhl-YO-L6g"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="resultImageView" destination="IZm-nb-Wgp" id="5v4-AB-cgs"/>
+                <outlet property="resultLavel" destination="Er3-WP-qX8" id="rKI-xQ-ywv"/>
+            </connections>
+            <point key="canvasLocation" x="89.5" y="46"/>
+        </tableViewCell>
+    </objects>
+</document>
