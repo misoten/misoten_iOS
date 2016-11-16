@@ -68,10 +68,6 @@
     UIColor *color = [UIColor colorWithRed:r green:g blue:b alpha:1.0];
     _cell.backgroundColor = color;
     
-    MISDetailViewController *vc = [[MISDetailViewController alloc] init];
-    vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    vc.firstFrame = _cell.frame;
-    [self presentViewController:vc animated:YES completion:nil];
 }
 - (IBAction)closeSearchMenu:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

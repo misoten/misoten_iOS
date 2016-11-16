@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2376902D1DD306030056ACF2 /* MISSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2376902C1DD306030056ACF2 /* MISSearchTableViewController.m */; };
 		237690311DD307920056ACF2 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 237690301DD307920056ACF2 /* SearchResultCell.xib */; };
 		23C9F59A1DD30A1F0081112E /* MISSearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C9F5991DD30A1F0081112E /* MISSearchResultCell.m */; };
 		37109EF81DB26DC0004B626B /* MISMapSearchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 37109EF71DB26DC0004B626B /* MISMapSearchItem.m */; };
 		37109EFB1DB271DA004B626B /* MISMapSearchItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37109EFA1DB271DA004B626B /* MISMapSearchItemCollectionViewCell.m */; };
 		37109F011DB3D9DF004B626B /* MISMapSettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37109F001DB3D9DF004B626B /* MISMapSettingModel.m */; };
 		37109F0D1DB6EA9F004B626B /* MISMapSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37109F0C1DB6EA9F004B626B /* MISMapSearchViewController.m */; };
+		374676B01DDC2E9A00E0EE1D /* MISSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374676AF1DDC2E9A00E0EE1D /* MISSearchTableViewController.m */; };
 		374A38821DAE35D0008C8CC2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 374A38811DAE35D0008C8CC2 /* main.m */; };
 		374A38851DAE35D0008C8CC2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 374A38841DAE35D0008C8CC2 /* AppDelegate.m */; };
 		374A38881DAE35D0008C8CC2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374A38871DAE35D0008C8CC2 /* ViewController.m */; };
@@ -32,8 +32,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2376902B1DD306030056ACF2 /* MISSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISSearchTableViewController.h; sourceTree = "<group>"; };
-		2376902C1DD306030056ACF2 /* MISSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISSearchTableViewController.m; sourceTree = "<group>"; };
 		237690301DD307920056ACF2 /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		23C9F5981DD30A1F0081112E /* MISSearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISSearchResultCell.h; sourceTree = "<group>"; };
 		23C9F5991DD30A1F0081112E /* MISSearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISSearchResultCell.m; sourceTree = "<group>"; };
@@ -45,6 +43,8 @@
 		37109F001DB3D9DF004B626B /* MISMapSettingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISMapSettingModel.m; sourceTree = "<group>"; };
 		37109F0B1DB6EA9F004B626B /* MISMapSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISMapSearchViewController.h; sourceTree = "<group>"; };
 		37109F0C1DB6EA9F004B626B /* MISMapSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISMapSearchViewController.m; sourceTree = "<group>"; };
+		374676AE1DDC2E9A00E0EE1D /* MISSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISSearchTableViewController.h; sourceTree = "<group>"; };
+		374676AF1DDC2E9A00E0EE1D /* MISSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISSearchTableViewController.m; sourceTree = "<group>"; };
 		374A387D1DAE35D0008C8CC2 /* MisotenApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MisotenApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		374A38811DAE35D0008C8CC2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		374A38831DAE35D0008C8CC2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -168,8 +168,8 @@
 				374A38A31DAF38C0008C8CC2 /* MISLeftMenuViewController.m */,
 				37109F0B1DB6EA9F004B626B /* MISMapSearchViewController.h */,
 				37109F0C1DB6EA9F004B626B /* MISMapSearchViewController.m */,
-				2376902B1DD306030056ACF2 /* MISSearchTableViewController.h */,
-				2376902C1DD306030056ACF2 /* MISSearchTableViewController.m */,
+				374676AE1DDC2E9A00E0EE1D /* MISSearchTableViewController.h */,
+				374676AF1DDC2E9A00E0EE1D /* MISSearchTableViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -239,6 +239,7 @@
 				TargetAttributes = {
 					374A387C1DAE35D0008C8CC2 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 6TCZ3F4BMQ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -339,9 +340,9 @@
 				374A38991DAE36F4008C8CC2 /* MISSignUpViewController.m in Sources */,
 				37109EF81DB26DC0004B626B /* MISMapSearchItem.m in Sources */,
 				374A38821DAE35D0008C8CC2 /* main.m in Sources */,
+				374676B01DDC2E9A00E0EE1D /* MISSearchTableViewController.m in Sources */,
 				37CBB8231DC3556B00145476 /* MISDetailViewController.m in Sources */,
 				23C9F59A1DD30A1F0081112E /* MISSearchResultCell.m in Sources */,
-				2376902D1DD306030056ACF2 /* MISSearchTableViewController.m in Sources */,
 				37D8EAAF1DCA274900F4E8C5 /* MISMapSettingView.m in Sources */,
 				374A38A41DAF38C0008C8CC2 /* MISLeftMenuViewController.m in Sources */,
 			);
@@ -462,7 +463,7 @@
 			baseConfigurationReference = C0E2A8A71100F77E16EFAAC9 /* Pods-MisotenApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6TCZ3F4BMQ;
 				INFOPLIST_FILE = MisotenApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -476,7 +477,7 @@
 			baseConfigurationReference = EDD44E68ADC2A6E5C7756096 /* Pods-MisotenApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6TCZ3F4BMQ;
 				INFOPLIST_FILE = MisotenApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
