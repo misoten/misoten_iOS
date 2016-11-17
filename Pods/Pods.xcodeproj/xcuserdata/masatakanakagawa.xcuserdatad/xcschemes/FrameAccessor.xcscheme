@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4AA39ADA5AAEF478F09EF71B'
+               BlueprintIdentifier = 'BF1258B878BFA89993BC8FEA5ACA97E4'
                BlueprintName = 'FrameAccessor'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'FrameAccessor.framework'>
