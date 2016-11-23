@@ -20,8 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [FIRApp configure];
-    [GMSServices provideAPIKey:@"AIzaSyBLGR7saz7kYL7zTDpHR4pIx7x9WlzkpS0"];
-    [GMSPlacesClient provideAPIKey:@"AIzaSyB0SWHv1pINFHqVQJGtT0fkyLFlbqLFYa4"];
+    [GMSServices provideAPIKey:@"AIzaSyBif3Pp8ik8v9KwOLSvUuOgAuz-J4kzXBI"];
+    [GMSPlacesClient provideAPIKey:@"AIzaSyBif3Pp8ik8v9KwOLSvUuOgAuz-J4kzXBI"];
     return YES;
 }
 

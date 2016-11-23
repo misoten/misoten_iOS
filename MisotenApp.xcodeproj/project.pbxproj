@@ -11,7 +11,6 @@
 		23C9F59A1DD30A1F0081112E /* MISSearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C9F5991DD30A1F0081112E /* MISSearchResultCell.m */; };
 		37109EF81DB26DC0004B626B /* MISMapSearchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 37109EF71DB26DC0004B626B /* MISMapSearchItem.m */; };
 		37109EFB1DB271DA004B626B /* MISMapSearchItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37109EFA1DB271DA004B626B /* MISMapSearchItemCollectionViewCell.m */; };
-		37109F011DB3D9DF004B626B /* MISMapSettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37109F001DB3D9DF004B626B /* MISMapSettingModel.m */; };
 		37109F0D1DB6EA9F004B626B /* MISMapSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37109F0C1DB6EA9F004B626B /* MISMapSearchViewController.m */; };
 		374676B01DDC2E9A00E0EE1D /* MISSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374676AF1DDC2E9A00E0EE1D /* MISSearchTableViewController.m */; };
 		374A38821DAE35D0008C8CC2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 374A38811DAE35D0008C8CC2 /* main.m */; };
@@ -26,9 +25,15 @@
 		374A38A11DAE37E1008C8CC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 374A38A01DAE37E1008C8CC2 /* GoogleService-Info.plist */; };
 		374A38A41DAF38C0008C8CC2 /* MISLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374A38A31DAF38C0008C8CC2 /* MISLeftMenuViewController.m */; };
 		374A38AA1DAF949C008C8CC2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374A38A91DAF949C008C8CC2 /* CoreLocation.framework */; };
+		37737A151DE0A101004C761C /* Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 37737A0A1DE0A101004C761C /* Geometry.m */; };
+		37737A161DE0A101004C761C /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 37737A0C1DE0A101004C761C /* Location.m */; };
+		37737A171DE0A101004C761C /* OpeningHour.m in Sources */ = {isa = PBXBuildFile; fileRef = 37737A0E1DE0A101004C761C /* OpeningHour.m */; };
+		37737A181DE0A101004C761C /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 37737A101DE0A101004C761C /* Photo.m */; };
+		37737A191DE0A101004C761C /* MISMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 37737A121DE0A101004C761C /* MISMap.m */; };
+		37B3AE181DE4133900548C26 /* MISMapSearchResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B3AE171DE4133900548C26 /* MISMapSearchResultModel.m */; };
 		37CBB8231DC3556B00145476 /* MISDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CBB8221DC3556B00145476 /* MISDetailViewController.m */; };
 		37D8EAAF1DCA274900F4E8C5 /* MISMapSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D8EAAE1DCA274900F4E8C5 /* MISMapSettingView.m */; };
-		68D0D39CBDFD2A187D8F4740 /* Pods_MisotenApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A350D3BE7DEB4A1329177E7B /* Pods_MisotenApp.framework */; };
+		686CDBD16FE40B4599F1FC46 /* Pods_MisotenApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4723EBBDA224B1214A0BDCEF /* Pods_MisotenApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,8 +44,6 @@
 		37109EF71DB26DC0004B626B /* MISMapSearchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISMapSearchItem.m; sourceTree = "<group>"; };
 		37109EF91DB271DA004B626B /* MISMapSearchItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISMapSearchItemCollectionViewCell.h; sourceTree = "<group>"; };
 		37109EFA1DB271DA004B626B /* MISMapSearchItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISMapSearchItemCollectionViewCell.m; sourceTree = "<group>"; };
-		37109EFF1DB3D9DF004B626B /* MISMapSettingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISMapSettingModel.h; sourceTree = "<group>"; };
-		37109F001DB3D9DF004B626B /* MISMapSettingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISMapSettingModel.m; sourceTree = "<group>"; };
 		37109F0B1DB6EA9F004B626B /* MISMapSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISMapSearchViewController.h; sourceTree = "<group>"; };
 		37109F0C1DB6EA9F004B626B /* MISMapSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISMapSearchViewController.m; sourceTree = "<group>"; };
 		374676AE1DDC2E9A00E0EE1D /* MISSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISSearchTableViewController.h; sourceTree = "<group>"; };
@@ -65,13 +68,25 @@
 		374A38A21DAF38C0008C8CC2 /* MISLeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISLeftMenuViewController.h; sourceTree = "<group>"; };
 		374A38A31DAF38C0008C8CC2 /* MISLeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISLeftMenuViewController.m; sourceTree = "<group>"; };
 		374A38A91DAF949C008C8CC2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		37737A091DE0A101004C761C /* Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geometry.h; sourceTree = "<group>"; };
+		37737A0A1DE0A101004C761C /* Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Geometry.m; sourceTree = "<group>"; };
+		37737A0B1DE0A101004C761C /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		37737A0C1DE0A101004C761C /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		37737A0D1DE0A101004C761C /* OpeningHour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpeningHour.h; sourceTree = "<group>"; };
+		37737A0E1DE0A101004C761C /* OpeningHour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpeningHour.m; sourceTree = "<group>"; };
+		37737A0F1DE0A101004C761C /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		37737A101DE0A101004C761C /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		37737A111DE0A101004C761C /* MISMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISMap.h; sourceTree = "<group>"; };
+		37737A121DE0A101004C761C /* MISMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISMap.m; sourceTree = "<group>"; };
+		37B3AE161DE4133900548C26 /* MISMapSearchResultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISMapSearchResultModel.h; sourceTree = "<group>"; };
+		37B3AE171DE4133900548C26 /* MISMapSearchResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISMapSearchResultModel.m; sourceTree = "<group>"; };
 		37CBB8211DC3556B00145476 /* MISDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISDetailViewController.h; sourceTree = "<group>"; };
 		37CBB8221DC3556B00145476 /* MISDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISDetailViewController.m; sourceTree = "<group>"; };
 		37D8EAAD1DCA274900F4E8C5 /* MISMapSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISMapSettingView.h; sourceTree = "<group>"; };
 		37D8EAAE1DCA274900F4E8C5 /* MISMapSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISMapSettingView.m; sourceTree = "<group>"; };
-		A350D3BE7DEB4A1329177E7B /* Pods_MisotenApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MisotenApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0E2A8A71100F77E16EFAAC9 /* Pods-MisotenApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MisotenApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MisotenApp/Pods-MisotenApp.debug.xcconfig"; sourceTree = "<group>"; };
-		EDD44E68ADC2A6E5C7756096 /* Pods-MisotenApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MisotenApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MisotenApp/Pods-MisotenApp.release.xcconfig"; sourceTree = "<group>"; };
+		4723EBBDA224B1214A0BDCEF /* Pods_MisotenApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MisotenApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		950C6C58FE14A95AA8F6DAD5 /* Pods-MisotenApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MisotenApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MisotenApp/Pods-MisotenApp.debug.xcconfig"; sourceTree = "<group>"; };
+		F537E15777CC3AEF8B34F781 /* Pods-MisotenApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MisotenApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MisotenApp/Pods-MisotenApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +95,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				374A38AA1DAF949C008C8CC2 /* CoreLocation.framework in Frameworks */,
-				68D0D39CBDFD2A187D8F4740 /* Pods_MisotenApp.framework in Frameworks */,
+				686CDBD16FE40B4599F1FC46 /* Pods_MisotenApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				374A38A91DAF949C008C8CC2 /* CoreLocation.framework */,
-				A350D3BE7DEB4A1329177E7B /* Pods_MisotenApp.framework */,
+				4723EBBDA224B1214A0BDCEF /* Pods_MisotenApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -101,8 +116,8 @@
 			children = (
 				374A387F1DAE35D0008C8CC2 /* MisotenApp */,
 				374A387E1DAE35D0008C8CC2 /* Products */,
-				E8E2FCBFC0613861E5B15095 /* Pods */,
 				0852C9BA48B0EE4BC8DC9890 /* Frameworks */,
+				7234D98F0C4FD48008C5FF97 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -177,10 +192,20 @@
 		374A38A71DAF8C0A008C8CC2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				37737A091DE0A101004C761C /* Geometry.h */,
+				37737A0A1DE0A101004C761C /* Geometry.m */,
+				37737A0B1DE0A101004C761C /* Location.h */,
+				37737A0C1DE0A101004C761C /* Location.m */,
+				37737A0D1DE0A101004C761C /* OpeningHour.h */,
+				37737A0E1DE0A101004C761C /* OpeningHour.m */,
+				37737A0F1DE0A101004C761C /* Photo.h */,
+				37737A101DE0A101004C761C /* Photo.m */,
+				37737A111DE0A101004C761C /* MISMap.h */,
+				37737A121DE0A101004C761C /* MISMap.m */,
 				37109EF61DB26DC0004B626B /* MISMapSearchItem.h */,
 				37109EF71DB26DC0004B626B /* MISMapSearchItem.m */,
-				37109EFF1DB3D9DF004B626B /* MISMapSettingModel.h */,
-				37109F001DB3D9DF004B626B /* MISMapSettingModel.m */,
+				37B3AE161DE4133900548C26 /* MISMapSearchResultModel.h */,
+				37B3AE171DE4133900548C26 /* MISMapSearchResultModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -196,11 +221,11 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
-		E8E2FCBFC0613861E5B15095 /* Pods */ = {
+		7234D98F0C4FD48008C5FF97 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C0E2A8A71100F77E16EFAAC9 /* Pods-MisotenApp.debug.xcconfig */,
-				EDD44E68ADC2A6E5C7756096 /* Pods-MisotenApp.release.xcconfig */,
+				950C6C58FE14A95AA8F6DAD5 /* Pods-MisotenApp.debug.xcconfig */,
+				F537E15777CC3AEF8B34F781 /* Pods-MisotenApp.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -212,12 +237,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 374A38941DAE35D1008C8CC2 /* Build configuration list for PBXNativeTarget "MisotenApp" */;
 			buildPhases = (
-				411249644D2FD1F48632AB2E /* Check Pods Manifest.lock */,
+				1AB1A6EF3C13FF39131E0ADA /* [CP] Check Pods Manifest.lock */,
 				374A38791DAE35D0008C8CC2 /* Sources */,
 				374A387A1DAE35D0008C8CC2 /* Frameworks */,
 				374A387B1DAE35D0008C8CC2 /* Resources */,
-				DA05122FFAEA294F115465BB /* Embed Pods Frameworks */,
-				39A3088E819F7C04E7527705 /* Copy Pods Resources */,
+				7EEAE2058E6372ECD8BC350C /* [CP] Embed Pods Frameworks */,
+				8F5A2ED95F756FE2C35288B7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,7 +259,7 @@
 		374A38751DAE35D0008C8CC2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Masataka Nakagawa";
 				TargetAttributes = {
 					374A387C1DAE35D0008C8CC2 = {
@@ -278,49 +303,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		39A3088E819F7C04E7527705 /* Copy Pods Resources */ = {
+		1AB1A6EF3C13FF39131E0ADA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MisotenApp/Pods-MisotenApp-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		411249644D2FD1F48632AB2E /* Check Pods Manifest.lock */ = {
+		7EEAE2058E6372ECD8BC350C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		DA05122FFAEA294F115465BB /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MisotenApp/Pods-MisotenApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F5A2ED95F756FE2C35288B7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MisotenApp/Pods-MisotenApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -330,21 +355,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37737A151DE0A101004C761C /* Geometry.m in Sources */,
 				374A38881DAE35D0008C8CC2 /* ViewController.m in Sources */,
 				37109F0D1DB6EA9F004B626B /* MISMapSearchViewController.m in Sources */,
 				374A389F1DAE372D008C8CC2 /* MISMapViewController.m in Sources */,
 				37109EFB1DB271DA004B626B /* MISMapSearchItemCollectionViewCell.m in Sources */,
 				374A389C1DAE3712008C8CC2 /* MISLoginViewController.m in Sources */,
-				37109F011DB3D9DF004B626B /* MISMapSettingModel.m in Sources */,
 				374A38851DAE35D0008C8CC2 /* AppDelegate.m in Sources */,
 				374A38991DAE36F4008C8CC2 /* MISSignUpViewController.m in Sources */,
 				37109EF81DB26DC0004B626B /* MISMapSearchItem.m in Sources */,
 				374A38821DAE35D0008C8CC2 /* main.m in Sources */,
 				374676B01DDC2E9A00E0EE1D /* MISSearchTableViewController.m in Sources */,
 				37CBB8231DC3556B00145476 /* MISDetailViewController.m in Sources */,
+				37737A181DE0A101004C761C /* Photo.m in Sources */,
+				37B3AE181DE4133900548C26 /* MISMapSearchResultModel.m in Sources */,
 				23C9F59A1DD30A1F0081112E /* MISSearchResultCell.m in Sources */,
 				37D8EAAF1DCA274900F4E8C5 /* MISMapSettingView.m in Sources */,
+				37737A161DE0A101004C761C /* Location.m in Sources */,
 				374A38A41DAF38C0008C8CC2 /* MISLeftMenuViewController.m in Sources */,
+				37737A171DE0A101004C761C /* OpeningHour.m in Sources */,
+				37737A191DE0A101004C761C /* MISMap.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +418,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -435,6 +466,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -460,7 +492,7 @@
 		};
 		374A38951DAE35D1008C8CC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C0E2A8A71100F77E16EFAAC9 /* Pods-MisotenApp.debug.xcconfig */;
+			baseConfigurationReference = 950C6C58FE14A95AA8F6DAD5 /* Pods-MisotenApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6TCZ3F4BMQ;
@@ -474,7 +506,7 @@
 		};
 		374A38961DAE35D1008C8CC2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EDD44E68ADC2A6E5C7756096 /* Pods-MisotenApp.release.xcconfig */;
+			baseConfigurationReference = F537E15777CC3AEF8B34F781 /* Pods-MisotenApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6TCZ3F4BMQ;

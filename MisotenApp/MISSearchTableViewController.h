@@ -10,4 +10,6 @@
 
 @interface MISSearchTableViewController : UIViewController
 
+@property (nonatomic, strong) NSString *searchType;
+
 @end

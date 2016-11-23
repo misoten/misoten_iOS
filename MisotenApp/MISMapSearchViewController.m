@@ -11,7 +11,14 @@
 #import "MISMapSearchItem.h"
 #import "MISMapViewController.h"
 
-#import "MISDetailViewController.h"
+#import "MISSearchTableViewController.h"
+
+typedef NS_ENUM(NSInteger, searchType) {
+    MUSEUM,
+    FOOD,
+    AMUSEMENT_PARK
+};
+
 
 @interface MISMapSearchViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -62,12 +69,37 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     _cell = (MISMapSearchItemCollectionViewCell *)[_searchMenuCollectionView cellForItemAtIndexPath:indexPath];
-    CGFloat r = (arc4random_uniform(255) + 1) / 255.0;
-    CGFloat g = (arc4random_uniform(255) + 1) / 255.0;
-    CGFloat b = (arc4random_uniform(255) + 1) / 255.0;
-    UIColor *color = [UIColor colorWithRed:r green:g blue:b alpha:1.0];
-    _cell.backgroundColor = color;
     
+    MISSearchTableViewController *searchTableViewController =  [self.storyboard instantiateViewControllerWithIdentifier:@"SearchView"];
+    
+    switch (indexPath.row) {
+        case MUSEUM:
+            searchTableViewController.searchType = @"museum";
+            break;
+        case FOOD:
+            searchTableViewController.searchType = @"food";
+            break;
+            
+        case AMUSEMENT_PARK:
+            searchTableViewController.searchType = @"amusement_park";
+            break;
+            
+        case 3:
+            
+            break;
+            
+        case 4:
+            
+            break;
+            
+            
+        default:
+            break;
+    }
+    
+    
+    [self.navigationController pushViewController:searchTableViewController animated:YES];
+
 }
 - (IBAction)closeSearchMenu:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

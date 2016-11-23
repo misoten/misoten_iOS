@@ -8,10 +8,19 @@
 
 #import "MISSearchTableViewController.h"
 #import "MISSearchResultCell.h"
+#import "AFNetworking.h"
+#import "MISMap.h"
+#import "SVProgressHUD/SVProgressHUD.h"
+#import "Photo.h"
 
 @interface MISSearchTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSMutableDictionary *imageCache;
+@property (nonatomic, strong) NSMutableDictionary *downloaderManager;
+@property (nonatomic, strong) NSData *data;
+
+@property (nonatomic, strong) NSMutableArray<MISMap *> *mapObjects;
 
 @end
 
@@ -24,6 +33,35 @@
     [self.tableView registerNib:nib forCellReuseIdentifier:@"Cell"];
     self.tableView.showsVerticalScrollIndicator = NO;
     
+    [SVProgressHUD show];
+    
+    
+    _mapObjects = [NSMutableArray array];
+    
+    NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=35.691864,139.696931&radius=500&types=%@&key=AIzaSyBif3Pp8ik8v9KwOLSvUuOgAuz-J4kzXBI",_searchType];
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager GET:url parameters:nil progress:nil
+         success:^(NSURLSessionTask *task, id responseObject) {
+             
+             // json取得に成功した場合の処理
+             NSArray *results = responseObject[@"results"];
+             for (int i =0; i<results.count; i++) {
+                 NSDictionary *result = results[i];
+                 MISMap *map = [[MISMap alloc] initWithDictionary:result];
+                 [_mapObjects addObject:map];
+                 [_tableView reloadData];
+             }
+             [SVProgressHUD dismiss];
+         } failure:^(NSURLSessionTask *operation, NSError *error) {
+             // エラーの場合の処理
+             if(error) {
+                 [SVProgressHUD showWithStatus:@"エラーが発生しました"];
+             }
+         }
+     ];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,8 +72,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
-    return 10;
+    return _mapObjects.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -46,11 +83,50 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MISSearchResultCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.resultImageView.image = [UIImage imageNamed:@"image"];
-    cell.resultLavel.text = @"横浜みなとみらい";
+    
+    if (!cell) {
+        cell = [[MISSearchResultCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    }
+    
+//    if ([_imageCache objectForKey:indexPath]) {
+//        // すでにキャッシュしてある場合
+//        cell.resultImageView.image = [_imageCache objectForKey:indexPath];
+//    } else {
+//        if (self.tableView.dragging == NO && self.tableView.decelerating == NO)
+//        {
+//            // キャッシュがない場合、読み込む
+//            [self startIconDownload:indexPath];
+//            cell.resultImageView.image = [UIImage imageWithData:_data];
+//        }
+//    }
+    
+    dispatch_queue_t q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_queue_t q_main = dispatch_get_main_queue();
+    cell.imageView.image = nil;
+    dispatch_async(q_global, ^{
+        Photo *photo = _mapObjects[indexPath.section].photos[0];
+        NSString *imageUrl = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/photo?maxwidth=1000&photoreference=%@&key=AIzaSyBif3Pp8ik8v9KwOLSvUuOgAuz-J4kzXBI",photo.photoReference];
+        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL: [NSURL URLWithString: imageUrl]]];
+        
+        dispatch_async(q_main, ^{
+            cell.resultImageView.image = image;
+            [cell layoutSubviews];
+        });
+    });
+    
+    cell.resultLavel.text = _mapObjects[indexPath.section].name;
     
     return cell;
 }
+
+//- (void)startIconDownload:(NSIndexPath *)indexPath {
+//    
+//    Photo *photo = _mapObjects[indexPath.section].photos[0];
+//    
+//    NSString *imageUrl = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=%@&key=AIzaSyBif3Pp8ik8v9KwOLSvUuOgAuz-J4kzXBI",photo.photoReference];
+//    NSURL *url = [NSURL URLWithString:imageUrl];
+//    _data = [NSData dataWithContentsOfURL:url];
+//}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 250.0f;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gqo-T0-vnf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gqo-T0-vnf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -421,7 +421,6 @@
                                         <connections>
                                             <outlet property="iconImageView" destination="fdG-y3-RXz" id="YRh-XP-zIy"/>
                                             <outlet property="itemLabel" destination="dDi-4X-sFR" id="M9N-t5-5Mw"/>
-                                            <segue destination="hbe-kX-y01" kind="show" id="OE4-fn-sR5"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -473,7 +472,7 @@
         <!--Title-->
         <scene sceneID="BFc-bG-M7Y">
             <objects>
-                <viewController id="hbe-kX-y01" customClass="MISSearchTableViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchView" id="hbe-kX-y01" customClass="MISSearchTableViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LoW-v6-1Mo"/>
                         <viewControllerLayoutGuide type="bottom" id="8Gr-dF-KiU"/>
@@ -484,7 +483,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vqj-O2-Ffm">
                                 <rect key="frame" x="16" y="0.0" width="343" height="667"/>
-                                <color key="backgroundColor" red="0.79607843140000001" green="0.54901960780000003" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="IoX-2A-Mnl" customClass="MISSearchResultCell">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
@@ -501,7 +500,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.79607843140000001" green="0.54901960780000003" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.36276075790000001" green="0.76557581190000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Vqj-O2-Ffm" firstAttribute="leading" secondItem="xF2-3S-AQK" secondAttribute="leading" constant="16" id="3fj-7e-Mfn"/>
                             <constraint firstAttribute="trailing" secondItem="Vqj-O2-Ffm" secondAttribute="trailing" constant="16" id="Qed-X7-3g2"/>

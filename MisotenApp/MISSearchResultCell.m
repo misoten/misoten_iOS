@@ -13,8 +13,12 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.layer.masksToBounds = YES;
-    self.layer.cornerRadius = 10.0f;
-    self.layer.borderWidth = 1.0f;
+    self.layer.cornerRadius = 5.0f;
+    self.layer.shadowPath = (__bridge CGPathRef)([UIBezierPath bezierPathWithRoundedRect:self.frame cornerRadius:5.0f]);
+    self.layer.shadowColor = (__bridge CGColorRef _Nullable)([UIColor blackColor]);
+    self.layer.shadowOffset = CGSizeMake(0.0, 3.0);
+    self.layer.shadowOpacity = 0.5;
+    
     self.layer.borderColor = [[UIColor darkGrayColor] CGColor];
 }
 
