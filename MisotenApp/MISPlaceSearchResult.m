@@ -1,24 +1,26 @@
 //
-//	Result.m
 //	Model file generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
 
 
 #import "MISPlaceSearchResult.h"
 
+NSString *const kResultAdrAddress = @"adr_address";
+NSString *const kResultFormattedAddress = @"formatted_address";
+NSString *const kResultFormattedPhoneNumber = @"formatted_phone_number";
 NSString *const kResultGeometry = @"geometry";
-NSString *const kResultIcon = @"icon";
 NSString *const kResultIdField = @"id";
+NSString *const kResultInternationalPhoneNumber = @"international_phone_number";
 NSString *const kResultName = @"name";
 NSString *const kResultOpeningHours = @"opening_hours";
 NSString *const kResultPhotos = @"photos";
 NSString *const kResultPlaceId = @"place_id";
 NSString *const kResultPriceLevel = @"price_level";
 NSString *const kResultRating = @"rating";
-NSString *const kResultReference = @"reference";
-NSString *const kResultScope = @"scope";
-NSString *const kResultTypes = @"types";
+NSString *const kResultReviews = @"reviews";
+NSString *const kResultUrl = @"url";
 NSString *const kResultVicinity = @"vicinity";
+NSString *const kResultWebsite = @"website";
 
 @interface MISPlaceSearchResult ()
 @end
@@ -34,15 +36,19 @@ NSString *const kResultVicinity = @"vicinity";
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
 	self = [super init];
+	
+	if(![dictionary[kResultFormattedAddress] isKindOfClass:[NSNull class]]){
+		self.formattedAddress = dictionary[kResultFormattedAddress];
+	}
 	if(![dictionary[kResultGeometry] isKindOfClass:[NSNull class]]){
 		self.geometry = [[Geometry alloc] initWithDictionary:dictionary[kResultGeometry]];
 	}
 
-	if(![dictionary[kResultIcon] isKindOfClass:[NSNull class]]){
-		self.icon = dictionary[kResultIcon];
-	}	
 	if(![dictionary[kResultIdField] isKindOfClass:[NSNull class]]){
 		self.idField = dictionary[kResultIdField];
+	}	
+	if(![dictionary[kResultInternationalPhoneNumber] isKindOfClass:[NSNull class]]){
+		self.internationalPhoneNumber = dictionary[kResultInternationalPhoneNumber];
 	}	
 	if(![dictionary[kResultName] isKindOfClass:[NSNull class]]){
 		self.name = dictionary[kResultName];
@@ -71,17 +77,20 @@ NSString *const kResultVicinity = @"vicinity";
 		self.rating = [dictionary[kResultRating] floatValue];
 	}
 
-	if(![dictionary[kResultReference] isKindOfClass:[NSNull class]]){
-		self.reference = dictionary[kResultReference];
-	}	
-	if(![dictionary[kResultScope] isKindOfClass:[NSNull class]]){
-		self.scope = dictionary[kResultScope];
-	}	
-	if(![dictionary[kResultTypes] isKindOfClass:[NSNull class]]){
-		self.types = dictionary[kResultTypes];
-	}	
+	if(dictionary[kResultReviews] != nil && [dictionary[kResultReviews] isKindOfClass:[NSArray class]]){
+		NSArray * reviewsDictionaries = dictionary[kResultReviews];
+		NSMutableArray * reviewsItems = [NSMutableArray array];
+		for(NSDictionary * reviewsDictionary in reviewsDictionaries){
+			Review * reviewsItem = [[Review alloc] initWithDictionary:reviewsDictionary];
+			[reviewsItems addObject:reviewsItem];
+		}
+		self.reviews = reviewsItems;
+	}
 	if(![dictionary[kResultVicinity] isKindOfClass:[NSNull class]]){
 		self.vicinity = dictionary[kResultVicinity];
+	}	
+	if(![dictionary[kResultWebsite] isKindOfClass:[NSNull class]]){
+		self.website = dictionary[kResultWebsite];
 	}	
 	return self;
 }
@@ -93,14 +102,18 @@ NSString *const kResultVicinity = @"vicinity";
 -(NSDictionary *)toDictionary
 {
 	NSMutableDictionary * dictionary = [NSMutableDictionary dictionary];
+    
+	if(self.formattedAddress != nil){
+		dictionary[kResultFormattedAddress] = self.formattedAddress;
+	}
 	if(self.geometry != nil){
 		dictionary[kResultGeometry] = [self.geometry toDictionary];
 	}
-	if(self.icon != nil){
-		dictionary[kResultIcon] = self.icon;
-	}
 	if(self.idField != nil){
 		dictionary[kResultIdField] = self.idField;
+	}
+	if(self.internationalPhoneNumber != nil){
+		dictionary[kResultInternationalPhoneNumber] = self.internationalPhoneNumber;
 	}
 	if(self.name != nil){
 		dictionary[kResultName] = self.name;
@@ -120,17 +133,18 @@ NSString *const kResultVicinity = @"vicinity";
 	}
 	dictionary[kResultPriceLevel] = @(self.priceLevel);
 	dictionary[kResultRating] = @(self.rating);
-	if(self.reference != nil){
-		dictionary[kResultReference] = self.reference;
-	}
-	if(self.scope != nil){
-		dictionary[kResultScope] = self.scope;
-	}
-	if(self.types != nil){
-		dictionary[kResultTypes] = self.types;
+	if(self.reviews != nil){
+		NSMutableArray * dictionaryElements = [NSMutableArray array];
+		for(Review * reviewsElement in self.reviews){
+			[dictionaryElements addObject:[reviewsElement toDictionary]];
+		}
+		dictionary[kResultReviews] = dictionaryElements;
 	}
 	if(self.vicinity != nil){
 		dictionary[kResultVicinity] = self.vicinity;
+	}
+	if(self.website != nil){
+		dictionary[kResultWebsite] = self.website;
 	}
 	return dictionary;
 
@@ -144,14 +158,17 @@ NSString *const kResultVicinity = @"vicinity";
  */
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
+	if(self.formattedAddress != nil){
+		[aCoder encodeObject:self.formattedAddress forKey:kResultFormattedAddress];
+	}
 	if(self.geometry != nil){
 		[aCoder encodeObject:self.geometry forKey:kResultGeometry];
 	}
-	if(self.icon != nil){
-		[aCoder encodeObject:self.icon forKey:kResultIcon];
-	}
 	if(self.idField != nil){
 		[aCoder encodeObject:self.idField forKey:kResultIdField];
+	}
+	if(self.internationalPhoneNumber != nil){
+		[aCoder encodeObject:self.internationalPhoneNumber forKey:kResultInternationalPhoneNumber];
 	}
 	if(self.name != nil){
 		[aCoder encodeObject:self.name forKey:kResultName];
@@ -165,17 +182,14 @@ NSString *const kResultVicinity = @"vicinity";
 	if(self.placeId != nil){
 		[aCoder encodeObject:self.placeId forKey:kResultPlaceId];
 	}
-	[aCoder encodeObject:@(self.priceLevel) forKey:kResultPriceLevel];	[aCoder encodeObject:@(self.rating) forKey:kResultRating];	if(self.reference != nil){
-		[aCoder encodeObject:self.reference forKey:kResultReference];
-	}
-	if(self.scope != nil){
-		[aCoder encodeObject:self.scope forKey:kResultScope];
-	}
-	if(self.types != nil){
-		[aCoder encodeObject:self.types forKey:kResultTypes];
+	[aCoder encodeObject:@(self.priceLevel) forKey:kResultPriceLevel];	[aCoder encodeObject:@(self.rating) forKey:kResultRating];	if(self.reviews != nil){
+		[aCoder encodeObject:self.reviews forKey:kResultReviews];
 	}
 	if(self.vicinity != nil){
 		[aCoder encodeObject:self.vicinity forKey:kResultVicinity];
+	}
+	if(self.website != nil){
+		[aCoder encodeObject:self.website forKey:kResultWebsite];
 	}
 
 }
@@ -186,19 +200,19 @@ NSString *const kResultVicinity = @"vicinity";
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
 	self = [super init];
+	self.formattedAddress = [aDecoder decodeObjectForKey:kResultFormattedAddress];
 	self.geometry = [aDecoder decodeObjectForKey:kResultGeometry];
-	self.icon = [aDecoder decodeObjectForKey:kResultIcon];
 	self.idField = [aDecoder decodeObjectForKey:kResultIdField];
+	self.internationalPhoneNumber = [aDecoder decodeObjectForKey:kResultInternationalPhoneNumber];
 	self.name = [aDecoder decodeObjectForKey:kResultName];
 	self.openingHours = [aDecoder decodeObjectForKey:kResultOpeningHours];
 	self.photos = [aDecoder decodeObjectForKey:kResultPhotos];
 	self.placeId = [aDecoder decodeObjectForKey:kResultPlaceId];
 	self.priceLevel = [[aDecoder decodeObjectForKey:kResultPriceLevel] integerValue];
 	self.rating = [[aDecoder decodeObjectForKey:kResultRating] floatValue];
-	self.reference = [aDecoder decodeObjectForKey:kResultReference];
-	self.scope = [aDecoder decodeObjectForKey:kResultScope];
-	self.types = [aDecoder decodeObjectForKey:kResultTypes];
+	self.reviews = [aDecoder decodeObjectForKey:kResultReviews];
 	self.vicinity = [aDecoder decodeObjectForKey:kResultVicinity];
+	self.website = [aDecoder decodeObjectForKey:kResultWebsite];
 	return self;
 
 }
@@ -210,19 +224,19 @@ NSString *const kResultVicinity = @"vicinity";
 {
 	MISPlaceSearchResult *copy = [MISPlaceSearchResult new];
 
+	copy.formattedAddress = [self.formattedAddress copy];
 	copy.geometry = [self.geometry copy];
-	copy.icon = [self.icon copy];
 	copy.idField = [self.idField copy];
+	copy.internationalPhoneNumber = [self.internationalPhoneNumber copy];
 	copy.name = [self.name copy];
 	copy.openingHours = [self.openingHours copy];
 	copy.photos = [self.photos copy];
 	copy.placeId = [self.placeId copy];
 	copy.priceLevel = self.priceLevel;
 	copy.rating = self.rating;
-	copy.reference = [self.reference copy];
-	copy.scope = [self.scope copy];
-	copy.types = [self.types copy];
+	copy.reviews = [self.reviews copy];
 	copy.vicinity = [self.vicinity copy];
+	copy.website = [self.website copy];
 
 	return copy;
 }

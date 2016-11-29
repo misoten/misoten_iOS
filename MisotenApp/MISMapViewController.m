@@ -151,8 +151,8 @@
 - (IBAction)openSearchMenu:(id)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     MISMapSearchViewController *mapSearchViewController = [storyboard instantiateViewControllerWithIdentifier:@"mapSearchVC"];
-    
     [UIView animateWithDuration:0.75 animations:^{
+        mapSearchViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [self presentViewController: mapSearchViewController animated:YES completion: nil];
     }];
 }

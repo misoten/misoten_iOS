@@ -31,10 +31,14 @@ typedef NS_ENUM(NSInteger, searchType) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBar.hidden = YES;
     self.tabBarController.tabBar.hidden = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
     _searchMenuCollectionView.showsVerticalScrollIndicator = NO;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {

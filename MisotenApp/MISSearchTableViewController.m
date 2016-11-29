@@ -30,7 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationController.navigationBar.hidden = NO;
     UINib *nib = [UINib nibWithNibName:@"SearchResultCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"Cell"];
     self.tableView.showsVerticalScrollIndicator = NO;

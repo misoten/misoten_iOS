@@ -528,32 +528,7 @@
                     <view key="view" contentMode="scaleToFill" id="Put-jJ-HaF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n7L-pV-Ifw">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="PDT-kU-7Oo"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLz-2A-7nD">
-                                <rect key="frame" x="16" y="208" width="343" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="h1G-sK-wfl"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="n7L-pV-Ifw" firstAttribute="leading" secondItem="Put-jJ-HaF" secondAttribute="leading" id="ANJ-ef-4xx"/>
-                            <constraint firstAttribute="trailing" secondItem="SLz-2A-7nD" secondAttribute="trailing" constant="16" id="Akv-2J-IIY"/>
-                            <constraint firstItem="SLz-2A-7nD" firstAttribute="top" secondItem="n7L-pV-Ifw" secondAttribute="bottom" constant="8" id="CTf-K7-biB"/>
-                            <constraint firstItem="n7L-pV-Ifw" firstAttribute="top" secondItem="Put-jJ-HaF" secondAttribute="top" id="Ec4-73-mSI"/>
-                            <constraint firstAttribute="trailing" secondItem="n7L-pV-Ifw" secondAttribute="trailing" id="F3z-8N-iuz"/>
-                            <constraint firstItem="SLz-2A-7nD" firstAttribute="leading" secondItem="Put-jJ-HaF" secondAttribute="leading" constant="16" id="WKn-EH-G0R"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TQt-zO-YvN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -670,7 +645,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="put-FH-RK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6290" y="-366"/>
+            <point key="canvasLocation" x="6302" y="-309"/>
         </scene>
     </scenes>
     <resources>
