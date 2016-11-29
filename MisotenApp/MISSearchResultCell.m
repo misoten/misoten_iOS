@@ -20,6 +20,7 @@
     self.layer.shadowOpacity = 0.5;
     
     self.layer.borderColor = [[UIColor darkGrayColor] CGColor];
+    self.ratingView.userInteractionEnabled = NO;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

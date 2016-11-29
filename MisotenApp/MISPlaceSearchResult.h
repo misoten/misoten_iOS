@@ -3,7 +3,7 @@
 #import "OpeningHour.h"
 #import "Photo.h"
 
-@interface MISMap : NSObject
+@interface MISPlaceSearchResult : NSObject
 
 @property (nonatomic, strong) Geometry * geometry;
 @property (nonatomic, strong) NSString * icon;

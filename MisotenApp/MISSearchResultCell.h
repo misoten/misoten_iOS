@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HCSStarRatingView/HCSStarRatingView.h"
 
 @interface MISSearchResultCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *resultImageView;
-@property (weak, nonatomic) IBOutlet UILabel *resultLavel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet HCSStarRatingView *ratingView;
 
 @end

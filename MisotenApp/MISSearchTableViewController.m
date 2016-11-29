@@ -9,9 +9,11 @@
 #import "MISSearchTableViewController.h"
 #import "MISSearchResultCell.h"
 #import "AFNetworking.h"
-#import "MISMap.h"
+#import "MISPlaceSearchResult.h"
 #import "SVProgressHUD/SVProgressHUD.h"
 #import "Photo.h"
+#import "UIImageView+WebCache.h"
+#import "MISSearchDetailViewController.h"
 
 @interface MISSearchTableViewController ()
 
@@ -20,7 +22,7 @@
 @property (nonatomic, strong) NSMutableDictionary *downloaderManager;
 @property (nonatomic, strong) NSData *data;
 
-@property (nonatomic, strong) NSMutableArray<MISMap *> *mapObjects;
+@property (nonatomic, strong) NSMutableArray<MISPlaceSearchResult *> *mapObjects;
 
 @end
 
@@ -39,6 +41,7 @@
     _mapObjects = [NSMutableArray array];
     
     NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=35.691864,139.696931&radius=500&types=%@&key=AIzaSyBif3Pp8ik8v9KwOLSvUuOgAuz-J4kzXBI",_searchType];
+    NSLog(@"%@", url);
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -49,8 +52,8 @@
              NSArray *results = responseObject[@"results"];
              for (int i =0; i<results.count; i++) {
                  NSDictionary *result = results[i];
-                 MISMap *map = [[MISMap alloc] initWithDictionary:result];
-                 [_mapObjects addObject:map];
+                 MISPlaceSearchResult *searchResult = [[MISPlaceSearchResult alloc] initWithDictionary:result];
+                 [_mapObjects addObject:searchResult];
                  [_tableView reloadData];
              }
              [SVProgressHUD dismiss];
@@ -80,53 +83,30 @@
     return 1;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MISSearchResultCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    
     if (!cell) {
         cell = [[MISSearchResultCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
-//    if ([_imageCache objectForKey:indexPath]) {
-//        // すでにキャッシュしてある場合
-//        cell.resultImageView.image = [_imageCache objectForKey:indexPath];
-//    } else {
-//        if (self.tableView.dragging == NO && self.tableView.decelerating == NO)
-//        {
-//            // キャッシュがない場合、読み込む
-//            [self startIconDownload:indexPath];
-//            cell.resultImageView.image = [UIImage imageWithData:_data];
-//        }
-//    }
-    
-    dispatch_queue_t q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_queue_t q_main = dispatch_get_main_queue();
-    cell.imageView.image = nil;
-    dispatch_async(q_global, ^{
-        Photo *photo = _mapObjects[indexPath.section].photos[0];
-        NSString *imageUrl = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/photo?maxwidth=1000&photoreference=%@&key=AIzaSyBif3Pp8ik8v9KwOLSvUuOgAuz-J4kzXBI",photo.photoReference];
-        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL: [NSURL URLWithString: imageUrl]]];
-        
-        dispatch_async(q_main, ^{
-            cell.resultImageView.image = image;
-            [cell layoutSubviews];
-        });
-    });
-    
-    cell.resultLavel.text = _mapObjects[indexPath.section].name;
-    
+    Photo *photo = _mapObjects[indexPath.section].photos[0];
+    NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/photo?maxwidth=1000&photoreference=%@&key=AIzaSyBif3Pp8ik8v9KwOLSvUuOgAuz-J4kzXBI",photo.photoReference];
+    NSURL *imageUrl = [NSURL URLWithString:url];
+    [cell.resultImageView sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"noimage"]];
+    cell.nameLabel.text = _mapObjects[indexPath.section].name;
+    cell.addressLabel.text = _mapObjects[indexPath.section].vicinity;
+    cell.ratingView.value = _mapObjects[indexPath.section].rating;
     return cell;
 }
 
-//- (void)startIconDownload:(NSIndexPath *)indexPath {
-//    
-//    Photo *photo = _mapObjects[indexPath.section].photos[0];
-//    
-//    NSString *imageUrl = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photoreference=%@&key=AIzaSyBif3Pp8ik8v9KwOLSvUuOgAuz-J4kzXBI",photo.photoReference];
-//    NSURL *url = [NSURL URLWithString:imageUrl];
-//    _data = [NSData dataWithContentsOfURL:url];
-//}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    MISSearchDetailViewController *searchDetailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"detail"];
+    searchDetailViewController.place_id = _mapObjects[indexPath.section].placeId;
+    
+    [self.navigationController pushViewController:searchDetailViewController animated:YES];
+}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 250.0f;
@@ -148,49 +128,5 @@
     [view setTintColor:[UIColor clearColor]];
 }
 
-
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

@@ -4,7 +4,7 @@
 
 
 
-#import "MISMap.h"
+#import "MISPlaceSearchResult.h"
 
 NSString *const kResultGeometry = @"geometry";
 NSString *const kResultIcon = @"icon";
@@ -20,9 +20,9 @@ NSString *const kResultScope = @"scope";
 NSString *const kResultTypes = @"types";
 NSString *const kResultVicinity = @"vicinity";
 
-@interface MISMap ()
+@interface MISPlaceSearchResult ()
 @end
-@implementation MISMap
+@implementation MISPlaceSearchResult
 
 
 
@@ -208,7 +208,7 @@ NSString *const kResultVicinity = @"vicinity";
  */
 - (instancetype)copyWithZone:(NSZone *)zone
 {
-	MISMap *copy = [MISMap new];
+	MISPlaceSearchResult *copy = [MISPlaceSearchResult new];
 
 	copy.geometry = [self.geometry copy];
 	copy.icon = [self.icon copy];

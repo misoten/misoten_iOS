@@ -14,5 +14,7 @@ pod 'ActionSheetPicker-3.0', '~> 2.2.0'
 pod 'EAIntroView', '~> 2.9.0'
 pod 'GooglePlaces'
 pod 'AFNetworking', '~> 3.0'
+pod 'SDWebImage'
+pod 'HCSStarRatingView', '~> 1.4.5'
 end
 

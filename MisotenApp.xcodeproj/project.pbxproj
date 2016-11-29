@@ -29,9 +29,8 @@
 		37737A161DE0A101004C761C /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 37737A0C1DE0A101004C761C /* Location.m */; };
 		37737A171DE0A101004C761C /* OpeningHour.m in Sources */ = {isa = PBXBuildFile; fileRef = 37737A0E1DE0A101004C761C /* OpeningHour.m */; };
 		37737A181DE0A101004C761C /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 37737A101DE0A101004C761C /* Photo.m */; };
-		37737A191DE0A101004C761C /* MISMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 37737A121DE0A101004C761C /* MISMap.m */; };
-		37B3AE181DE4133900548C26 /* MISMapSearchResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B3AE171DE4133900548C26 /* MISMapSearchResultModel.m */; };
-		37CBB8231DC3556B00145476 /* MISDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CBB8221DC3556B00145476 /* MISDetailViewController.m */; };
+		37737A191DE0A101004C761C /* MISPlaceSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 37737A121DE0A101004C761C /* MISPlaceSearchResult.m */; };
+		37C543B91DEB1C2100F4A0B3 /* MISSearchDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C543B81DEB1C2100F4A0B3 /* MISSearchDetailViewController.m */; };
 		37D8EAAF1DCA274900F4E8C5 /* MISMapSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D8EAAE1DCA274900F4E8C5 /* MISMapSettingView.m */; };
 		686CDBD16FE40B4599F1FC46 /* Pods_MisotenApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4723EBBDA224B1214A0BDCEF /* Pods_MisotenApp.framework */; };
 /* End PBXBuildFile section */
@@ -76,12 +75,10 @@
 		37737A0E1DE0A101004C761C /* OpeningHour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpeningHour.m; sourceTree = "<group>"; };
 		37737A0F1DE0A101004C761C /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		37737A101DE0A101004C761C /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
-		37737A111DE0A101004C761C /* MISMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISMap.h; sourceTree = "<group>"; };
-		37737A121DE0A101004C761C /* MISMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISMap.m; sourceTree = "<group>"; };
-		37B3AE161DE4133900548C26 /* MISMapSearchResultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISMapSearchResultModel.h; sourceTree = "<group>"; };
-		37B3AE171DE4133900548C26 /* MISMapSearchResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISMapSearchResultModel.m; sourceTree = "<group>"; };
-		37CBB8211DC3556B00145476 /* MISDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISDetailViewController.h; sourceTree = "<group>"; };
-		37CBB8221DC3556B00145476 /* MISDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISDetailViewController.m; sourceTree = "<group>"; };
+		37737A111DE0A101004C761C /* MISPlaceSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISPlaceSearchResult.h; sourceTree = "<group>"; };
+		37737A121DE0A101004C761C /* MISPlaceSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISPlaceSearchResult.m; sourceTree = "<group>"; };
+		37C543B71DEB1C2100F4A0B3 /* MISSearchDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISSearchDetailViewController.h; sourceTree = "<group>"; };
+		37C543B81DEB1C2100F4A0B3 /* MISSearchDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISSearchDetailViewController.m; sourceTree = "<group>"; };
 		37D8EAAD1DCA274900F4E8C5 /* MISMapSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISMapSettingView.h; sourceTree = "<group>"; };
 		37D8EAAE1DCA274900F4E8C5 /* MISMapSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISMapSettingView.m; sourceTree = "<group>"; };
 		4723EBBDA224B1214A0BDCEF /* Pods_MisotenApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MisotenApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,14 +174,14 @@
 				374A389B1DAE3712008C8CC2 /* MISLoginViewController.m */,
 				374A389D1DAE372D008C8CC2 /* MISMapViewController.h */,
 				374A389E1DAE372D008C8CC2 /* MISMapViewController.m */,
-				37CBB8211DC3556B00145476 /* MISDetailViewController.h */,
-				37CBB8221DC3556B00145476 /* MISDetailViewController.m */,
 				374A38A21DAF38C0008C8CC2 /* MISLeftMenuViewController.h */,
 				374A38A31DAF38C0008C8CC2 /* MISLeftMenuViewController.m */,
 				37109F0B1DB6EA9F004B626B /* MISMapSearchViewController.h */,
 				37109F0C1DB6EA9F004B626B /* MISMapSearchViewController.m */,
 				374676AE1DDC2E9A00E0EE1D /* MISSearchTableViewController.h */,
 				374676AF1DDC2E9A00E0EE1D /* MISSearchTableViewController.m */,
+				37C543B71DEB1C2100F4A0B3 /* MISSearchDetailViewController.h */,
+				37C543B81DEB1C2100F4A0B3 /* MISSearchDetailViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -200,12 +197,10 @@
 				37737A0E1DE0A101004C761C /* OpeningHour.m */,
 				37737A0F1DE0A101004C761C /* Photo.h */,
 				37737A101DE0A101004C761C /* Photo.m */,
-				37737A111DE0A101004C761C /* MISMap.h */,
-				37737A121DE0A101004C761C /* MISMap.m */,
+				37737A111DE0A101004C761C /* MISPlaceSearchResult.h */,
+				37737A121DE0A101004C761C /* MISPlaceSearchResult.m */,
 				37109EF61DB26DC0004B626B /* MISMapSearchItem.h */,
 				37109EF71DB26DC0004B626B /* MISMapSearchItem.m */,
-				37B3AE161DE4133900548C26 /* MISMapSearchResultModel.h */,
-				37B3AE171DE4133900548C26 /* MISMapSearchResultModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -366,15 +361,14 @@
 				37109EF81DB26DC0004B626B /* MISMapSearchItem.m in Sources */,
 				374A38821DAE35D0008C8CC2 /* main.m in Sources */,
 				374676B01DDC2E9A00E0EE1D /* MISSearchTableViewController.m in Sources */,
-				37CBB8231DC3556B00145476 /* MISDetailViewController.m in Sources */,
 				37737A181DE0A101004C761C /* Photo.m in Sources */,
-				37B3AE181DE4133900548C26 /* MISMapSearchResultModel.m in Sources */,
 				23C9F59A1DD30A1F0081112E /* MISSearchResultCell.m in Sources */,
 				37D8EAAF1DCA274900F4E8C5 /* MISMapSettingView.m in Sources */,
+				37C543B91DEB1C2100F4A0B3 /* MISSearchDetailViewController.m in Sources */,
 				37737A161DE0A101004C761C /* Location.m in Sources */,
 				374A38A41DAF38C0008C8CC2 /* MISLeftMenuViewController.m in Sources */,
 				37737A171DE0A101004C761C /* OpeningHour.m in Sources */,
-				37737A191DE0A101004C761C /* MISMap.m in Sources */,
+				37737A191DE0A101004C761C /* MISPlaceSearchResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

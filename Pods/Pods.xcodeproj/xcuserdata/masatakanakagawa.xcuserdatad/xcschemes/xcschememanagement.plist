@@ -29,12 +29,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>HCSStarRatingView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MisotenApp.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>RESideMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,12 +57,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1E47B2E84AE8CFCCB01D1249D6A42DE3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2FEBADEEA3D53A5D5FB704B82F95CE36</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>45FF4A7AFE5D8E17D01023C53AED87FF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>58AAD2C9E898747F2F4ABF348E6325F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>6164F8E8E705AE672C3247A83C96DB02</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>822DA31A6A34C7EF41E1EC7A5EF8FC2F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>878BA7346FB1F457CBA6FD94CDD9D12B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,22 +102,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C2EDB935B139A46B974592E85C67D586</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>CF671F7E57B92905F1CC91D036D6B4A7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CFBBAB8E985F82FE77B1EB69E6264A24</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F4018412C0E7E81C4524E2827D523036</key>
 		<dict>
 			<key>primary</key>
 			<true/>

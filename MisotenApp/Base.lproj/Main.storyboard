@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="592" width="375" height="75"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZm-fN-bJl">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="75"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="188" height="75"/>
                                         <color key="backgroundColor" red="0.62633852355464947" green="0.67536274700032151" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="サインアップ"/>
                                         <connections>
@@ -34,7 +34,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mia-tP-CoN">
-                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="75"/>
+                                        <rect key="frame" x="188" y="0.0" width="187" height="75"/>
                                         <color key="backgroundColor" red="0.71608397084062436" green="1" blue="0.55877085340493826" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="ログイン"/>
                                         <connections>
@@ -111,7 +111,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0X-Tx-zYe">
-                                <rect key="frame" x="165.5" y="379" width="44" height="30"/>
+                                <rect key="frame" x="166" y="379" width="44" height="30"/>
                                 <state key="normal" title="debug"/>
                                 <connections>
                                     <action selector="debug:" destination="PCb-K0-GSZ" eventType="touchUpInside" id="oWC-wp-Jy3"/>
@@ -227,7 +227,7 @@
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="コンパス" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YhG-YT-ePi">
-                                <rect key="frame" x="30" y="307" width="69.5" height="31"/>
+                                <rect key="frame" x="30" y="307" width="70" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="25c-Pp-43L"/>
                                 </constraints>
@@ -245,7 +245,7 @@
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CiR-ad-lgE">
-                                <rect key="frame" x="257.5" y="307" width="51" height="31"/>
+                                <rect key="frame" x="258" y="307" width="51" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="2bB-iZ-r9e"/>
                                     <constraint firstAttribute="width" constant="49" id="deS-bW-bRJ"/>
@@ -278,7 +278,7 @@
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WjX-oM-VuP">
-                                <rect key="frame" x="257.5" y="226" width="51" height="31"/>
+                                <rect key="frame" x="258" y="226" width="51" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="16x-xu-ieC"/>
                                     <constraint firstAttribute="width" constant="49" id="85j-f6-UVD"/>
@@ -404,7 +404,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDi-4X-sFR">
-                                                    <rect key="frame" x="44" y="109" width="42" height="20.5"/>
+                                                    <rect key="frame" x="44" y="109" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -516,6 +516,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgh-mf-SxD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7935.1999999999998" y="-366.56671664167919"/>
+        </scene>
+        <!--Search Detail View Controller-->
+        <scene sceneID="F2P-5I-Ukz">
+            <objects>
+                <viewController storyboardIdentifier="detail" id="wWk-Vl-vY2" customClass="MISSearchDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8TX-Yt-0mQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="dLy-2O-lnO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Put-jJ-HaF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n7L-pV-Ifw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="PDT-kU-7Oo"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLz-2A-7nD">
+                                <rect key="frame" x="16" y="208" width="343" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="h1G-sK-wfl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n7L-pV-Ifw" firstAttribute="leading" secondItem="Put-jJ-HaF" secondAttribute="leading" id="ANJ-ef-4xx"/>
+                            <constraint firstAttribute="trailing" secondItem="SLz-2A-7nD" secondAttribute="trailing" constant="16" id="Akv-2J-IIY"/>
+                            <constraint firstItem="SLz-2A-7nD" firstAttribute="top" secondItem="n7L-pV-Ifw" secondAttribute="bottom" constant="8" id="CTf-K7-biB"/>
+                            <constraint firstItem="n7L-pV-Ifw" firstAttribute="top" secondItem="Put-jJ-HaF" secondAttribute="top" id="Ec4-73-mSI"/>
+                            <constraint firstAttribute="trailing" secondItem="n7L-pV-Ifw" secondAttribute="trailing" id="F3z-8N-iuz"/>
+                            <constraint firstItem="SLz-2A-7nD" firstAttribute="leading" secondItem="Put-jJ-HaF" secondAttribute="leading" constant="16" id="WKn-EH-G0R"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TQt-zO-YvN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8608.7999999999993" y="-367.46626686656674"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="vcg-4x-kuF">
