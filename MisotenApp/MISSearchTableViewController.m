@@ -34,6 +34,13 @@
     UINib *nib = [UINib nibWithNibName:@"SearchResultCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"Cell"];
     self.tableView.showsVerticalScrollIndicator = NO;
+    self.title = _searchType;
+    
+    UIBarButtonItem* btn = [[UIBarButtonItem alloc] initWithTitle:@"戻る"
+                                                            style:UIBarButtonItemStylePlain
+                                                           target:nil
+                                                           action:nil];
+    self.navigationItem.backBarButtonItem = btn;
     
     [SVProgressHUD show];
     
@@ -93,7 +100,7 @@
     Photo *photo = _mapObjects[indexPath.section].photos[0];
     NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/photo?maxwidth=1000&photoreference=%@&key=AIzaSyBif3Pp8ik8v9KwOLSvUuOgAuz-J4kzXBI",photo.photoReference];
     NSURL *imageUrl = [NSURL URLWithString:url];
-    [cell.resultImageView sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"noimage"]];
+    [cell.resultImageView sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"loadImage"]];
     cell.nameLabel.text = _mapObjects[indexPath.section].name;
     cell.addressLabel.text = _mapObjects[indexPath.section].vicinity;
     cell.ratingView.value = _mapObjects[indexPath.section].rating;

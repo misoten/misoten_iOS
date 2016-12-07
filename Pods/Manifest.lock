@@ -60,6 +60,7 @@ PODS:
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
   - SVProgressHUD (2.0.3)
+  - ZYBannerView (1.1.1)
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0 (~> 2.2.0)
@@ -74,6 +75,7 @@ DEPENDENCIES:
   - RESideMenu (~> 4.0.7)
   - SDWebImage
   - SVProgressHUD (~> 2.0.3)
+  - ZYBannerView
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
@@ -96,7 +98,8 @@ SPEC CHECKSUMS:
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  ZYBannerView: 9248cc8385e2c4bfe81a17ea177dd43ee0e27d64
 
-PODFILE CHECKSUM: ed3df11f5518db4339a6147185a3430442e17f5a
+PODFILE CHECKSUM: ca45d95d9a538251848007a5eab7b23ce6669023
 
 COCOAPODS: 1.1.1

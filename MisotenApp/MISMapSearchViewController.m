@@ -15,8 +15,14 @@
 
 typedef NS_ENUM(NSInteger, searchType) {
     MUSEUM,
-    FOOD,
-    AMUSEMENT_PARK
+    RESTAURANT,
+    AMUSEMENT_PARK,
+    BAR,
+    CAFE,
+    LODGING,
+    CLOTHING_STORE,
+    PARK,
+    DEPARTMENT_STORE
 };
 
 
@@ -80,24 +86,36 @@ typedef NS_ENUM(NSInteger, searchType) {
         case MUSEUM:
             searchTableViewController.searchType = @"museum";
             break;
-        case FOOD:
-            searchTableViewController.searchType = @"food";
+        case RESTAURANT:
+            searchTableViewController.searchType = @"restaurant";
             break;
             
         case AMUSEMENT_PARK:
             searchTableViewController.searchType = @"amusement_park";
             break;
             
-        case 3:
-            
+        case BAR:
+            searchTableViewController.searchType = @"bar";
             break;
             
-        case 4:
-            
+        case CAFE:
+            searchTableViewController.searchType = @"cafe";
+            break;
+        
+        case LODGING:
+            searchTableViewController.searchType = @"lodging";
             break;
             
+        case CLOTHING_STORE:
+            searchTableViewController.searchType = @"clothing_store";
+            break;
             
-        default:
+        case PARK:
+            searchTableViewController.searchType = @"park";
+            break;
+            
+        case DEPARTMENT_STORE:
+            searchTableViewController.searchType = @"department_store";
             break;
     }
     

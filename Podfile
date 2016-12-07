@@ -16,5 +16,6 @@ pod 'GooglePlaces'
 pod 'AFNetworking', '~> 3.0'
 pod 'SDWebImage'
 pod 'HCSStarRatingView', '~> 1.4.5'
+pod 'ZYBannerView'
 end
 

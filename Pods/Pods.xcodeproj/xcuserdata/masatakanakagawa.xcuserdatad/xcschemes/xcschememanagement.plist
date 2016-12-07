@@ -54,24 +54,14 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ZYBannerView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1E47B2E84AE8CFCCB01D1249D6A42DE3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>21907884EF4CA51E75933C68861F26CD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2FEBADEEA3D53A5D5FB704B82F95CE36</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>45FF4A7AFE5D8E17D01023C53AED87FF</key>
 		<dict>
 			<key>primary</key>
@@ -82,12 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6164F8E8E705AE672C3247A83C96DB02</key>
+		<key>642DAD74DD7B6BBF1C57756380FE1094</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>738FFB5A0A7C642A6657EA5241C1FB7E</key>
+		<key>6ABC511C80A431085256F391A2426D79</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6E3225A646DFD568D0C0A80D3C40B63C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,12 +92,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>878BA7346FB1F457CBA6FD94CDD9D12B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8FA6690A70E2223F6DA59CB8C5B6294B</key>
+		<key>889E649DC9BB1B423CBA3E4A3568CBBE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,22 +102,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AB045440E0FF21FA9AA0E0A151C95FDB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>BF1258B878BFA89993BC8FEA5ACA97E4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C5A8E29AAE38E55A23B5A28B8C2B837A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CE0A701D8A271EFE0065667D13272921</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,7 +112,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D8BF146EAE696DCA97C90C51BE045947</key>
+		<key>DF9E49456CE66A5CAC7AA31E20540A1F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

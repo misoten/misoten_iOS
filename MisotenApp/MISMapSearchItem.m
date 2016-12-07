@@ -18,9 +18,8 @@
 }
 
 +(NSArray *)searchItemStringArray {
-    NSArray *itemStringArray = [[NSArray alloc] initWithObjects:@"建物",@"レストラン",@"ホテル",@"建物",@"レストラン",@"ホテル",@"建物",@"レストラン",@"ホテル", nil];
+    NSArray *itemStringArray = [[NSArray alloc] initWithObjects:@"ミュージアム",@"レストラン",@"アミューズ\nメントパーク",@"バー",@"カフェ",@"ホテル",@"洋服店",@"公園",@"デパート", nil];
     return itemStringArray;
 }
-
 
 @end

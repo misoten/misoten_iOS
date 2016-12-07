@@ -42,7 +42,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TbC-aJ-TXA" customClass="HCSStarRatingView">
                         <rect key="frame" x="366" y="207" width="116" height="42"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" red="1" green="0.70219412190595754" blue="0.14185758683034344" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="0.70196078431372544" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="116" id="X6n-3f-yZM"/>
                         </constraints>

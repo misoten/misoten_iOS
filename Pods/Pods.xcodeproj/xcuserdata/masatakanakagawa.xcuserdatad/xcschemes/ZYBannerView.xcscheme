@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '6E3225A646DFD568D0C0A80D3C40B63C'
-               BlueprintName = 'RESideMenu'
+               BlueprintIdentifier = 'DF9E49456CE66A5CAC7AA31E20540A1F'
+               BlueprintName = 'ZYBannerView'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'RESideMenu.framework'>
+               BuildableName = 'ZYBannerView.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

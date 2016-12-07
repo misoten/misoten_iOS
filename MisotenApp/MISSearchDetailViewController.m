@@ -13,15 +13,22 @@
 #import "Photo.h"
 #import "FrameAccessor.h"
 #import "UIImageView+WebCache.h"
+#import "ZYBannerView.h"
+#import "HCSStarRatingView.h"
+@import GoogleMaps;
 
-@interface MISSearchDetailViewController () <UIScrollViewDelegate>
-
-//@property (nonatomic, strong) UIImageView *imageView;
+@interface MISSearchDetailViewController () <UIScrollViewDelegate, ZYBannerViewDelegate, ZYBannerViewDataSource, GMSMapViewDelegate>
 
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic) NSMutableArray *slideShowImages;
 @property (nonatomic, strong) NSMutableArray<NSURL *> *imageUrl;
 @property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) ZYBannerView *bannerView;
+@property (nonatomic, strong) NSMutableArray<UIImage*> *imageArray;
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) HCSStarRatingView *ratingView;
+
+@property (nonatomic, strong) GMSMapView *mapView;
 
 @end
 
@@ -30,23 +37,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.bottom, self.view.width, 250)];
-    _scrollView.bounces = YES;
-    _scrollView.pagingEnabled = YES;
-    _scrollView.delegate = self;
-    _scrollView.userInteractionEnabled = YES;
-    _scrollView.showsHorizontalScrollIndicator = NO;
-    
-    _imageView = [[UIImageView alloc] init];
-    _imageView.contentMode = UIViewContentModeScaleAspectFill;
-    _imageView.frame = _scrollView.frame;
-    [_scrollView addSubview:_imageView];
-    
-    
 
+    [self initLayout];
     [SVProgressHUD show];
+    
     NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/details/json?placeid=%@&key=AIzaSyBif3Pp8ik8v9KwOLSvUuOgAuz-J4kzXBI",_place_id];
-    //NSLog(@"%@", url);
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [manager GET:url parameters:nil progress:nil
@@ -56,6 +51,7 @@
              MISPlaceSearchResult *result = [[MISPlaceSearchResult alloc] initWithDictionary:response];
              NSArray *photos = result.photos;
              _slideShowImages = [NSMutableArray array];
+             _imageArray = [NSMutableArray<UIImage*> array];
              for(int i=0; i<photos.count; i++) {
                  Photo *photo = photos[i];
                  NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/photo?maxwidth=1000&photoreference=%@&key=AIzaSyBif3Pp8ik8v9KwOLSvUuOgAuz-J4kzXBI",photo.photoReference];
@@ -63,31 +59,16 @@
                  [_slideShowImages addObject:imageUrl];
              }
              
-             [_imageView sd_setImageWithURL:_slideShowImages[([_slideShowImages count]-1)] placeholderImage:[UIImage imageNamed:@"noimage"]];
+             [self initilizeBannerView];
              
-             //ループさせる画像
-             for (int i=0; i<_slideShowImages.count; i++) {
-                 UIImageView *imageView = [[UIImageView alloc] init];
-                 [imageView sd_setImageWithURL:_slideShowImages[i] placeholderImage:[UIImage imageNamed:@"noimage"]];
-                 imageView.frame = CGRectMake((self.view.frame.size.width * i) + self.view.frame.size.width,0, self.view.frame.size.width, _scrollView.height);
-                 [_scrollView addSubview:imageView];
-             }
-             
-             //最初の画像を最後のページに置く
-             _imageView = [[UIImageView alloc] init];
-             [_imageView sd_setImageWithURL:_slideShowImages[0] placeholderImage:[UIImage imageNamed:@"noimage"]];
-             _imageView.frame = CGRectMake((self.view.frame.size.width * ([_slideShowImages count] + 1)),0, self.view.frame.size.width, _scrollView.height);
-             [_scrollView addSubview:_imageView];
-             
-             //ScrollViewの領域をループさせる画像＋２の幅にする
-             [_scrollView setContentSize:CGSizeMake(self.view.frame.size.width * ([_slideShowImages count] + 2), _scrollView.height)];
-             
-             //初期位置を2ページ目にする
-             [_scrollView setContentOffset:CGPointMake(self.view.frame.size.width, 0)];
-             [self.view addSubview:_scrollView];
-             self.title = result.name;
+             [self setupGoogleMap:result.geometry.location.lat longitude:result.geometry.location.lng setTitle:result.name];
 
-
+             _titleLabel.text = result.name;
+             _ratingView.value = result.rating;
+             NSLog(@"%@", result.formattedAddress);
+             NSLog(@"%@", result.vicinity);
+             NSLog(@"%@", result.website);
+            
             [SVProgressHUD dismiss];
          } failure:^(NSURLSessionTask *operation, NSError *error) {
              // エラーの場合の処理
@@ -98,20 +79,75 @@
      ];
 }
 
-//スクロールが終わったとき
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    //ページ数の取得
-    int currentPage = scrollView.contentOffset.x /self.view.frame.size.width;
+-(void) initLayout {
     
-    //最初のページに行った時ループさせる最後の画像のページに移動
-    if (currentPage == 0) {
-        [scrollView scrollRectToVisible:CGRectMake(self.view.frame.size.width * [_slideShowImages count],0,self.view.frame.size.width,_scrollView.height) animated:NO];
-    }
-    //最後のページに行った時ループさせる最初の画像のページに移動
-    else if (currentPage==([_slideShowImages count]+1)) {
-        [scrollView scrollRectToVisible:CGRectMake(self.view.frame.size.width,0,self.view.frame.size.width,_scrollView.height) animated:NO];
-    }
+    //UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:];
+    
+    
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 44)];
+    titleView.opaque = NO;
+    
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 22)];
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
+    [titleView addSubview:_titleLabel];
+    
+    _ratingView = [[HCSStarRatingView alloc] initWithFrame:CGRectMake(50, 25, 100, 13)];
+    _ratingView.backgroundColor = [UIColor clearColor];
+    _ratingView.allowsHalfStars = YES;
+    _ratingView.accurateHalfStars = YES;
+    _ratingView.userInteractionEnabled = NO;
+    _ratingView.tintColor = [UIColor colorWithRed:1.00 green:0.70 blue:0.14 alpha:1.0];
+    [titleView addSubview:_ratingView];
+    self.navigationItem.titleView = titleView;
 }
+
+-(void)setupGoogleMap:(float)latitude longitude:(float)longitude setTitle:(NSString *)title {
+    
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:latitude
+                                                            longitude:longitude
+                                                                 zoom:18];
+    _mapView = [GMSMapView mapWithFrame:CGRectMake(0, _bannerView.height, self.view.width, self.view.height-_bannerView.height-self.tabBarController.tabBar.height) camera:camera];
+    _mapView.settings.scrollGestures = NO;
+    _mapView.settings.indoorPicker = NO;
+    _mapView.delegate = self;
+    [self.view addSubview:_mapView];
+    
+    
+    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(latitude, longitude);
+    GMSMarker *marker = [GMSMarker markerWithPosition:position];
+    marker.title = title;
+    marker.appearAnimation = kGMSMarkerAnimationPop;
+    marker.snippet = title;
+    marker.map = _mapView;
+
+}
+
+-(void)initilizeBannerView {
+    _bannerView = [[ZYBannerView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 350)];
+    _bannerView.dataSource = self;
+    _bannerView.delegate = self;
+    _bannerView.scrollInterval = 3.0f;
+    _bannerView.autoScroll = YES;
+    _bannerView.shouldLoop = YES;
+    [self.view addSubview:_bannerView];
+}
+
+- (NSInteger)numberOfItemsInBanner:(ZYBannerView *)banner
+{
+    return _slideShowImages.count;
+}
+
+
+- (UIView *)banner:(ZYBannerView *)banner viewForItemAtIndex:(NSInteger)index
+{
+    
+    _imageView = [[UIImageView alloc] init];
+    [_imageView sd_setImageWithURL:_slideShowImages[index] placeholderImage:[UIImage imageNamed:@"loading"]];
+    
+    
+    return _imageView;
+}
+
 
 
 
