@@ -95,6 +95,14 @@
     if (!cell) {
         cell = [[MISSearchResultCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
+    UIImage *backgroundImage=[UIImage imageNamed:@"makimono"];
+    
+    CGSize resizedSize = CGSizeMake(cell.frame.size.width, cell.frame.size.height);
+    UIGraphicsBeginImageContext(resizedSize);
+    [backgroundImage drawInRect:CGRectMake(0, 0, resizedSize.width, resizedSize.height)];
+    UIImage* resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    cell.backgroundColor = [UIColor colorWithPatternImage:resizedImage];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
     Photo *photo = _mapObjects[indexPath.section].photos[0];
@@ -116,15 +124,15 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 250.0f;
+    return 330.0f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 20.0f;
+    return 10.0f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 20.0f;
+    return 10.0f;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {

@@ -12,6 +12,7 @@
 #import "MISMapViewController.h"
 
 #import "MISSearchTableViewController.h"
+#import "MISTouristInformationViewController.h"
 
 typedef NS_ENUM(NSInteger, searchType) {
     MUSEUM,
@@ -22,7 +23,7 @@ typedef NS_ENUM(NSInteger, searchType) {
     LODGING,
     CLOTHING_STORE,
     PARK,
-    DEPARTMENT_STORE
+    TouristInformation
 };
 
 
@@ -69,11 +70,6 @@ typedef NS_ENUM(NSInteger, searchType) {
     _cell.layer.cornerRadius = 10.0f;
     _cell.iconImageView.image = [UIImage imageNamed:iconArray[indexPath.row]];
     _cell.itemLabel.text = stringArray[indexPath.row];
-    CGFloat r = (arc4random_uniform(255) + 1) / 255.0;
-    CGFloat g = (arc4random_uniform(255) + 1) / 255.0;
-    CGFloat b = (arc4random_uniform(255) + 1) / 255.0;
-    UIColor *color = [UIColor colorWithRed:r green:g blue:b alpha:1.0];
-    _cell.backgroundColor = color;
     return _cell;
 }
 
@@ -81,6 +77,8 @@ typedef NS_ENUM(NSInteger, searchType) {
     _cell = (MISMapSearchItemCollectionViewCell *)[_searchMenuCollectionView cellForItemAtIndexPath:indexPath];
     
     MISSearchTableViewController *searchTableViewController =  [self.storyboard instantiateViewControllerWithIdentifier:@"SearchView"];
+    
+    MISTouristInformationViewController *touristInformationViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"touristInformation"];
     
     switch (indexPath.row) {
         case MUSEUM:
@@ -114,9 +112,10 @@ typedef NS_ENUM(NSInteger, searchType) {
             searchTableViewController.searchType = @"park";
             break;
             
-        case DEPARTMENT_STORE:
-            searchTableViewController.searchType = @"department_store";
-            break;
+        case TouristInformation:
+            [self.navigationController pushViewController:touristInformationViewController
+                                                 animated:YES];
+            return;
     }
     
     
