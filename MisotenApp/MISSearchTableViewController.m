@@ -34,6 +34,7 @@
     UINib *nib = [UINib nibWithNibName:@"SearchResultCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"Cell"];
     self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.separatorColor = [UIColor clearColor];
     self.title = _searchType;
     
     UIBarButtonItem* btn = [[UIBarButtonItem alloc] initWithTitle:@"戻る"

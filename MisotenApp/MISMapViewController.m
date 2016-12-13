@@ -14,6 +14,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 #import "MISMapSettingView.h"
+#import "AppDelegate.h"
 
 @import GooglePlaces;
 
@@ -31,6 +32,8 @@
 @property (nonatomic, strong) UISearchController *placeSearchController;
 
 @property (nonatomic, strong) MISMapSettingView *settingView;
+
+@property (nonatomic, strong) UIImageView *alertImageView;
 
 @end
 
@@ -60,6 +63,13 @@
     }
     
     _settingView = [MISMapSettingView initSettingView:CGRectMake(0, self.navigationController.navigationBar.bottom, self.view.width, self.view.height-self.tabBarController.tabBar.height-self.navigationController.navigationBar.bottom)];
+    
+    _alertImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 350, [[UIScreen mainScreen] bounds].size.width/2, 300)];
+    _alertImageView.image = [UIImage imageNamed:@"kaede"];
+    _alertImageView.contentMode = UIViewContentModeScaleToFill;
+    _alertImageView.alpha = 1;
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    [keyWindow addSubview:_alertImageView];
 }
 
 -(void)setupSearchBar {

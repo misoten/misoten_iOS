@@ -59,6 +59,7 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
+  - SocketRocket (0.5.1)
   - SVProgressHUD (2.0.3)
   - ZYBannerView (1.1.1)
 
@@ -74,6 +75,7 @@ DEPENDENCIES:
   - HCSStarRatingView (~> 1.4.5)
   - RESideMenu (~> 4.0.7)
   - SDWebImage
+  - SocketRocket
   - SVProgressHUD (~> 2.0.3)
   - ZYBannerView
 
@@ -97,9 +99,10 @@ SPEC CHECKSUMS:
   HCSStarRatingView: bff3f89314d3b5013ce826ea11897d3129ff6b8c
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   ZYBannerView: 9248cc8385e2c4bfe81a17ea177dd43ee0e27d64
 
-PODFILE CHECKSUM: ca45d95d9a538251848007a5eab7b23ce6669023
+PODFILE CHECKSUM: fcd7e621083280b98b0c1d7a06ab8036d628a0a0
 
 COCOAPODS: 1.1.1

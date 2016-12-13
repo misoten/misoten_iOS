@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B76EE407E3AC3D36215B9AEF78FD7665'
-               BlueprintName = 'RESideMenu'
+               BlueprintIdentifier = '71CEB223CFD0C90E15850EAD66291EBD'
+               BlueprintName = 'SocketRocket'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'RESideMenu.framework'>
+               BuildableName = 'SocketRocket.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

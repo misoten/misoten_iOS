@@ -7,11 +7,15 @@
 //
 
 #import "AppDelegate.h"
+#import "SRWebSocket.h"
 @import GoogleMaps;
 @import GooglePlaces;
 @import Firebase;
 
-@interface AppDelegate ()
+
+@interface AppDelegate () <SRWebSocketDelegate>
+
+@property (nonatomic, strong) UIImageView *alertImageView;
 
 @end
 
@@ -22,9 +26,22 @@
     [FIRApp configure];
     [GMSServices provideAPIKey:@"AIzaSyBif3Pp8ik8v9KwOLSvUuOgAuz-J4kzXBI"];
     [GMSPlacesClient provideAPIKey:@"AIzaSyBif3Pp8ik8v9KwOLSvUuOgAuz-J4kzXBI"];
-    
-    
+    [self initWebSocket];
     return YES;
+}
+
+-(void)initWebSocket {
+    
+    SRWebSocket *web_socket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://192.168.179.3:3000/"]]];
+    [web_socket setDelegate:self];
+    [web_socket open];
+}
+
+-(void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message {
+    
+    [UIView animateWithDuration:0.75 animations:^{
+        _alertImageView.alpha = 1;
+    }];
 }
 
 

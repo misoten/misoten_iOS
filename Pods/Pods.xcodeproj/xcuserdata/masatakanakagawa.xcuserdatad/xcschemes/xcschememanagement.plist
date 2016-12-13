@@ -54,6 +54,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SocketRocket.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ZYBannerView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,6 +67,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>026D5936CBDA6ECDF4057F28AF8C92A1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1F5F2B0A7CEBE012498BC8051D5C99E3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>45FF4A7AFE5D8E17D01023C53AED87FF</key>
 		<dict>
 			<key>primary</key>
@@ -72,17 +87,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>642DAD74DD7B6BBF1C57756380FE1094</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6ABC511C80A431085256F391A2426D79</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6E3225A646DFD568D0C0A80D3C40B63C</key>
+		<key>71CEB223CFD0C90E15850EAD66291EBD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,12 +97,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>889E649DC9BB1B423CBA3E4A3568CBBE</key>
+		<key>965699190112DDBD9B7864D091660DBC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>965699190112DDBD9B7864D091660DBC</key>
+		<key>AC99F42CEAA836E3C05D30D846CD080B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B76EE407E3AC3D36215B9AEF78FD7665</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,7 +122,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DF9E49456CE66A5CAC7AA31E20540A1F</key>
+		<key>E73FD0ADF8894D0BB4080E2B66D49390</key>
 		<dict>
 			<key>primary</key>
 			<true/>

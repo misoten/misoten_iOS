@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'DF9E49456CE66A5CAC7AA31E20540A1F'
+               BlueprintIdentifier = 'AC99F42CEAA836E3C05D30D846CD080B'
                BlueprintName = 'ZYBannerView'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'ZYBannerView.framework'>
