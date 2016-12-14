@@ -27,7 +27,24 @@
     [GMSServices provideAPIKey:@"AIzaSyBif3Pp8ik8v9KwOLSvUuOgAuz-J4kzXBI"];
     [GMSPlacesClient provideAPIKey:@"AIzaSyBif3Pp8ik8v9KwOLSvUuOgAuz-J4kzXBI"];
     [self initWebSocket];
+    [self setupNavigationBarStyle];
+    [self setupTabbarStyle];
     return YES;
+}
+
+-(void)setupNavigationBarStyle {
+    UINavigationBar *navigationBar = [UINavigationBar appearance];
+    [navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    navigationBar.shadowImage = [UIImage new];
+    navigationBar.tintColor = [UIColor darkGrayColor];
+    navigationBar.translucent = NO;
+    //navigationBar.barTintColor = [UIColor orangeColor];
+    //navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor textBlackColor]};
+}
+
+-(void)setupTabbarStyle {
+    //UITabBar *tabbar = [UITabBar appearance];
+    //tabbar.barTintColor = [UIColor orangeColor];
 }
 
 -(void)initWebSocket {

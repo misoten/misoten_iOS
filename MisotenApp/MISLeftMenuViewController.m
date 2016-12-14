@@ -36,8 +36,8 @@
     [self.view addSubview:self.tableView];
 }
 
--(void)viewWillAppear:(BOOL)animated {
-}
+//-(void)viewWillAppear:(BOOL)animated {
+//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

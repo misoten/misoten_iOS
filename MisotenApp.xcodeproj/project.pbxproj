@@ -36,6 +36,7 @@
 		377758761DED276B00CFBA80 /* Review.m in Sources */ = {isa = PBXBuildFile; fileRef = 377758721DED276B00CFBA80 /* Review.m */; };
 		377758791DED299300CFBA80 /* MISPlaceSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 377758781DED299300CFBA80 /* MISPlaceSearchResult.m */; };
 		3785846C1DF802F4000763BA /* MISTouristInformationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3785846B1DF802F4000763BA /* MISTouristInformationDetailViewController.m */; };
+		378E70791E005E3A00137BCB /* mapstyle-retro.json in Resources */ = {isa = PBXBuildFile; fileRef = 378E70781E005E3A00137BCB /* mapstyle-retro.json */; };
 		37C543B91DEB1C2100F4A0B3 /* MISSearchDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C543B81DEB1C2100F4A0B3 /* MISSearchDetailViewController.m */; };
 		37D8EAAF1DCA274900F4E8C5 /* MISMapSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D8EAAE1DCA274900F4E8C5 /* MISMapSettingView.m */; };
 		686CDBD16FE40B4599F1FC46 /* Pods_MisotenApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4723EBBDA224B1214A0BDCEF /* Pods_MisotenApp.framework */; };
@@ -53,7 +54,7 @@
 		37109F0C1DB6EA9F004B626B /* MISMapSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISMapSearchViewController.m; sourceTree = "<group>"; };
 		374676AE1DDC2E9A00E0EE1D /* MISSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISSearchTableViewController.h; sourceTree = "<group>"; };
 		374676AF1DDC2E9A00E0EE1D /* MISSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISSearchTableViewController.m; sourceTree = "<group>"; };
-		374A387D1DAE35D0008C8CC2 /* MisotenApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MisotenApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		374A387D1DAE35D0008C8CC2 /* くのべる.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "くのべる.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		374A38811DAE35D0008C8CC2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		374A38831DAE35D0008C8CC2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		374A38841DAE35D0008C8CC2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -95,6 +96,7 @@
 		377758781DED299300CFBA80 /* MISPlaceSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISPlaceSearchResult.m; sourceTree = "<group>"; };
 		3785846A1DF802F4000763BA /* MISTouristInformationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISTouristInformationDetailViewController.h; sourceTree = "<group>"; };
 		3785846B1DF802F4000763BA /* MISTouristInformationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISTouristInformationDetailViewController.m; sourceTree = "<group>"; };
+		378E70781E005E3A00137BCB /* mapstyle-retro.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mapstyle-retro.json"; sourceTree = "<group>"; };
 		37C543B71DEB1C2100F4A0B3 /* MISSearchDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISSearchDetailViewController.h; sourceTree = "<group>"; };
 		37C543B81DEB1C2100F4A0B3 /* MISSearchDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISSearchDetailViewController.m; sourceTree = "<group>"; };
 		37D8EAAD1DCA274900F4E8C5 /* MISMapSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISMapSettingView.h; sourceTree = "<group>"; };
@@ -139,7 +141,7 @@
 		374A387E1DAE35D0008C8CC2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				374A387D1DAE35D0008C8CC2 /* MisotenApp.app */,
+				374A387D1DAE35D0008C8CC2 /* くのべる.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,6 +240,7 @@
 		374A38A81DAF8C26008C8CC2 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				378E70781E005E3A00137BCB /* mapstyle-retro.json */,
 				374A38891DAE35D0008C8CC2 /* Main.storyboard */,
 				237690301DD307920056ACF2 /* SearchResultCell.xib */,
 				374A388E1DAE35D1008C8CC2 /* LaunchScreen.storyboard */,
@@ -275,7 +278,7 @@
 			);
 			name = MisotenApp;
 			productName = MisotenApp;
-			productReference = 374A387D1DAE35D0008C8CC2 /* MisotenApp.app */;
+			productReference = 374A387D1DAE35D0008C8CC2 /* くのべる.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -320,6 +323,7 @@
 				374A38901DAE35D1008C8CC2 /* LaunchScreen.storyboard in Resources */,
 				237690311DD307920056ACF2 /* SearchResultCell.xib in Resources */,
 				374A38A11DAE37E1008C8CC2 /* GoogleService-Info.plist in Resources */,
+				378E70791E005E3A00137BCB /* mapstyle-retro.json in Resources */,
 				374A388D1DAE35D1008C8CC2 /* Assets.xcassets in Resources */,
 				374A388B1DAE35D0008C8CC2 /* Main.storyboard in Resources */,
 			);
@@ -530,7 +534,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.nakagawa.MisotenApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "くのべる";
 			};
 			name = Debug;
 		};
@@ -544,7 +548,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.nakagawa.MisotenApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "くのべる";
 			};
 			name = Release;
 		};

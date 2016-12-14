@@ -25,8 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _itemArray = [[NSArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5", nil];
-    _titleArray = [[NSArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5", nil];
+    _itemArray = [[NSArray alloc] initWithObjects:@"1",@"2",@"3",@"4", nil];
+    _titleArray = [[NSArray alloc] initWithObjects:@"1",@"2",@"3",@"4", nil];
     
     self.navigationController.navigationBar.hidden = NO;
     UINib *nib = [UINib nibWithNibName:@"SearchResultCell" bundle:nil];
@@ -53,7 +53,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
     return 1;
 }
 
@@ -62,6 +61,7 @@
     if (!cell) {
         cell = [[MISSearchResultCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
+    cell.backgroundColor = [UIColor clearColor];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     cell.resultImageView.image = [UIImage imageNamed:_itemArray[indexPath.section]];
     return cell;
@@ -77,7 +77,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 250.0f;
+    return 330.0f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {

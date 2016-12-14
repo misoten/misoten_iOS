@@ -99,6 +99,12 @@
     _ratingView.tintColor = [UIColor colorWithRed:1.00 green:0.70 blue:0.14 alpha:1.0];
     [titleView addSubview:_ratingView];
     self.navigationItem.titleView = titleView;
+    
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"画像名"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                                                             style:UIBarButtonItemStylePlain
+                                                            target:self
+                                                            action:@selector(tap:)];
+    self.navigationItem.rightBarButtonItem = item;
 }
 
 -(void)setupGoogleMap:(float)latitude longitude:(float)longitude setTitle:(NSString *)title {
@@ -106,7 +112,7 @@
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:latitude
                                                             longitude:longitude
                                                                  zoom:18];
-    _mapView = [GMSMapView mapWithFrame:CGRectMake(0, _bannerView.height, self.view.width, self.view.height-_bannerView.height-self.tabBarController.tabBar.height) camera:camera];
+    _mapView = [GMSMapView mapWithFrame:CGRectMake(0, _bannerView.bottom, self.view.width, self.view.height-_bannerView.height-self.tabBarController.tabBar.height) camera:camera];
     _mapView.settings.scrollGestures = NO;
     _mapView.settings.indoorPicker = NO;
     _mapView.delegate = self;
@@ -146,6 +152,10 @@
     
     
     return _imageView;
+}
+
+-(void)tap:(UINavigationItem *)sender {
+    NSLog(@"お気に入り保存");
 }
 
 

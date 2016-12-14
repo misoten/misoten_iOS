@@ -67,7 +67,7 @@
     _alertImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 350, [[UIScreen mainScreen] bounds].size.width/2, 300)];
     _alertImageView.image = [UIImage imageNamed:@"kaede"];
     _alertImageView.contentMode = UIViewContentModeScaleToFill;
-    _alertImageView.alpha = 1;
+    _alertImageView.alpha = 0;
     UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
     [keyWindow addSubview:_alertImageView];
 }
@@ -102,10 +102,16 @@
                                                             longitude:0
                                                                  zoom:18];
     _mapView = [GMSMapView mapWithFrame:CGRectMake(0, 0, self.view.width, self.view.height-self.tabBarController.tabBar.height) camera:camera];
-    
-    _mapView.settings.compassButton = YES;
+    //コンパスとメニューボタンがかぶる
+    //_mapView.settings.compassButton = YES;
     _mapView.settings.myLocationButton = YES;
     _mapView.delegate = self;
+
+    NSURL *retroURL = [[NSBundle mainBundle] URLForResource:@"mapstyle-retro"
+                                              withExtension:@"json"];
+    GMSMapStyle *retroStyle = [GMSMapStyle styleWithContentsOfFileURL:retroURL error:NULL];
+    _mapView.mapStyle = retroStyle;
+    
     [self.view addSubview:_mapView];
     
     [_mapView addObserver:self forKeyPath:@"myLocation" options:NSKeyValueObservingOptionNew context:NULL];

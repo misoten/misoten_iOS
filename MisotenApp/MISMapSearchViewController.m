@@ -31,6 +31,7 @@ typedef NS_ENUM(NSInteger, searchType) {
 
 @property (weak, nonatomic) IBOutlet UICollectionView *searchMenuCollectionView;
 @property (nonatomic, strong) MISMapSearchItemCollectionViewCell *cell;
+@property (weak, nonatomic) IBOutlet UIView *blurView;
 
 @end
 
@@ -41,6 +42,19 @@ typedef NS_ENUM(NSInteger, searchType) {
     self.tabBarController.tabBar.hidden = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
     _searchMenuCollectionView.showsVerticalScrollIndicator = NO;
+    
+    //ブラースタイルの決定
+    UIVisualEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    //VisualEffectViewにVisualEffectを設定
+    UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    //VisualEffectViewを_blurViewと同じサイズに設定
+    CGRect frame = self.blurView.frame;
+    frame.size.width = self.view.frame.size.width;
+    effectView.frame = frame;
+    //self.blurViewにVisualEffectViewを追加
+    self.blurView.layer.cornerRadius = 10.0;
+    self.blurView.clipsToBounds = YES;
+    [self.blurView addSubview:effectView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -70,6 +84,14 @@ typedef NS_ENUM(NSInteger, searchType) {
     _cell.layer.cornerRadius = 10.0f;
     _cell.iconImageView.image = [UIImage imageNamed:iconArray[indexPath.row]];
     _cell.itemLabel.text = stringArray[indexPath.row];
+    if([_cell.itemLabel.text isEqualToString: @"ミュージアム"]) {
+        _cell.itemLabel.font = [UIFont systemFontOfSize:15.0f];
+    }
+    
+    if([_cell.itemLabel.text isEqualToString: @"アミューズ\nメントパーク"]) {
+        _cell.itemLabel.font = [UIFont systemFontOfSize:14.0f];
+    }
+    
     return _cell;
 }
 

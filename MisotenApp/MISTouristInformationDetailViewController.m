@@ -28,7 +28,7 @@
     self.title = _titleName;
     
     [self initLayout];
-    [self initilizeBannerView];
+    ///[self initilizeBannerView];
 }
 
 
@@ -50,10 +50,16 @@
     _ratingView.tintColor = [UIColor colorWithRed:1.00 green:0.70 blue:0.14 alpha:1.0];
     [titleView addSubview:_ratingView];
     self.navigationItem.titleView = titleView;
+
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, _bannerView.bottom, self.view.width, self.view.height-_bannerView.height-self.tabBarController.tabBar.height)];
+    scrollView.contentSize = CGSizeMake(664, 622);
+    scrollView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:scrollView];
     
-    UIImageView *mapImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, _bannerView.height, self.view.width, self.view.height-_bannerView.height-self.tabBarController.tabBar.height)];
-    mapImage.image = [UIImage imageNamed:@"5"];
-    [self.view addSubview:mapImage];
+    UIImageView *mapImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 664, 622)];
+    mapImage.image = [UIImage imageNamed:@"map"];
+    [scrollView addSubview:mapImage];
+    
 }
 
 -(void)initilizeBannerView {
