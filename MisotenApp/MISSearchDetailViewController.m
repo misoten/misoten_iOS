@@ -61,7 +61,7 @@
              
              [self initilizeBannerView];
              
-             [self setupGoogleMap:result.geometry.location.lat longitude:result.geometry.location.lng setTitle:result.name];
+             [self setupGoogleMap:result.geometry.location.lat longitude:result.geometry.location.lng setTitle:result.name setAddress:result.vicinity];
 
              _titleLabel.text = result.name;
              _ratingView.value = result.rating;
@@ -107,7 +107,7 @@
     self.navigationItem.rightBarButtonItem = item;
 }
 
--(void)setupGoogleMap:(float)latitude longitude:(float)longitude setTitle:(NSString *)title {
+-(void)setupGoogleMap:(float)latitude longitude:(float)longitude setTitle:(NSString *)title setAddress:(NSString *)address {
     
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:latitude
                                                             longitude:longitude
@@ -123,13 +123,13 @@
     GMSMarker *marker = [GMSMarker markerWithPosition:position];
     marker.title = title;
     marker.appearAnimation = kGMSMarkerAnimationPop;
-    marker.snippet = title;
+    marker.snippet = address;
     marker.map = _mapView;
 
 }
 
 -(void)initilizeBannerView {
-    _bannerView = [[ZYBannerView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 350)];
+    _bannerView = [[ZYBannerView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 220)];
     _bannerView.dataSource = self;
     _bannerView.delegate = self;
     _bannerView.scrollInterval = 3.0f;

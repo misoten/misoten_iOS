@@ -15,6 +15,9 @@
 #import "UIImageView+WebCache.h"
 #import "MISSearchDetailViewController.h"
 
+
+#import "TestTableViewController.h"
+
 @interface MISSearchTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -48,7 +51,7 @@
     
     _mapObjects = [NSMutableArray array];
     
-    NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=35.691864,139.696931&radius=500&types=%@&key=AIzaSyBif3Pp8ik8v9KwOLSvUuOgAuz-J4kzXBI",_searchType];
+    NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=48.873792,2.295028&radius=500&types=%@&key=AIzaSyBif3Pp8ik8v9KwOLSvUuOgAuz-J4kzXBI",_searchType];
     NSLog(@"%@", url);
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -103,7 +106,7 @@
     Photo *photo = _mapObjects[indexPath.section].photos[0];
     NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/photo?maxwidth=1000&photoreference=%@&key=AIzaSyBif3Pp8ik8v9KwOLSvUuOgAuz-J4kzXBI",photo.photoReference];
     NSURL *imageUrl = [NSURL URLWithString:url];
-    [cell.resultImageView sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"loadImage"]];
+    [cell.resultImageView sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"noimage"]];
     cell.nameLabel.text = _mapObjects[indexPath.section].name;
     cell.addressLabel.text = _mapObjects[indexPath.section].vicinity;
     cell.ratingView.value = _mapObjects[indexPath.section].rating;
@@ -112,7 +115,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    MISSearchDetailViewController *searchDetailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"detail"];
+    TestTableViewController *searchDetailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"test"];
     searchDetailViewController.place_id = _mapObjects[indexPath.section].placeId;
     
     [self.navigationController pushViewController:searchDetailViewController animated:YES];

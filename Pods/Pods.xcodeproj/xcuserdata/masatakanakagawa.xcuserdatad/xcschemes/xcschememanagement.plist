@@ -24,6 +24,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FCAlertView-FCAlertView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FCAlertView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FrameAccessor.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,12 +77,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>026D5936CBDA6ECDF4057F28AF8C92A1</key>
+		<key>093C7F575494D9958A4B5F978698AEC4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1F5F2B0A7CEBE012498BC8051D5C99E3</key>
+		<key>1613271357771814C71601D90B787D94</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,12 +92,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>52A414086BCE971FB9815A92CA49554E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>58AAD2C9E898747F2F4ABF348E6325F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>71CEB223CFD0C90E15850EAD66291EBD</key>
+		<key>6E47C8110CF299FD90E4406F104EC589</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,17 +112,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>8F9320DBD23C84DD54AC9C25632BFE66</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>965699190112DDBD9B7864D091660DBC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AC99F42CEAA836E3C05D30D846CD080B</key>
+		<key>A306665517FA61DF93BD432145614663</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B76EE407E3AC3D36215B9AEF78FD7665</key>
+		<key>AA141681C2ACECD56CEB5F28DA07C532</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,7 +142,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E73FD0ADF8894D0BB4080E2B66D49390</key>
+		<key>EF1ABE20DAA23760FBF0359740C1F0B9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

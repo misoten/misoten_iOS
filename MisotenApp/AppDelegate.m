@@ -15,7 +15,7 @@
 
 @interface AppDelegate () <SRWebSocketDelegate>
 
-@property (nonatomic, strong) UIImageView *alertImageView;
+@property (nonatomic, strong) SRWebSocket *web_socket;
 
 @end
 
@@ -48,19 +48,35 @@
 }
 
 -(void)initWebSocket {
-    
-    SRWebSocket *web_socket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://192.168.179.3:3000/"]]];
-    [web_socket setDelegate:self];
-    [web_socket open];
+    _web_socket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://192.168.179.3:3000/"]]];
+    [_web_socket setDelegate:self];
+    [_web_socket open];
 }
 
 -(void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message {
-    
+    #warning debug バイブのデバッグ
+    if([[UIDevice currentDevice].model isEqualToString:@"iPhone"]) {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    }
+    _notificationView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
     [UIView animateWithDuration:0.75 animations:^{
-        _alertImageView.alpha = 1;
+//        _alertImageView.alpha = 1;
+//        _fukidashiImageView.alpha = 1;
+        _notificationView.alpha = 1;
+    } completion:^(BOOL finished) {
+        [self performSelector:@selector(dissmiss) withObject:nil afterDelay:5.0];
     }];
 }
 
+-(void)dissmiss {
+//    _alertImageView.alpha = 0;
+//    _fukidashiImageView.alpha = 0;
+    _notificationView.alpha = 0;
+}
+
+-(void)webSocketDidOpen:(SRWebSocket *)webSocket {
+    [_web_socket send:@"1001"];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

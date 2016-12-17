@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		237690311DD307920056ACF2 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 237690301DD307920056ACF2 /* SearchResultCell.xib */; };
-		238C03891E012B1600A8D649 /* MISForgetItemsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 238C03881E012B1600A8D649 /* MISForgetItemsTableView.m */; };
 		23C9F59A1DD30A1F0081112E /* MISSearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C9F5991DD30A1F0081112E /* MISSearchResultCell.m */; };
 		37109EF81DB26DC0004B626B /* MISMapSearchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 37109EF71DB26DC0004B626B /* MISMapSearchItem.m */; };
 		37109EFB1DB271DA004B626B /* MISMapSearchItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37109EFA1DB271DA004B626B /* MISMapSearchItemCollectionViewCell.m */; };
@@ -39,14 +38,15 @@
 		3785846C1DF802F4000763BA /* MISTouristInformationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3785846B1DF802F4000763BA /* MISTouristInformationDetailViewController.m */; };
 		378E70791E005E3A00137BCB /* mapstyle-retro.json in Resources */ = {isa = PBXBuildFile; fileRef = 378E70781E005E3A00137BCB /* mapstyle-retro.json */; };
 		37C543B91DEB1C2100F4A0B3 /* MISSearchDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C543B81DEB1C2100F4A0B3 /* MISSearchDetailViewController.m */; };
+		37D039071E05326C0059B58B /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D039061E05326C0059B58B /* TestTableViewController.m */; };
 		37D8EAAF1DCA274900F4E8C5 /* MISMapSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D8EAAE1DCA274900F4E8C5 /* MISMapSettingView.m */; };
+		37FB793F1E013C3000C99CBB /* MISForgetItemsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FB793E1E013C3000C99CBB /* MISForgetItemsTableView.m */; };
+		37FB79421E01483B00C99CBB /* MISNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FB79411E01483B00C99CBB /* MISNotificationView.m */; };
 		686CDBD16FE40B4599F1FC46 /* Pods_MisotenApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4723EBBDA224B1214A0BDCEF /* Pods_MisotenApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		237690301DD307920056ACF2 /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
-		238C03881E012B1600A8D649 /* MISForgetItemsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MISForgetItemsTableView.m; path = ../../Sample001/Sample001/MISForgetItemsTableView.m; sourceTree = "<group>"; };
-		238C038A1E012DE100A8D649 /* MISForgetItemsTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MISForgetItemsTableView.h; path = ../../Sample001/Sample001/MISForgetItemsTableView.h; sourceTree = "<group>"; };
 		23C9F5981DD30A1F0081112E /* MISSearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISSearchResultCell.h; sourceTree = "<group>"; };
 		23C9F5991DD30A1F0081112E /* MISSearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISSearchResultCell.m; sourceTree = "<group>"; };
 		37109EF61DB26DC0004B626B /* MISMapSearchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISMapSearchItem.h; sourceTree = "<group>"; };
@@ -102,8 +102,14 @@
 		378E70781E005E3A00137BCB /* mapstyle-retro.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mapstyle-retro.json"; sourceTree = "<group>"; };
 		37C543B71DEB1C2100F4A0B3 /* MISSearchDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISSearchDetailViewController.h; sourceTree = "<group>"; };
 		37C543B81DEB1C2100F4A0B3 /* MISSearchDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISSearchDetailViewController.m; sourceTree = "<group>"; };
+		37D039051E05326C0059B58B /* TestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
+		37D039061E05326C0059B58B /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
 		37D8EAAD1DCA274900F4E8C5 /* MISMapSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISMapSettingView.h; sourceTree = "<group>"; };
 		37D8EAAE1DCA274900F4E8C5 /* MISMapSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISMapSettingView.m; sourceTree = "<group>"; };
+		37FB793D1E013C3000C99CBB /* MISForgetItemsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISForgetItemsTableView.h; sourceTree = "<group>"; };
+		37FB793E1E013C3000C99CBB /* MISForgetItemsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISForgetItemsTableView.m; sourceTree = "<group>"; };
+		37FB79401E01483B00C99CBB /* MISNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISNotificationView.h; sourceTree = "<group>"; };
+		37FB79411E01483B00C99CBB /* MISNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISNotificationView.m; sourceTree = "<group>"; };
 		4723EBBDA224B1214A0BDCEF /* Pods_MisotenApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MisotenApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		950C6C58FE14A95AA8F6DAD5 /* Pods-MisotenApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MisotenApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MisotenApp/Pods-MisotenApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F537E15777CC3AEF8B34F781 /* Pods-MisotenApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MisotenApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MisotenApp/Pods-MisotenApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -182,6 +188,8 @@
 				37D8EAAE1DCA274900F4E8C5 /* MISMapSettingView.m */,
 				23C9F5981DD30A1F0081112E /* MISSearchResultCell.h */,
 				23C9F5991DD30A1F0081112E /* MISSearchResultCell.m */,
+				37FB79401E01483B00C99CBB /* MISNotificationView.h */,
+				37FB79411E01483B00C99CBB /* MISNotificationView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -189,8 +197,8 @@
 		374A38A61DAF8BF8008C8CC2 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				238C038A1E012DE100A8D649 /* MISForgetItemsTableView.h */,
-				238C03881E012B1600A8D649 /* MISForgetItemsTableView.m */,
+				37FB793D1E013C3000C99CBB /* MISForgetItemsTableView.h */,
+				37FB793E1E013C3000C99CBB /* MISForgetItemsTableView.m */,
 				374A38861DAE35D0008C8CC2 /* ViewController.h */,
 				374A38871DAE35D0008C8CC2 /* ViewController.m */,
 				374A38971DAE36F4008C8CC2 /* MISSignUpViewController.h */,
@@ -211,6 +219,8 @@
 				37620FA01DF7F52700B48776 /* MISTouristInformationViewController.m */,
 				3785846A1DF802F4000763BA /* MISTouristInformationDetailViewController.h */,
 				3785846B1DF802F4000763BA /* MISTouristInformationDetailViewController.m */,
+				37D039051E05326C0059B58B /* TestTableViewController.h */,
+				37D039061E05326C0059B58B /* TestTableViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -297,6 +307,7 @@
 				TargetAttributes = {
 					374A387C1DAE35D0008C8CC2 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 6TCZ3F4BMQ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -348,7 +359,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7EEAE2058E6372ECD8BC350C /* [CP] Embed Pods Frameworks */ = {
@@ -389,12 +400,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				37737A151DE0A101004C761C /* Geometry.m in Sources */,
-				238C03891E012B1600A8D649 /* MISForgetItemsTableView.m in Sources */,
+				37FB793F1E013C3000C99CBB /* MISForgetItemsTableView.m in Sources */,
 				374A38881DAE35D0008C8CC2 /* ViewController.m in Sources */,
 				37109F0D1DB6EA9F004B626B /* MISMapSearchViewController.m in Sources */,
 				377758731DED276B00CFBA80 /* Aspect.m in Sources */,
 				374A389F1DAE372D008C8CC2 /* MISMapViewController.m in Sources */,
 				37109EFB1DB271DA004B626B /* MISMapSearchItemCollectionViewCell.m in Sources */,
+				37FB79421E01483B00C99CBB /* MISNotificationView.m in Sources */,
 				377758741DED276B00CFBA80 /* Close.m in Sources */,
 				374A389C1DAE3712008C8CC2 /* MISLoginViewController.m in Sources */,
 				37620FA11DF7F52700B48776 /* MISTouristInformationViewController.m in Sources */,
@@ -406,6 +418,7 @@
 				37737A181DE0A101004C761C /* Photo.m in Sources */,
 				23C9F59A1DD30A1F0081112E /* MISSearchResultCell.m in Sources */,
 				37D8EAAF1DCA274900F4E8C5 /* MISMapSettingView.m in Sources */,
+				37D039071E05326C0059B58B /* TestTableViewController.m in Sources */,
 				37C543B91DEB1C2100F4A0B3 /* MISSearchDetailViewController.m in Sources */,
 				37737A161DE0A101004C761C /* Location.m in Sources */,
 				377758791DED299300CFBA80 /* MISPlaceSearchResult.m in Sources */,
@@ -534,7 +547,7 @@
 			baseConfigurationReference = 950C6C58FE14A95AA8F6DAD5 /* Pods-MisotenApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6TCZ3F4BMQ;
 				INFOPLIST_FILE = MisotenApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -548,7 +561,7 @@
 			baseConfigurationReference = F537E15777CC3AEF8B34F781 /* Pods-MisotenApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6TCZ3F4BMQ;
 				INFOPLIST_FILE = MisotenApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

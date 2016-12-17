@@ -18,5 +18,6 @@ pod 'SDWebImage'
 pod 'HCSStarRatingView', '~> 1.4.5'
 pod 'ZYBannerView'
 pod 'SocketRocket'
+pod 'FCAlertView'
 end
 

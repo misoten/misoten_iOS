@@ -18,6 +18,7 @@ PODS:
   - EAIntroView (2.9.0):
     - EARestrictedScrollView (~> 1.1.0)
   - EARestrictedScrollView (1.1.0)
+  - FCAlertView (1.2.8)
   - Firebase (3.7.1):
     - Firebase/Core (= 3.7.1)
   - Firebase/Auth (3.7.1):
@@ -67,6 +68,7 @@ DEPENDENCIES:
   - ActionSheetPicker-3.0 (~> 2.2.0)
   - AFNetworking (~> 3.0)
   - EAIntroView (~> 2.9.0)
+  - FCAlertView
   - Firebase
   - Firebase/Auth
   - FrameAccessor
@@ -84,6 +86,7 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   EAIntroView: 76f68cc56242f2e25359419e6ecc2344ee7e1756
   EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
+  FCAlertView: c051a628d0adf7ee20f4966322c5186965debf75
   Firebase: be473484f0d515e72ffd04acf22f981773c23e58
   FirebaseAnalytics: 0533a00b681e08fd0b2cd0444b7ddf0ef9fd7a1a
   FirebaseAuth: 75a062bbf2d3c97d1e6e55bbc110e13a6853e25d
@@ -103,6 +106,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   ZYBannerView: 9248cc8385e2c4bfe81a17ea177dd43ee0e27d64
 
-PODFILE CHECKSUM: fcd7e621083280b98b0c1d7a06ab8036d628a0a0
+PODFILE CHECKSUM: 41546d66119c29f47721378ec562a37da15d6726
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1

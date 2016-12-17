@@ -15,6 +15,7 @@
 
 #import "MISMapSettingView.h"
 #import "AppDelegate.h"
+#import "MISNotificationView.h"
 
 @import GooglePlaces;
 
@@ -33,8 +34,6 @@
 
 @property (nonatomic, strong) MISMapSettingView *settingView;
 
-@property (nonatomic, strong) UIImageView *alertImageView;
-
 @end
 
 @implementation MISMapViewController
@@ -45,10 +44,7 @@
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255 green:255 blue:255 alpha:0.5];
     self.navigationController.navigationBar.alpha = 0.7;
     self.navigationController.navigationBar.translucent  = YES;
-    
     [self setupSearchBar];
-    
-    //[self initializeSideMenu];
     
     _searchResultArray = [NSMutableArray array];
     
@@ -64,12 +60,16 @@
     
     _settingView = [MISMapSettingView initSettingView:CGRectMake(0, self.navigationController.navigationBar.bottom, self.view.width, self.view.height-self.tabBarController.tabBar.height-self.navigationController.navigationBar.bottom)];
     
-    _alertImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 350, [[UIScreen mainScreen] bounds].size.width/2, 300)];
-    _alertImageView.image = [UIImage imageNamed:@"kaede"];
-    _alertImageView.contentMode = UIViewContentModeScaleToFill;
-    _alertImageView.alpha = 0;
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//
+//    appDelegate.alertImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 330, [[UIScreen mainScreen] bounds].size.width/2, 300)];
+//    appDelegate.alertImageView.image = [UIImage imageNamed:@"kaede"];
+//    appDelegate.alertImageView.contentMode = UIViewContentModeScaleToFill;
+//    appDelegate.alertImageView.alpha = 0;
+    
+    appDelegate.notificationView = [[MISNotificationView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];//CGRectMake(0, 330, self.view.width, 330)];
     UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
-    [keyWindow addSubview:_alertImageView];
+    [keyWindow addSubview: appDelegate.notificationView];
 }
 
 -(void)setupSearchBar {
