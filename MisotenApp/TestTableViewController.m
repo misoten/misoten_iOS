@@ -15,7 +15,8 @@
 #import "MISPlaceSearchResult.h"
 #import "Photo.h"
 #import "FrameAccessor.h"
-#import ""
+#import "FCAlertView.h"
+#import "AppDelegate.h"
 @import GoogleMaps;
 
 @interface TestTableViewController () <ZYBannerViewDelegate, ZYBannerViewDataSource, GMSMapViewDelegate>
@@ -31,6 +32,8 @@
 @property (nonatomic, strong) NSMutableArray<NSURL *> *imageUrl;
 @property (nonatomic, strong) UIBarButtonItem *favorite;
 @property (nonatomic, strong) UIBarButtonItem *cancelFavorite;
+@property (nonatomic, strong) MISPlaceSearchResult *result;
+@property (nonatomic, strong) NSUserDefaults *userDefaults;
 
 
 @end
@@ -40,19 +43,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _userDefaults = [NSUserDefaults standardUserDefaults];
     [self initLayout];
     [SVProgressHUD show];
     
     NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/details/json?placeid=%@&key=AIzaSyBif3Pp8ik8v9KwOLSvUuOgAuz-J4kzXBI",_place_id];
-    NSLog(@"%@", url);
+    
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [manager GET:url parameters:nil progress:nil
          success:^(NSURLSessionTask *task, id responseObject) {
              // json取得に成功した場合の処理
              NSDictionary *response = responseObject[@"result"];
-             MISPlaceSearchResult *result = [[MISPlaceSearchResult alloc] initWithDictionary:response];
-             NSArray *photos = result.photos;
+             _result = [[MISPlaceSearchResult alloc] initWithDictionary:response];
+             NSArray *photos = _result.photos;
              _slideShowImages = [NSMutableArray array];
              _imageArray = [NSMutableArray<UIImage*> array];
              for(int i=0; i<photos.count; i++) {
@@ -64,20 +68,17 @@
              
              [self initilizeBannerView];
              
-             [self setupGoogleMap:result.geometry.location.lat longitude:result.geometry.location.lng setTitle:result.name setAddress:result.vicinity];
+             [self setupGoogleMap:_result.geometry.location.lat longitude:_result.geometry.location.lng setTitle:_result.name setAddress:_result.vicinity];
              
-             _titleLabel.text = result.name;
-             _ratingView.value = result.rating;
-             _ratingLabel.text = [NSString stringWithFormat:@"レビュー(%lu件のレビュー)", (unsigned long)result.reviews.count];
-             NSLog(@"%@", result.formattedAddress);
-             NSLog(@"%@", result.vicinity);
-             NSLog(@"%@", result.website);
-             
+             _titleLabel.text = _result.name;
+             _ratingView.value = _result.rating;
+             _ratingLabel.text = [NSString stringWithFormat:@"レビュー(%lu件のレビュー)", (unsigned long)_result.reviews.count];
              [SVProgressHUD dismiss];
          } failure:^(NSURLSessionTask *operation, NSError *error) {
              // エラーの場合の処理
              if(error) {
                  [SVProgressHUD showWithStatus:@"エラーが発生しました"];
+                 [SVProgressHUD dismiss];
              }
          }
      ];
@@ -93,26 +94,33 @@
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     _titleLabel.numberOfLines = 2;
     [titleView addSubview:_titleLabel];
-    
-//    _ratingView = [[HCSStarRatingView alloc] initWithFrame:CGRectMake(50, 25, 100, 13)];
-//    _ratingView.backgroundColor = [UIColor clearColor];
-//    _ratingView.allowsHalfStars = YES;
-//    _ratingView.accurateHalfStars = YES;
+
     _ratingView.userInteractionEnabled = NO;
-//    _ratingView.tintColor = [UIColor colorWithRed:1.00 green:0.70 blue:0.14 alpha:1.0];
-    //[titleView addSubview:_ratingView];
     self.navigationItem.titleView = titleView;
     
+    //お気に入り登録用
     _favorite = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"Hearts"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
                                                              style:UIBarButtonItemStylePlain
                                                             target:self
                                                             action:@selector(favorite:)];
     
+    //お気に入り解除用
     _cancelFavorite = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"HeartsFilled"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
                                                              style:UIBarButtonItemStylePlain
                                                             target:self
-                                                            action:@selector(favorite:)];
-    self.navigationItem.rightBarButtonItem = _favorite;
+                                                            action:@selector(cancelFavorite:)];
+    
+    
+    
+    NSData *data = [_userDefaults dataForKey:_place_id];
+    MISPlaceSearchResult *result = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    NSLog(@"%@", result.name);
+    if(result) {
+        self.navigationItem.rightBarButtonItem = _cancelFavorite;
+    } else {
+        self.navigationItem.rightBarButtonItem = _favorite;
+    }
+
 }
 
 -(void)setupGoogleMap:(float)latitude longitude:(float)longitude setTitle:(NSString *)title setAddress:(NSString *)address {
@@ -124,8 +132,6 @@
     _mapView.settings.scrollGestures = NO;
     _mapView.settings.indoorPicker = NO;
     _mapView.delegate = self;
-//    [self.view addSubview:_mapView];
-    
     
     CLLocationCoordinate2D position = CLLocationCoordinate2DMake(latitude, longitude);
     GMSMarker *marker = [GMSMarker markerWithPosition:position];
@@ -140,14 +146,9 @@
     _bannerView.dataSource = self;
     _bannerView.delegate = self;
     _bannerView.scrollInterval = 3.0f;
-    
     _bannerView.autoScroll = YES;
     _bannerView.shouldLoop = YES;
-//    [self.view addSubview:_bannerView];
 }
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -175,7 +176,6 @@
 
 - (UIView *)banner:(ZYBannerView *)banner viewForItemAtIndex:(NSInteger)index
 {
-    
     _imageView = [[UIImageView alloc] init];
     [_imageView sd_setImageWithURL:_slideShowImages[index] placeholderImage:[UIImage imageNamed:@"loading"]];
     return _imageView;
@@ -184,64 +184,27 @@
 -(void) favorite:(UINavigationItem *)sender {
     self.navigationItem.rightBarButtonItem = _cancelFavorite;
     
+//    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//    [delegate.userDefaultsKeyArray addObject:_place_id];
+    
+    //UserDefultsに保存
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:_result];
+    [_userDefaults setObject:data forKey:_place_id];
+    [_userDefaults synchronize];
+    
+    FCAlertView *alertView = [[FCAlertView alloc] init];
+    alertView.cornerRadius = 15;
+    alertView.hideSeparatorLineView = YES;
+    alertView.bounceAnimations = YES;
+    alertView.colorScheme = alertView.flatOrange;
+    [alertView showAlertInView:self withTitle:@"お気に入り" withSubtitle:@"お気に入りに追加しました。" withCustomImage:[UIImage imageNamed:@"HeartsFilled"] withDoneButtonTitle:@"OK" andButtons:nil];
 }
 
 -(void) cancelFavorite:(UINavigationItem *)sender {
     self.navigationItem.rightBarButtonItem = _favorite;
+    [_userDefaults removeObjectForKey:_place_id];
+    [_userDefaults synchronize];
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
