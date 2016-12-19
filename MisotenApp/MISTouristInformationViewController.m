@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *itemArray;
 @property (nonatomic, strong) NSArray *titleArray;
+@property (nonatomic ,strong) NSArray *mapImageArray;
 
 @end
 
@@ -27,6 +28,7 @@
     
     _itemArray = [[NSArray alloc] initWithObjects:@"1",@"2",@"3",@"4", nil];
     _titleArray = [[NSArray alloc] initWithObjects:@"1",@"2",@"3",@"4", nil];
+    _mapImageArray = [[NSArray alloc] initWithObjects:@"charch", @"statue", @"tower", @"phonebox", nil];
     
     self.navigationController.navigationBar.hidden = NO;
     UINib *nib = [UINib nibWithNibName:@"SearchResultCell" bundle:nil];
@@ -73,8 +75,10 @@
     
     searchDetailViewController.titleName = _titleArray[indexPath.section];
     searchDetailViewController.image = [UIImage imageNamed:_itemArray[indexPath.section]];
+    searchDetailViewController.mapImage = [UIImage imageNamed:_mapImageArray[indexPath.section]];
     [self.navigationController pushViewController:searchDetailViewController animated:YES];
 }
+
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 330.0f;

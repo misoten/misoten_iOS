@@ -17,6 +17,7 @@
 #import "FrameAccessor.h"
 #import "FCAlertView.h"
 #import "AppDelegate.h"
+#import "MISRateDetailViewController.h"
 @import GoogleMaps;
 
 @interface TestTableViewController () <ZYBannerViewDelegate, ZYBannerViewDataSource, GMSMapViewDelegate>
@@ -34,6 +35,8 @@
 @property (nonatomic, strong) UIBarButtonItem *cancelFavorite;
 @property (nonatomic, strong) MISPlaceSearchResult *result;
 @property (nonatomic, strong) NSUserDefaults *userDefaults;
+
+@property (weak, nonatomic) IBOutlet UIView *rateView;
 
 
 @end
@@ -94,6 +97,11 @@
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     _titleLabel.numberOfLines = 2;
     [titleView addSubview:_titleLabel];
+    
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapped:)];
+    [_rateView addGestureRecognizer:tapGesture];
+    
 
     _ratingView.userInteractionEnabled = NO;
     self.navigationItem.titleView = titleView;
@@ -198,6 +206,12 @@
     alertView.bounceAnimations = YES;
     alertView.colorScheme = alertView.flatOrange;
     [alertView showAlertInView:self withTitle:@"お気に入り" withSubtitle:@"お気に入りに追加しました。" withCustomImage:[UIImage imageNamed:@"HeartsFilled"] withDoneButtonTitle:@"OK" andButtons:nil];
+}
+
+-(void)tapped:(UITapGestureRecognizer *)sender {
+    MISRateDetailViewController *detailView = [self.storyboard instantiateViewControllerWithIdentifier:@"RateDetail"];
+    detailView.reviews = _result.reviews;
+    [self.navigationController pushViewController:detailView animated:YES];
 }
 
 -(void) cancelFavorite:(UINavigationItem *)sender {

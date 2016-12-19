@@ -12,8 +12,6 @@
 
 @interface MISNotificationView()
 
-@property (nonatomic, strong) UILabel *notificationLabel;
-
 @end
 
 @implementation MISNotificationView
@@ -27,6 +25,7 @@
 }
 
 -(void)initializeSubViews {
+    self.alpha = 0;
     self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.35];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
@@ -43,7 +42,7 @@
     [self addSubview:appDelegate.fukidashiImageView];
     
     _notificationLabel = [[UILabel alloc] initWithFrame:CGRectMake(appDelegate.fukidashiImageView.width/2-50, 30, 100, 200)];
-    _notificationLabel.text = @"通知でござる";
+    //_notificationLabel.text = @"通知でござる";
     [appDelegate.fukidashiImageView addSubview:_notificationLabel];
     
     

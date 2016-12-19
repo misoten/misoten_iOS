@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MISNotificationView.h"
+#import "SRWebSocket.h"
 #import <AudioToolbox/AudioToolbox.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
@@ -17,6 +18,7 @@
 @property (nonatomic, strong) UIImageView *alertImageView;
 @property (nonatomic, strong) UIImageView *fukidashiImageView;
 @property (nonatomic, strong) MISNotificationView *notificationView;
+@property (nonatomic, strong) SRWebSocket *web_socket;
 
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "SRWebSocket.h"
 @import GoogleMaps;
 @import GooglePlaces;
 @import Firebase;
@@ -15,7 +14,6 @@
 
 @interface AppDelegate () <SRWebSocketDelegate>
 
-@property (nonatomic, strong) SRWebSocket *web_socket;
 
 @end
 
@@ -54,18 +52,28 @@
 }
 
 -(void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message {
-    #warning debug バイブのデバッグ
-    if([[UIDevice currentDevice].model isEqualToString:@"iPhone"]) {
-        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    
+    NSLog(@"%@", message);
+    NSLog(@"aaaaa");
+    
+    if(message) {
+        
+        if([message isEqualToString:@"1001"] || [message isEqualToString:@"1002"] || [message isEqualToString:@"1003"] || [message isEqualToString:@"1004"]) {
+            
+        } else {
+            _notificationView.notificationLabel.text = message;
+            if([[UIDevice currentDevice].model isEqualToString:@"iPhone"]) {
+                AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+            }
+            [UIView animateWithDuration:0.75 animations:^{
+                _notificationView.alpha = 1;
+            } completion:^(BOOL finished) {
+                [self performSelector:@selector(dissmiss) withObject:nil afterDelay:5.0];
+            }];
+        }
     }
-    _notificationView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
-    [UIView animateWithDuration:0.75 animations:^{
-//        _alertImageView.alpha = 1;
-//        _fukidashiImageView.alpha = 1;
-        _notificationView.alpha = 1;
-    } completion:^(BOOL finished) {
-        [self performSelector:@selector(dissmiss) withObject:nil afterDelay:5.0];
-    }];
+    
+    
 }
 
 -(void)dissmiss {
@@ -75,7 +83,7 @@
 }
 
 -(void)webSocketDidOpen:(SRWebSocket *)webSocket {
-    [_web_socket send:@"1001"];
+    //[_web_socket send:@"1001"];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

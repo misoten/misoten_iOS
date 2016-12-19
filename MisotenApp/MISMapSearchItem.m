@@ -11,7 +11,7 @@
 @implementation MISMapSearchItem
 
 +(NSArray *)searchItemIconArray {
-    NSArray *itemIconArray = [[NSArray alloc] initWithObjects:@"Museum",@"Restaurant",@"Amusement",@"Bar",@"Cafe",@"hotel",@"Clothes",@"park",@"favorite", nil];
+    NSArray *itemIconArray = [[NSArray alloc] initWithObjects:@"Museum",@"Restaurant",@"Amusement",@"Bar",@"Cafe",@"hotel",@"Clothes",@"park",@"infomation", nil];
     
     
     return itemIconArray;

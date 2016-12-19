@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) UIImageView *alertImageView;
 @property (nonatomic, strong) UIImageView *fukidashiImageView;
+@property (nonatomic, strong) UILabel *notificationLabel;
 
 @end
