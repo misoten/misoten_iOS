@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TestTableViewController : UITableViewController
+@interface MISPlaceDetailViewController : UITableViewController
 
 @property (nonatomic, strong) NSString *place_id;
 

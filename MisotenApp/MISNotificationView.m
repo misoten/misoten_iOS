@@ -42,7 +42,7 @@
     [self addSubview:appDelegate.fukidashiImageView];
     
     _notificationLabel = [[UILabel alloc] initWithFrame:CGRectMake(appDelegate.fukidashiImageView.width/2-50, 30, 100, 200)];
-    //_notificationLabel.text = @"通知でござる";
+    _notificationLabel.numberOfLines = 5;
     [appDelegate.fukidashiImageView addSubview:_notificationLabel];
     
     

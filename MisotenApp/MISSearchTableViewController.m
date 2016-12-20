@@ -13,10 +13,9 @@
 #import "SVProgressHUD/SVProgressHUD.h"
 #import "Photo.h"
 #import "UIImageView+WebCache.h"
-#import "MISSearchDetailViewController.h"
 
 
-#import "TestTableViewController.h"
+#import "MISPlaceDetailViewController.h"
 
 @interface MISSearchTableViewController ()
 
@@ -115,7 +114,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    TestTableViewController *searchDetailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"test"];
+    MISPlaceDetailViewController *searchDetailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"test"];
     searchDetailViewController.place_id = _mapObjects[indexPath.section].placeId;
     
     [self.navigationController pushViewController:searchDetailViewController animated:YES];

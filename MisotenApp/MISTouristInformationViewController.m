@@ -7,7 +7,6 @@
 //
 
 #import "MISTouristInformationViewController.h"
-#import "MISSearchDetailViewController.h"
 #import "SVProgressHUD/SVProgressHUD.h"
 #import "MISSearchResultCell.h"
 #import "MISTouristInformationDetailViewController.h"
@@ -18,6 +17,7 @@
 @property (nonatomic, strong) NSArray *itemArray;
 @property (nonatomic, strong) NSArray *titleArray;
 @property (nonatomic ,strong) NSArray *mapImageArray;
+@property (nonatomic, strong) NSArray *sendMessages;
 
 @end
 
@@ -29,6 +29,7 @@
     _itemArray = [[NSArray alloc] initWithObjects:@"1",@"2",@"3",@"4", nil];
     _titleArray = [[NSArray alloc] initWithObjects:@"1",@"2",@"3",@"4", nil];
     _mapImageArray = [[NSArray alloc] initWithObjects:@"charch", @"statue", @"tower", @"phonebox", nil];
+    _sendMessages = [[NSArray alloc] initWithObjects:@"1001",@"1004",@"1002", @"1003", nil];
     
     self.navigationController.navigationBar.hidden = NO;
     UINib *nib = [UINib nibWithNibName:@"SearchResultCell" bundle:nil];
@@ -76,6 +77,7 @@
     searchDetailViewController.titleName = _titleArray[indexPath.section];
     searchDetailViewController.image = [UIImage imageNamed:_itemArray[indexPath.section]];
     searchDetailViewController.mapImage = [UIImage imageNamed:_mapImageArray[indexPath.section]];
+    searchDetailViewController.sendMessage = _sendMessages[indexPath.section];
     [self.navigationController pushViewController:searchDetailViewController animated:YES];
 }
 

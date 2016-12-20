@@ -13,5 +13,6 @@
 @property (nonatomic, strong) NSString *titleName;
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) UIImage *mapImage;
+@property (nonatomic, strong) NSString *sendMessage;
 
 @end

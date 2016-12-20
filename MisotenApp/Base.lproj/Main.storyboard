@@ -219,7 +219,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="cAW-cc-9pw">
-                        <barButtonItem key="leftBarButtonItem" image="Setting" id="hed-b0-on7">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="hed-b0-on7">
                             <connections>
                                 <action selector="showSettingView:" destination="6Oy-Al-9Hx" id="JIw-Ie-ObV"/>
                             </connections>
@@ -488,7 +488,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sW1-kJ-PwZ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1bh-WQ-gfP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="1bh-WQ-gfP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -507,7 +507,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xuU-x1-PPV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" image="Map" selectedImage="MapSeleced" id="ZRp-Cq-jOC"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cJw-D2-OnK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="cJw-D2-OnK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -525,7 +525,7 @@
             <objects>
                 <navigationController storyboardIdentifier="mapSearchVC" automaticallyAdjustsScrollViewInsets="NO" id="jeq-n7-Fsz" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9iZ-Jf-xOM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="9iZ-Jf-xOM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -581,7 +581,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xyG-ny-V7Y" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hzp-X5-CIn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hzp-X5-CIn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -651,9 +651,9 @@
         <!--Test-->
         <scene sceneID="zbd-uj-XND">
             <objects>
-                <tableViewController storyboardIdentifier="test" id="i0F-cX-kMn" customClass="TestTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="test" id="i0F-cX-kMn" customClass="MISPlaceDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="FIM-gq-GSC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <sections>
@@ -799,53 +799,31 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="971" id="HSd-wV-uVf">
-                                        <rect key="frame" x="0.0" y="550" width="375" height="971"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="119" id="HSd-wV-uVf">
+                                        <rect key="frame" x="0.0" y="550" width="375" height="119"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HSd-wV-uVf" id="fC0-ur-Zji">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="971"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JjR-LN-vcr">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAF-Uo-zzA">
+                                                    <rect key="frame" x="8" y="54" width="359" height="50"/>
+                                                    <color key="backgroundColor" red="1" green="0.70219412189999997" blue="0.14185758679999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="yd2-uK-Os2"/>
+                                                        <constraint firstAttribute="height" constant="50" id="4o3-Kv-14g"/>
                                                     </constraints>
-                                                </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dwt-5q-MQe">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="971"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJ5-1Q-Aja">
-                                                            <rect key="frame" x="8" y="908" width="359" height="55"/>
-                                                            <color key="backgroundColor" red="1" green="0.70219412189999997" blue="0.14185758679999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="55" id="FXz-Bm-BqT"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                            <state key="normal" title="ここにいく">
-                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="goTo:" destination="lTv-Yu-v6o" eventType="touchUpInside" id="NAr-tc-FFP"/>
-                                                            </connections>
-                                                        </button>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="bJ5-1Q-Aja" secondAttribute="trailing" constant="8" id="4Qy-sd-S5r"/>
-                                                        <constraint firstAttribute="bottom" secondItem="bJ5-1Q-Aja" secondAttribute="bottom" constant="8" id="ceI-eT-czH"/>
-                                                        <constraint firstItem="bJ5-1Q-Aja" firstAttribute="leading" secondItem="Dwt-5q-MQe" secondAttribute="leading" constant="8" id="yt5-dK-uYm"/>
-                                                    </constraints>
-                                                </view>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <state key="normal" title="ここにいく"/>
+                                                    <connections>
+                                                        <action selector="goTo:" destination="i0F-cX-kMn" eventType="touchUpInside" id="9SJ-fC-aTX"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Dwt-5q-MQe" firstAttribute="leading" secondItem="fC0-ur-Zji" secondAttribute="leading" id="Djw-Oa-Ndz"/>
-                                                <constraint firstAttribute="trailing" secondItem="JjR-LN-vcr" secondAttribute="trailing" id="IH9-SR-Gcj"/>
-                                                <constraint firstItem="JjR-LN-vcr" firstAttribute="leading" secondItem="fC0-ur-Zji" secondAttribute="leading" id="NVr-KC-4ki"/>
-                                                <constraint firstAttribute="trailing" secondItem="Dwt-5q-MQe" secondAttribute="trailing" id="Un7-9O-qEa"/>
-                                                <constraint firstAttribute="bottom" secondItem="Dwt-5q-MQe" secondAttribute="bottom" id="WIK-g0-Adb"/>
-                                                <constraint firstItem="Dwt-5q-MQe" firstAttribute="top" secondItem="fC0-ur-Zji" secondAttribute="top" id="eDW-Ky-4gz"/>
-                                                <constraint firstItem="JjR-LN-vcr" firstAttribute="top" secondItem="fC0-ur-Zji" secondAttribute="top" id="lXG-Jf-WJd"/>
+                                                <constraint firstItem="GAF-Uo-zzA" firstAttribute="leading" secondItem="fC0-ur-Zji" secondAttribute="leading" constant="8" id="jTP-J5-YDj"/>
+                                                <constraint firstAttribute="bottom" secondItem="GAF-Uo-zzA" secondAttribute="bottom" constant="15" id="kz6-l2-yqm"/>
+                                                <constraint firstAttribute="trailing" secondItem="GAF-Uo-zzA" secondAttribute="trailing" constant="8" id="sxC-8t-2s5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -858,8 +836,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Test" id="pRm-qR-pwA"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="1500"/>
                     <connections>
                         <outlet property="bannerView" destination="OFa-F0-D75" id="jfK-gK-j1k"/>
                         <outlet property="mapView" destination="lcE-fp-UnW" id="R01-GU-9Ml"/>
@@ -870,7 +846,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e23-aF-UHJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8757.6000000000004" y="-217.69115442278863"/>
+            <point key="canvasLocation" x="7992.8000000000002" y="-532.98350824587715"/>
         </scene>
         <!--Rate Detail View Controller-->
         <scene sceneID="sZ8-6e-cAt">
@@ -975,7 +951,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Ut-1t-5XS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="kZx-iv-Sb7"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hrl-Jv-t5Y">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Hrl-Jv-t5Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1133,13 +1109,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="118"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6vl-8s-rfz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="ZgP-Ap-V03"/>
-                                                    </constraints>
-                                                </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLx-kM-pgX">
                                                     <rect key="frame" x="8" y="48" width="359" height="55"/>
                                                     <color key="backgroundColor" red="1" green="0.70219412189999997" blue="0.14185758679999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1159,9 +1128,6 @@
                                                 <constraint firstAttribute="trailing" secondItem="vLx-kM-pgX" secondAttribute="trailing" constant="8" id="2Ql-id-mll"/>
                                                 <constraint firstItem="vLx-kM-pgX" firstAttribute="leading" secondItem="phg-uG-V9N" secondAttribute="leading" constant="8" id="K6N-a3-CWr"/>
                                                 <constraint firstAttribute="bottom" secondItem="vLx-kM-pgX" secondAttribute="bottom" constant="15" id="Kk4-tO-saf"/>
-                                                <constraint firstAttribute="trailing" secondItem="6vl-8s-rfz" secondAttribute="trailing" id="hpJ-TY-Wpb"/>
-                                                <constraint firstItem="6vl-8s-rfz" firstAttribute="top" secondItem="phg-uG-V9N" secondAttribute="top" id="kce-4H-gdq"/>
-                                                <constraint firstItem="6vl-8s-rfz" firstAttribute="leading" secondItem="phg-uG-V9N" secondAttribute="leading" id="mqh-dZ-Bo4"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1191,7 +1157,6 @@
     <resources>
         <image name="Map" width="40" height="40"/>
         <image name="MapSeleced" width="60" height="60"/>
-        <image name="Setting" width="670" height="1274"/>
         <image name="Xbox" width="90" height="90"/>
         <image name="fukidashi-1" width="300" height="301"/>
         <image name="haikei" width="1500" height="1500"/>

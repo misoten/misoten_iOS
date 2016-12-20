@@ -127,8 +127,12 @@
 //    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
 //    [window addSubview:view];
     
+    
+    
+    
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [delegate.web_socket send:@"1001"];
+    [delegate.web_socket send:_sendMessage];
+    
     //[self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 @end

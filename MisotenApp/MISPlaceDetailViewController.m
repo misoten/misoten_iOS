@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Masataka Nakagawa. All rights reserved.
 //
 
-#import "TestTableViewController.h"
+#import "MISPlaceDetailViewController.h"
 #import "ZYBannerView.h"
 #import "HCSStarRatingView.h"
 #import "UIImageView+WebCache.h"
@@ -20,7 +20,7 @@
 #import "MISRateDetailViewController.h"
 @import GoogleMaps;
 
-@interface TestTableViewController () <ZYBannerViewDelegate, ZYBannerViewDataSource, GMSMapViewDelegate>
+@interface MISPlaceDetailViewController () <ZYBannerViewDelegate, ZYBannerViewDataSource, GMSMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet ZYBannerView *bannerView;
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
@@ -38,14 +38,16 @@
 
 @property (weak, nonatomic) IBOutlet UIView *rateView;
 
+//@property (weak, nonatomic) IBOutlet UIButton *goButton;
+
 
 @end
 
-@implementation TestTableViewController
+@implementation MISPlaceDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     _userDefaults = [NSUserDefaults standardUserDefaults];
     [self initLayout];
     [SVProgressHUD show];
@@ -98,6 +100,7 @@
     _titleLabel.numberOfLines = 2;
     [titleView addSubview:_titleLabel];
     
+//    _goButton.layer.cornerRadius = 10.0f;
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapped:)];
     [_rateView addGestureRecognizer:tapGesture];
@@ -122,7 +125,7 @@
     
     NSData *data = [_userDefaults dataForKey:_place_id];
     MISPlaceSearchResult *result = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    NSLog(@"%@", result.name);
+    
     if(result) {
         self.navigationItem.rightBarButtonItem = _cancelFavorite;
     } else {
@@ -218,6 +221,18 @@
     self.navigationItem.rightBarButtonItem = _favorite;
     [_userDefaults removeObjectForKey:_place_id];
     [_userDefaults synchronize];
+}
+
+- (IBAction)goTo:(id)sender {
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    delegate.notificationView.notificationLabel.text = @"出発でござる";
+    
+    [UIView animateWithDuration:0.75f animations:^{
+        delegate.notificationView.alpha = 1;
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    } completion:^(BOOL finished) {
+        
+    }];
 }
 
 
