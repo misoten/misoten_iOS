@@ -27,23 +27,23 @@
 -(void)initializeSubViews {
     self.alpha = 0;
     self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.35];
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    appDelegate.alertImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.height/2, [[UIScreen mainScreen] bounds].size.width/2, 300)];
-    appDelegate.alertImageView.image = [UIImage imageNamed:@"kaede"];
-    appDelegate.alertImageView.contentMode = UIViewContentModeScaleToFill;
-    appDelegate.alertImageView.alpha = 1;
-    [self addSubview:appDelegate.alertImageView];
+    _alertImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.height/2, [[UIScreen mainScreen] bounds].size.width/2, 300)];
+    _alertImageView.image = [UIImage imageNamed:@"kaede"];
+    _alertImageView.contentMode = UIViewContentModeScaleToFill;
+    _alertImageView.alpha = 1;
+    [self addSubview:_alertImageView];
     
-    appDelegate.fukidashiImageView = [[UIImageView alloc] initWithFrame:CGRectMake(appDelegate.alertImageView.width, self.height/2-150, appDelegate.alertImageView.width-30, 300)];
-    appDelegate.fukidashiImageView.image = [UIImage imageNamed:@"fukidashi-1"];
-    appDelegate.fukidashiImageView.contentMode = UIViewContentModeScaleToFill;
-    appDelegate.fukidashiImageView.alpha = 1;
-    [self addSubview:appDelegate.fukidashiImageView];
+    _fukidashiImageView = [[UIImageView alloc] initWithFrame:CGRectMake(_alertImageView.width, self.height/2-150, _alertImageView.width-30, 300)];
+    _fukidashiImageView.image = [UIImage imageNamed:@"fukidashi-1"];
+    _fukidashiImageView.contentMode = UIViewContentModeScaleToFill;
+    _fukidashiImageView.alpha = 1;
+    [self addSubview:_fukidashiImageView];
     
-    _notificationLabel = [[UILabel alloc] initWithFrame:CGRectMake(appDelegate.fukidashiImageView.width/2-50, 30, 100, 200)];
+    _notificationLabel = [[UILabel alloc] initWithFrame:CGRectMake(_fukidashiImageView.width/2-70, 30, 140, 200)];
+    _notificationLabel.textAlignment = NSTextAlignmentCenter;
     _notificationLabel.numberOfLines = 5;
-    [appDelegate.fukidashiImageView addSubview:_notificationLabel];
+    [_fukidashiImageView addSubview:_notificationLabel];
     
     
     

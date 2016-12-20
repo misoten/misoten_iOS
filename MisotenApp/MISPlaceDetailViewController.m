@@ -225,7 +225,7 @@
 
 - (IBAction)goTo:(id)sender {
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    delegate.notificationView.notificationLabel.text = @"出発でござる";
+    delegate.notificationView.notificationLabel.text = @"出発でござる！";
     
     [UIView animateWithDuration:0.75f animations:^{
         delegate.notificationView.alpha = 1;

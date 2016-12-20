@@ -46,7 +46,7 @@
 }
 
 -(void)initWebSocket {
-    _web_socket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://192.168.179.3:3000/"]]];
+    _web_socket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://192.168.179.5:3000/"]]];
     [_web_socket setDelegate:self];
     [_web_socket open];
 }

@@ -128,10 +128,12 @@
 //    [window addSubview:view];
     
     
+    NSLog(@"aaa");
     
     
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [delegate.web_socket send:_sendMessage];
+
     
     //[self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
