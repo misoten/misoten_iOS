@@ -19,6 +19,7 @@
 //@property (nonatomic, strong) UIImageView *fukidashiImageView;
 @property (nonatomic, strong) MISNotificationView *notificationView;
 @property (nonatomic, strong) SRWebSocket *web_socket;
+@property (nonatomic, strong) NSMutableArray *userDefaultsKeyArray;
 
 
 @end

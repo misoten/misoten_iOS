@@ -21,16 +21,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kaede" translatesAutoresizingMaskIntoConstraints="NO" id="Uvx-a1-AjE">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="luncher" translatesAutoresizingMaskIntoConstraints="NO" id="Uvx-a1-AjE">
+                                <rect key="frame" x="37" y="183" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Tgy-6P-iIJ"/>
+                                    <constraint firstAttribute="width" constant="300" id="dMB-BQ-RJ2"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Uvx-a1-AjE" secondAttribute="trailing" id="BsZ-w4-nZP"/>
-                            <constraint firstItem="Uvx-a1-AjE" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Usl-8R-BGV"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Uvx-a1-AjE" secondAttribute="bottom" id="YL4-Cs-Oft"/>
-                            <constraint firstItem="Uvx-a1-AjE" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ptj-u6-foH"/>
+                            <constraint firstItem="Uvx-a1-AjE" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="JSh-Kp-285"/>
+                            <constraint firstItem="Uvx-a1-AjE" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="yv0-y2-KuY"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -40,6 +42,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="kaede" width="670" height="1274"/>
+        <image name="luncher" width="500" height="526"/>
     </resources>
 </document>

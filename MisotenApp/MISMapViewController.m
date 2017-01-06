@@ -17,9 +17,14 @@
 #import "AppDelegate.h"
 #import "MISNotificationView.h"
 
+#import "EAIntroView.h"
+#import "EAIntroPage.h"
+
+#import "MISForgetItemsTableView.h"
+
 @import GooglePlaces;
 
-@interface MISMapViewController () <GMSMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate, UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface MISMapViewController () <GMSMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate, UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource, EAIntroDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) RESideMenu *sideMenuViewController;
@@ -27,12 +32,11 @@
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) UITableView *searchTableView;
 @property (nonatomic, strong) GMSPlacesClient *placesClient;
-
 @property (nonatomic, strong) NSMutableArray *searchResultArray;
-
 @property (nonatomic, strong) UISearchController *placeSearchController;
-
 @property (nonatomic, strong) MISMapSettingView *settingView;
+
+@property (nonatomic, strong) CLLocation *myLocation;
 
 @end
 
@@ -41,6 +45,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [self showIntroWithCrossDissolve];
+    
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255 green:255 blue:255 alpha:0.5];
     self.navigationController.navigationBar.alpha = 0.7;
     self.navigationController.navigationBar.translucent  = YES;
@@ -97,7 +103,6 @@
 
 
 -(void)setupGoogleMap {
-    
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:0
                                                             longitude:0
                                                                  zoom:18];
@@ -156,6 +161,9 @@
         CLLocation *location = [change objectForKey:NSKeyValueChangeNewKey];
         //[_mapView animateToLocation:location.coordinate];
         _mapView.camera = [GMSCameraPosition cameraWithTarget:location.coordinate zoom:18];
+        
+        _myLocation = location;
+        NSLog(@"latitude:%f, longitude:%f", _myLocation.coordinate.latitude, _myLocation.coordinate.longitude);
     }
 }
 
@@ -278,6 +286,49 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)showIntroWithCrossDissolve {
+    EAIntroPage *page1 = [EAIntroPage page];
+    page1.title = @"Hello world";
+    page1.desc = @"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+    page1.bgImage = [UIImage imageNamed:@"bg1"];
+    page1.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title1"]];
+    
+    EAIntroPage *page2 = [EAIntroPage page];
+    page2.title = @"This is page 2";
+    page2.desc = @"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.";
+    
+    page2.bgImage = [UIImage imageNamed:@"bg2"];
+    page2.titleIconView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"title2"]];
+    
+    EAIntroPage *page3 = [EAIntroPage page];
+    page3.title = @"This is page 3";
+    page3.desc = @"Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.";
+    page3.bgImage = [UIImage imageNamed:@"bg3"];
+    page3.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title3"]];
+    
+    EAIntroPage *page4 = [EAIntroPage page];
+    page4.title = @"This is page 4";
+    page4.desc = @"Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit.";
+    page4.bgImage = [UIImage imageNamed:@"bg4"];
+    page4.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title4"]];
+    
+    EAIntroView *intro = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:@[page1,page2,page3,page4]];
+    intro.skipButton.backgroundColor = [UIColor grayColor];
+    intro.swipeToExit = NO;
+    [intro setDelegate:self];
+    
+    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    [intro showInView:window animateDuration:0.3];
+    
+}
+
+-(void) getRoute:(NSString *)place_id {
+    NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/directions/json?origin=%f,%f&destination=place_id:%@&key=AIzaSyBif3Pp8ik8v9KwOLSvUuOgAuz-J4kzXBI", _myLocation.coordinate.latitude, _myLocation.coordinate.longitude, place_id];
+    NSLog(@"%@", url);
+}
+
+
 
 /*
 #pragma mark - Navigation

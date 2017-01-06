@@ -19,5 +19,7 @@ pod 'HCSStarRatingView', '~> 1.4.5'
 pod 'ZYBannerView'
 pod 'SocketRocket'
 pod 'FCAlertView'
+pod 'IQActionSheetPickerView', '~> 1.0.3'
+pod 'NeetMSTranslator', '~>0.0.3'
 end
 

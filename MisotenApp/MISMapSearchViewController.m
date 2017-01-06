@@ -42,7 +42,6 @@ typedef NS_ENUM(NSInteger, searchType) {
     self.tabBarController.tabBar.hidden = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
     _searchMenuCollectionView.showsVerticalScrollIndicator = NO;
-    
     //ブラースタイルの決定
     UIVisualEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
     //VisualEffectViewにVisualEffectを設定
@@ -57,8 +56,7 @@ typedef NS_ENUM(NSInteger, searchType) {
     [self.blurView addSubview:effectView];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+-(void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBar.hidden = YES;
 }
 

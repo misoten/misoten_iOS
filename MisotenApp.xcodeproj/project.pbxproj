@@ -36,6 +36,8 @@
 		377758761DED276B00CFBA80 /* Review.m in Sources */ = {isa = PBXBuildFile; fileRef = 377758721DED276B00CFBA80 /* Review.m */; };
 		377758791DED299300CFBA80 /* MISPlaceSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 377758781DED299300CFBA80 /* MISPlaceSearchResult.m */; };
 		378E70791E005E3A00137BCB /* mapstyle-retro.json in Resources */ = {isa = PBXBuildFile; fileRef = 378E70781E005E3A00137BCB /* mapstyle-retro.json */; };
+		37A3189E1E1EC81C00C7F64B /* MISReviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A3189D1E1EC81C00C7F64B /* MISReviewCell.m */; };
+		37CD3DF61E0A5D3400F6D7BD /* MISTrancerationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CD3DF51E0A5D3400F6D7BD /* MISTrancerationViewController.m */; };
 		37D039071E05326C0059B58B /* MISPlaceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D039061E05326C0059B58B /* MISPlaceDetailViewController.m */; };
 		37D0390A1E057F880059B58B /* MISFavoriteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D039091E057F880059B58B /* MISFavoriteListViewController.m */; };
 		37D8EAAF1DCA274900F4E8C5 /* MISMapSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D8EAAE1DCA274900F4E8C5 /* MISMapSettingView.m */; };
@@ -99,6 +101,10 @@
 		377758771DED299300CFBA80 /* MISPlaceSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISPlaceSearchResult.h; sourceTree = "<group>"; };
 		377758781DED299300CFBA80 /* MISPlaceSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISPlaceSearchResult.m; sourceTree = "<group>"; };
 		378E70781E005E3A00137BCB /* mapstyle-retro.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mapstyle-retro.json"; sourceTree = "<group>"; };
+		37A3189C1E1EC81C00C7F64B /* MISReviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISReviewCell.h; sourceTree = "<group>"; };
+		37A3189D1E1EC81C00C7F64B /* MISReviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISReviewCell.m; sourceTree = "<group>"; };
+		37CD3DF41E0A5D3400F6D7BD /* MISTrancerationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISTrancerationViewController.h; sourceTree = "<group>"; };
+		37CD3DF51E0A5D3400F6D7BD /* MISTrancerationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISTrancerationViewController.m; sourceTree = "<group>"; };
 		37D039051E05326C0059B58B /* MISPlaceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISPlaceDetailViewController.h; sourceTree = "<group>"; };
 		37D039061E05326C0059B58B /* MISPlaceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISPlaceDetailViewController.m; sourceTree = "<group>"; };
 		37D039081E057F880059B58B /* MISFavoriteListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISFavoriteListViewController.h; sourceTree = "<group>"; };
@@ -193,6 +199,8 @@
 				23C9F5991DD30A1F0081112E /* MISSearchResultCell.m */,
 				37FB79401E01483B00C99CBB /* MISNotificationView.h */,
 				37FB79411E01483B00C99CBB /* MISNotificationView.m */,
+				37A3189C1E1EC81C00C7F64B /* MISReviewCell.h */,
+				37A3189D1E1EC81C00C7F64B /* MISReviewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -226,6 +234,8 @@
 				37FC4C861E0794D000CA3E52 /* MISRateDetailViewController.m */,
 				37FC4C881E07B6E300CA3E52 /* MISTouristInformationDetailViewController.h */,
 				37FC4C891E07B6E300CA3E52 /* MISTouristInformationDetailViewController.m */,
+				37CD3DF41E0A5D3400F6D7BD /* MISTrancerationViewController.h */,
+				37CD3DF51E0A5D3400F6D7BD /* MISTrancerationViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -420,6 +430,7 @@
 				374A38991DAE36F4008C8CC2 /* MISSignUpViewController.m in Sources */,
 				37FC4C871E0794D000CA3E52 /* MISRateDetailViewController.m in Sources */,
 				37109EF81DB26DC0004B626B /* MISMapSearchItem.m in Sources */,
+				37CD3DF61E0A5D3400F6D7BD /* MISTrancerationViewController.m in Sources */,
 				374A38821DAE35D0008C8CC2 /* main.m in Sources */,
 				374676B01DDC2E9A00E0EE1D /* MISSearchTableViewController.m in Sources */,
 				37737A181DE0A101004C761C /* Photo.m in Sources */,
@@ -431,6 +442,7 @@
 				377758791DED299300CFBA80 /* MISPlaceSearchResult.m in Sources */,
 				377758751DED276B00CFBA80 /* Period.m in Sources */,
 				374A38A41DAF38C0008C8CC2 /* MISLeftMenuViewController.m in Sources */,
+				37A3189E1E1EC81C00C7F64B /* MISReviewCell.m in Sources */,
 				37737A171DE0A101004C761C /* OpeningHour.m in Sources */,
 				377758761DED276B00CFBA80 /* Review.m in Sources */,
 			);

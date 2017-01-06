@@ -10,11 +10,16 @@
 #import "MISSearchResultCell.h"
 #import "MISPlaceSearchResult.h"
 #import "AppDelegate.h"
+#import "UIImageView+WebCache.h"
+#import "MISPlaceDetailViewController.h"
 
 @interface MISFavoriteListViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSDictionary *dictionary;
+
+@property (nonatomic, strong) NSMutableArray *favoriteKeyArray;
+@property (nonatomic, strong) NSMutableArray *favoriteArray;
+@property (nonatomic, strong) MISPlaceSearchResult *result;
 
 @end
 
@@ -28,6 +33,10 @@
     self.tableView.separatorColor = [UIColor clearColor];
     self.title = @"お気に入り";
     
+    _favoriteArray = [NSMutableArray array];
+    _favoriteKeyArray = [NSMutableArray array];
+    
+    
 //    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 //    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 //    NSLog(@"%lu", (unsigned long)delegate.userDefaultsKeyArray.count);
@@ -38,8 +47,26 @@
 //    }
     
     
+    
+    
 //    _dictionary = [userDefaults dictionaryRepresentation];
 //    NSLog(@"defualts:%@", _dictionary);
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [_favoriteArray removeAllObjects];
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSData *favoList = [userDefaults objectForKey:@"favoriteKeys"];
+    _favoriteKeyArray = [NSKeyedUnarchiver unarchiveObjectWithData:favoList];
+    
+    for (NSString *key in _favoriteKeyArray) {
+        NSData *data = [userDefaults objectForKey:key];
+        [_favoriteArray addObject:[NSKeyedUnarchiver unarchiveObjectWithData:data]];
+    }
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,11 +77,11 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    NSLog(@"%lu", (unsigned long)_favoriteArray.count);
+    return _favoriteArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
     return 1;
 }
 
@@ -67,22 +94,24 @@
     cell.backgroundColor = [UIColor clearColor];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
-//    Photo *photo = _mapObjects[indexPath.section].photos[0];
-//    NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/photo?maxwidth=1000&photoreference=%@&key=AIzaSyBif3Pp8ik8v9KwOLSvUuOgAuz-J4kzXBI",photo.photoReference];
-//    NSURL *imageUrl = [NSURL URLWithString:url];
-//    [cell.resultImageView sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"noimage"]];
-//    cell.nameLabel.text = _mapObjects[indexPath.section].name;
-//    cell.addressLabel.text = _mapObjects[indexPath.section].vicinity;
-//    cell.ratingView.value = _mapObjects[indexPath.section].rating;
+    _result = _favoriteArray[indexPath.section];
+    Photo *photo = _result.photos[0];
+    NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/photo?maxwidth=1000&photoreference=%@&key=AIzaSyBif3Pp8ik8v9KwOLSvUuOgAuz-J4kzXBI",photo.photoReference];
+    NSURL *imageUrl = [NSURL URLWithString:url];
+    [cell.resultImageView sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"noimage"]];
+    cell.nameLabel.text = _result.name;
+    //cell.addressLabel.text = _result.vicinity;
+    cell.ratingView.value = _result.rating;
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    TestTableViewController *searchDetailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"test"];
-//    searchDetailViewController.place_id = _mapObjects[indexPath.section].placeId;
-//    
-//    [self.navigationController pushViewController:searchDetailViewController animated:YES];
+    MISPlaceDetailViewController *searchDetailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"test"];
+    _result = _favoriteArray[indexPath.section];
+    searchDetailViewController.place_id = _result.placeId;
+    
+    [self.navigationController pushViewController:searchDetailViewController animated:YES];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -104,5 +133,4 @@
 - (void)tableView:(UITableView *)tableView willDisplayFooterView:(UIView *)view forSection:(NSInteger)section {
     [view setTintColor:[UIColor clearColor]];
 }
-
 @end

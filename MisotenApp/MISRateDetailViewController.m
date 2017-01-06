@@ -8,10 +8,13 @@
 
 #import "MISRateDetailViewController.h"
 #import "Review.h"
+#import "NeetMSTranslator/NMSTranslator.h"
+#import "MISReviewCell.h"
 
 @interface MISRateDetailViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSString *reviewText;
 
 @end
 
@@ -19,7 +22,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor greenColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 }
@@ -41,15 +43,22 @@
     return 1;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 90.0f;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    MISReviewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[MISReviewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     
-//    Review *review = [[Review alloc] initWithDictionary:_reviews[indexPath.section]];
-//    NSLog(@"%@", review.text);
-    cell.textLabel.text = @"レビュータイトル";
+    Review *review = _reviews[indexPath.section];
+    cell.review_text.text = review.text;
+    cell.review_auther.text = review.authorName;
+    cell.review_rating.value = review.rating;
+    cell.review_rating.allowsHalfStars = YES;
+    cell.review_rating.userInteractionEnabled = NO;
     
     return cell;
 }

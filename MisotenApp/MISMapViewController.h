@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) GMSMapView *mapView;
 
+-(void) getRoute:(NSString *)place_id;
 
++(MISMapViewController *)getInstance;
 
 @end

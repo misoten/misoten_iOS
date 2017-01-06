@@ -18,7 +18,20 @@
 #import "FCAlertView.h"
 #import "AppDelegate.h"
 #import "MISRateDetailViewController.h"
+#import <CoreLocation/CoreLocation.h>
+#import "MISMapViewController.h"
+#import "OpeningHour.h"
 @import GoogleMaps;
+
+typedef NS_ENUM(NSInteger, weekDay) {
+    Sunday = 1,
+    Monday = 2,
+    Tuesday = 3,
+    Wednesday = 4,
+    Thursday = 5,
+    Friday = 6,
+    Saturday = 7
+};
 
 @interface MISPlaceDetailViewController () <ZYBannerViewDelegate, ZYBannerViewDataSource, GMSMapViewDelegate>
 
@@ -28,6 +41,8 @@
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (nonatomic, weak) IBOutlet HCSStarRatingView *ratingView;
+@property (nonatomic, weak) IBOutlet UIImageView *open;
+@property (nonatomic, weak) IBOutlet UILabel *openDay;
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic) NSMutableArray *slideShowImages;
 @property (nonatomic, strong) NSMutableArray<NSURL *> *imageUrl;
@@ -35,7 +50,8 @@
 @property (nonatomic, strong) UIBarButtonItem *cancelFavorite;
 @property (nonatomic, strong) MISPlaceSearchResult *result;
 @property (nonatomic, strong) NSUserDefaults *userDefaults;
-
+@property (nonatomic, strong) NSUserDefaults *userDefaultsKey;
+@property (nonatomic, strong) AppDelegate *delegate;
 @property (weak, nonatomic) IBOutlet UIView *rateView;
 
 //@property (weak, nonatomic) IBOutlet UIButton *goButton;
@@ -49,6 +65,9 @@
     [super viewDidLoad];
 
     _userDefaults = [NSUserDefaults standardUserDefaults];
+    _userDefaultsKey = [NSUserDefaults standardUserDefaults];
+    _delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
     [self initLayout];
     [SVProgressHUD show];
     
@@ -77,6 +96,42 @@
              
              _titleLabel.text = _result.name;
              _ratingView.value = _result.rating;
+             if(_result.openingHours.openNow) {
+                 _open.image = [UIImage imageNamed:@"Open"];
+             } else {
+                 _open.image = [UIImage imageNamed:@"Close"];
+             }
+             
+             NSDate *date = [NSDate date];
+             NSCalendar *calendar = [NSCalendar currentCalendar];
+             NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSWeekdayCalendarUnit fromDate:date];
+             NSInteger weekday = [components weekday];
+             if(_result.openingHours.openNow) {
+             switch (weekday) {
+                 case Sunday:
+                     _openDay.text = _result.openingHours.weekdayText[7];
+                     break;
+                 case Monday:
+                     _openDay.text = _result.openingHours.weekdayText[0];
+                     break;
+                 case Tuesday:
+                     _openDay.text = _result.openingHours.weekdayText[1];
+                     break;
+                 case Wednesday:
+                     _openDay.text = _result.openingHours.weekdayText[2];
+                     break;
+                 case Thursday:
+                     _openDay.text = _result.openingHours.weekdayText[3];
+                     break;
+                 case Friday:
+                     _openDay.text = _result.openingHours.weekdayText[4];
+                     break;
+                 case Saturday:
+                     _openDay.text = _result.openingHours.weekdayText[5];
+                 default:
+                     break;
+             }
+             } else {_openDay.text = @"本日の営業は終了しています";}
              _ratingLabel.text = [NSString stringWithFormat:@"レビュー(%lu件のレビュー)", (unsigned long)_result.reviews.count];
              [SVProgressHUD dismiss];
          } failure:^(NSURLSessionTask *operation, NSError *error) {
@@ -195,18 +250,20 @@
 -(void) favorite:(UINavigationItem *)sender {
     self.navigationItem.rightBarButtonItem = _cancelFavorite;
     
-//    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//    [delegate.userDefaultsKeyArray addObject:_place_id];
-    
     //UserDefultsに保存
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:_result];
     [_userDefaults setObject:data forKey:_place_id];
     [_userDefaults synchronize];
     
+    [_delegate.userDefaultsKeyArray addObject:_place_id];
+    NSData *favoList = [NSKeyedArchiver archivedDataWithRootObject:_delegate.userDefaultsKeyArray];
+    [_userDefaultsKey setObject:favoList forKey:@"favoriteKeys"];
+    [_userDefaultsKey synchronize];
+    
     FCAlertView *alertView = [[FCAlertView alloc] init];
     alertView.cornerRadius = 15;
     alertView.hideSeparatorLineView = YES;
-    alertView.bounceAnimations = YES;
+    //alertView.bounceAnimations = YES;
     alertView.colorScheme = alertView.flatOrange;
     [alertView showAlertInView:self withTitle:@"お気に入り" withSubtitle:@"お気に入りに追加しました。" withCustomImage:[UIImage imageNamed:@"HeartsFilled"] withDoneButtonTitle:@"OK" andButtons:nil];
 }
@@ -224,8 +281,13 @@
 }
 
 - (IBAction)goTo:(id)sender {
+    
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     delegate.notificationView.notificationLabel.text = @"出発でござる！";
+    
+    //サーバーにplace_idを投げる
+    //[delegate.web_socket send:[NSString stringWithFormat:@"%@", _place_id]];
+    
     
     [UIView animateWithDuration:0.75f animations:^{
         delegate.notificationView.alpha = 1;
@@ -234,6 +296,5 @@
         
     }];
 }
-
 
 @end

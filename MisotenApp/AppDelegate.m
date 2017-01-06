@@ -27,6 +27,14 @@
     [self initWebSocket];
     [self setupNavigationBarStyle];
     [self setupTabbarStyle];
+    
+    _userDefaultsKeyArray = [NSMutableArray array];
+    
+//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+//    NSData *favoList = [userDefaults objectForKey:@"favoriteKeys"];
+//    if(favoList) {
+//        _userDefaultsKeyArray = [NSKeyedUnarchiver unarchiveObjectWithData:favoList];
+//    }
     return YES;
 }
 
@@ -72,8 +80,6 @@
             }];
         }
     }
-    
-    
 }
 
 -(void)dissmiss {
