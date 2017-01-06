@@ -8,6 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		237690311DD307920056ACF2 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 237690301DD307920056ACF2 /* SearchResultCell.xib */; };
+		23A883851E1F6D8B0018CB4B /* LUNAnimalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A883831E1F6D8B0018CB4B /* LUNAnimalsViewController.m */; };
+		23A883921E1F6D9F0018CB4B /* LUNLabelsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A883871E1F6D9F0018CB4B /* LUNLabelsView.m */; };
+		23A883931E1F6D9F0018CB4B /* LUNLabelsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A883881E1F6D9F0018CB4B /* LUNLabelsView.xib */; };
+		23A883941E1F6D9F0018CB4B /* LUNStaticView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A8838B1E1F6D9F0018CB4B /* LUNStaticView.m */; };
+		23A883951E1F6D9F0018CB4B /* LUNStaticView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A8838C1E1F6D9F0018CB4B /* LUNStaticView.xib */; };
+		23A883961E1F6D9F0018CB4B /* LUNGalaxyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A883901E1F6D9F0018CB4B /* LUNGalaxyViewController.m */; };
+		23A8839E1E1F6DA90018CB4B /* LUNNatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A883981E1F6DA90018CB4B /* LUNNatureViewController.m */; };
+		23A8839F1E1F6DA90018CB4B /* LUNNatureWireframeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A8839A1E1F6DA90018CB4B /* LUNNatureWireframeView.m */; };
+		23A883A01E1F6DA90018CB4B /* LUNNatureWireframeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A8839B1E1F6DA90018CB4B /* LUNNatureWireframeView.xib */; };
+		23A883AC1E1F6DAF0018CB4B /* LUNBackgroundPatternedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A883A21E1F6DAF0018CB4B /* LUNBackgroundPatternedView.m */; };
+		23A883AD1E1F6DAF0018CB4B /* LUNBackgroundPatternedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A883A31E1F6DAF0018CB4B /* LUNBackgroundPatternedView.xib */; };
+		23A883AE1E1F6DAF0018CB4B /* LUNNewYearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A883A61E1F6DAF0018CB4B /* LUNNewYearViewController.m */; };
+		23A883AF1E1F6DAF0018CB4B /* LUNSlidingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A883A81E1F6DAF0018CB4B /* LUNSlidingImageView.m */; };
+		23A883B01E1F6DAF0018CB4B /* LUNSlidingImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A883A91E1F6DAF0018CB4B /* LUNSlidingImageView.xib */; };
+		23A883B41E1F6DBE0018CB4B /* NSArray+LUNObjectAtIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A883B21E1F6DBE0018CB4B /* NSArray+LUNObjectAtIndex.m */; };
+		23A883B81E1F6DEF0018CB4B /* LUNXibView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A883B61E1F6DEF0018CB4B /* LUNXibView.m */; };
+		23A883E31E1F6E2E0018CB4B /* LUNTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A883BA1E1F6E2E0018CB4B /* LUNTutorialViewController.m */; };
+		23A883E41E1F6E2E0018CB4B /* LUNRotatingWireframesAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A883DF1E1F6E2E0018CB4B /* LUNRotatingWireframesAnimator.m */; };
+		23A883EC1E1F6E3A0018CB4B /* LUNTapPassingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A883E61E1F6E3A0018CB4B /* LUNTapPassingScrollView.m */; };
+		23A883ED1E1F6E3A0018CB4B /* UIView+EnumerationForTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A883E91E1F6E3A0018CB4B /* UIView+EnumerationForTest.m */; };
 		23C9F59A1DD30A1F0081112E /* MISSearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C9F5991DD30A1F0081112E /* MISSearchResultCell.m */; };
 		37109EF81DB26DC0004B626B /* MISMapSearchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 37109EF71DB26DC0004B626B /* MISMapSearchItem.m */; };
 		37109EFB1DB271DA004B626B /* MISMapSearchItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37109EFA1DB271DA004B626B /* MISMapSearchItemCollectionViewCell.m */; };
@@ -50,6 +70,56 @@
 
 /* Begin PBXFileReference section */
 		237690301DD307920056ACF2 /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		23A883821E1F6D8B0018CB4B /* LUNAnimalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNAnimalsViewController.h; sourceTree = "<group>"; };
+		23A883831E1F6D8B0018CB4B /* LUNAnimalsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUNAnimalsViewController.m; sourceTree = "<group>"; };
+		23A883861E1F6D9F0018CB4B /* LUNLabelsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNLabelsView.h; sourceTree = "<group>"; };
+		23A883871E1F6D9F0018CB4B /* LUNLabelsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUNLabelsView.m; sourceTree = "<group>"; };
+		23A883881E1F6D9F0018CB4B /* LUNLabelsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LUNLabelsView.xib; sourceTree = "<group>"; };
+		23A8838A1E1F6D9F0018CB4B /* LUNStaticView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNStaticView.h; sourceTree = "<group>"; };
+		23A8838B1E1F6D9F0018CB4B /* LUNStaticView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUNStaticView.m; sourceTree = "<group>"; };
+		23A8838C1E1F6D9F0018CB4B /* LUNStaticView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LUNStaticView.xib; sourceTree = "<group>"; };
+		23A8838F1E1F6D9F0018CB4B /* LUNGalaxyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNGalaxyViewController.h; sourceTree = "<group>"; };
+		23A883901E1F6D9F0018CB4B /* LUNGalaxyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUNGalaxyViewController.m; sourceTree = "<group>"; };
+		23A883971E1F6DA90018CB4B /* LUNNatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNNatureViewController.h; sourceTree = "<group>"; };
+		23A883981E1F6DA90018CB4B /* LUNNatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUNNatureViewController.m; sourceTree = "<group>"; };
+		23A883991E1F6DA90018CB4B /* LUNNatureWireframeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNNatureWireframeView.h; sourceTree = "<group>"; };
+		23A8839A1E1F6DA90018CB4B /* LUNNatureWireframeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUNNatureWireframeView.m; sourceTree = "<group>"; };
+		23A8839B1E1F6DA90018CB4B /* LUNNatureWireframeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LUNNatureWireframeView.xib; sourceTree = "<group>"; };
+		23A883A11E1F6DAF0018CB4B /* LUNBackgroundPatternedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNBackgroundPatternedView.h; sourceTree = "<group>"; };
+		23A883A21E1F6DAF0018CB4B /* LUNBackgroundPatternedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUNBackgroundPatternedView.m; sourceTree = "<group>"; };
+		23A883A31E1F6DAF0018CB4B /* LUNBackgroundPatternedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LUNBackgroundPatternedView.xib; sourceTree = "<group>"; };
+		23A883A51E1F6DAF0018CB4B /* LUNNewYearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNNewYearViewController.h; sourceTree = "<group>"; };
+		23A883A61E1F6DAF0018CB4B /* LUNNewYearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUNNewYearViewController.m; sourceTree = "<group>"; };
+		23A883A71E1F6DAF0018CB4B /* LUNSlidingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNSlidingImageView.h; sourceTree = "<group>"; };
+		23A883A81E1F6DAF0018CB4B /* LUNSlidingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUNSlidingImageView.m; sourceTree = "<group>"; };
+		23A883A91E1F6DAF0018CB4B /* LUNSlidingImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LUNSlidingImageView.xib; sourceTree = "<group>"; };
+		23A883B11E1F6DBE0018CB4B /* NSArray+LUNObjectAtIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+LUNObjectAtIndex.h"; sourceTree = "<group>"; };
+		23A883B21E1F6DBE0018CB4B /* NSArray+LUNObjectAtIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+LUNObjectAtIndex.m"; sourceTree = "<group>"; };
+		23A883B51E1F6DEF0018CB4B /* LUNXibView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNXibView.h; sourceTree = "<group>"; };
+		23A883B61E1F6DEF0018CB4B /* LUNXibView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUNXibView.m; sourceTree = "<group>"; };
+		23A883B91E1F6E2E0018CB4B /* LUNTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNTutorialViewController.h; sourceTree = "<group>"; };
+		23A883BA1E1F6E2E0018CB4B /* LUNTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUNTutorialViewController.m; sourceTree = "<group>"; };
+		23A883BD1E1F6E2E0018CB4B /* LUNTutorialAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNTutorialAnimator.h; sourceTree = "<group>"; };
+		23A883BF1E1F6E2E0018CB4B /* LUNTutorialBackgroundAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNTutorialBackgroundAnimator.h; sourceTree = "<group>"; };
+		23A883C11E1F6E2E0018CB4B /* LUNTutorialIconAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNTutorialIconAnimator.h; sourceTree = "<group>"; };
+		23A883C31E1F6E2E0018CB4B /* LUNTutorialInnerWirefamesAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNTutorialInnerWirefamesAnimator.h; sourceTree = "<group>"; };
+		23A883C51E1F6E2E0018CB4B /* LUNTutorialLabelAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNTutorialLabelAnimator.h; sourceTree = "<group>"; };
+		23A883C71E1F6E2E0018CB4B /* LUNTutorialWireframeAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNTutorialWireframeAnimator.h; sourceTree = "<group>"; };
+		23A883C91E1F6E2E0018CB4B /* LUNTutorialScrollAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNTutorialScrollAnimator.h; sourceTree = "<group>"; };
+		23A883CC1E1F6E2E0018CB4B /* LUNTutorialBackgroundDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNTutorialBackgroundDataSource.h; sourceTree = "<group>"; };
+		23A883CE1E1F6E2E0018CB4B /* LUNTutorialDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNTutorialDataSource.h; sourceTree = "<group>"; };
+		23A883D01E1F6E2E0018CB4B /* LUNTutorialIconDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNTutorialIconDataSource.h; sourceTree = "<group>"; };
+		23A883D21E1F6E2E0018CB4B /* LUNTutorialInnerWireframesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNTutorialInnerWireframesDataSource.h; sourceTree = "<group>"; };
+		23A883D41E1F6E2E0018CB4B /* LUNTutorialLabelsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNTutorialLabelsDataSource.h; sourceTree = "<group>"; };
+		23A883D61E1F6E2E0018CB4B /* LUNTutorialStaticContentViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNTutorialStaticContentViewDataSource.h; sourceTree = "<group>"; };
+		23A883D81E1F6E2E0018CB4B /* LUNTutorialWireframesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNTutorialWireframesDataSource.h; sourceTree = "<group>"; };
+		23A883DB1E1F6E2E0018CB4B /* LUNTutorialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNTutorialDelegate.h; sourceTree = "<group>"; };
+		23A883DE1E1F6E2E0018CB4B /* LUNRotatingWireframesAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNRotatingWireframesAnimator.h; sourceTree = "<group>"; };
+		23A883DF1E1F6E2E0018CB4B /* LUNRotatingWireframesAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUNRotatingWireframesAnimator.m; sourceTree = "<group>"; };
+		23A883E51E1F6E3A0018CB4B /* LUNTapPassingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNTapPassingScrollView.h; sourceTree = "<group>"; };
+		23A883E61E1F6E3A0018CB4B /* LUNTapPassingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUNTapPassingScrollView.m; sourceTree = "<group>"; };
+		23A883E81E1F6E3A0018CB4B /* UIView+EnumerationForTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EnumerationForTest.h"; sourceTree = "<group>"; };
+		23A883E91E1F6E3A0018CB4B /* UIView+EnumerationForTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EnumerationForTest.m"; sourceTree = "<group>"; };
 		23C9F5981DD30A1F0081112E /* MISSearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISSearchResultCell.h; sourceTree = "<group>"; };
 		23C9F5991DD30A1F0081112E /* MISSearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MISSearchResultCell.m; sourceTree = "<group>"; };
 		37109EF61DB26DC0004B626B /* MISMapSearchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MISMapSearchItem.h; sourceTree = "<group>"; };
@@ -146,6 +216,360 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		23A883841E1F6D8B0018CB4B /* AnimalsOnboarding */ = {
+			isa = PBXGroup;
+			children = (
+				23A883821E1F6D8B0018CB4B /* LUNAnimalsViewController.h */,
+				23A883831E1F6D8B0018CB4B /* LUNAnimalsViewController.m */,
+			);
+			name = AnimalsOnboarding;
+			path = ../../Sample001/Sample001/Examples/AnimalsOnboarding;
+			sourceTree = "<group>";
+		};
+		23A883891E1F6D9F0018CB4B /* LUNGalaxyLabelsView */ = {
+			isa = PBXGroup;
+			children = (
+				23A883861E1F6D9F0018CB4B /* LUNLabelsView.h */,
+				23A883871E1F6D9F0018CB4B /* LUNLabelsView.m */,
+				23A883881E1F6D9F0018CB4B /* LUNLabelsView.xib */,
+			);
+			path = LUNGalaxyLabelsView;
+			sourceTree = "<group>";
+		};
+		23A8838D1E1F6D9F0018CB4B /* LUNGalaxyStaticView */ = {
+			isa = PBXGroup;
+			children = (
+				23A8838A1E1F6D9F0018CB4B /* LUNStaticView.h */,
+				23A8838B1E1F6D9F0018CB4B /* LUNStaticView.m */,
+				23A8838C1E1F6D9F0018CB4B /* LUNStaticView.xib */,
+			);
+			path = LUNGalaxyStaticView;
+			sourceTree = "<group>";
+		};
+		23A8838E1E1F6D9F0018CB4B /* GalaxyViews */ = {
+			isa = PBXGroup;
+			children = (
+				23A883891E1F6D9F0018CB4B /* LUNGalaxyLabelsView */,
+				23A8838D1E1F6D9F0018CB4B /* LUNGalaxyStaticView */,
+			);
+			path = GalaxyViews;
+			sourceTree = "<group>";
+		};
+		23A883911E1F6D9F0018CB4B /* GalaxyOnboarding */ = {
+			isa = PBXGroup;
+			children = (
+				23A8838E1E1F6D9F0018CB4B /* GalaxyViews */,
+				23A8838F1E1F6D9F0018CB4B /* LUNGalaxyViewController.h */,
+				23A883901E1F6D9F0018CB4B /* LUNGalaxyViewController.m */,
+			);
+			name = GalaxyOnboarding;
+			path = ../../Sample001/Sample001/Examples/GalaxyOnboarding;
+			sourceTree = "<group>";
+		};
+		23A8839C1E1F6DA90018CB4B /* LUNNatureWireframe */ = {
+			isa = PBXGroup;
+			children = (
+				23A883991E1F6DA90018CB4B /* LUNNatureWireframeView.h */,
+				23A8839A1E1F6DA90018CB4B /* LUNNatureWireframeView.m */,
+				23A8839B1E1F6DA90018CB4B /* LUNNatureWireframeView.xib */,
+			);
+			path = LUNNatureWireframe;
+			sourceTree = "<group>";
+		};
+		23A8839D1E1F6DA90018CB4B /* NatureOnboarding */ = {
+			isa = PBXGroup;
+			children = (
+				23A883971E1F6DA90018CB4B /* LUNNatureViewController.h */,
+				23A883981E1F6DA90018CB4B /* LUNNatureViewController.m */,
+				23A8839C1E1F6DA90018CB4B /* LUNNatureWireframe */,
+			);
+			name = NatureOnboarding;
+			path = ../../Sample001/Sample001/Examples/NatureOnboarding;
+			sourceTree = "<group>";
+		};
+		23A883A41E1F6DAF0018CB4B /* BackgroundPatternedView */ = {
+			isa = PBXGroup;
+			children = (
+				23A883A11E1F6DAF0018CB4B /* LUNBackgroundPatternedView.h */,
+				23A883A21E1F6DAF0018CB4B /* LUNBackgroundPatternedView.m */,
+				23A883A31E1F6DAF0018CB4B /* LUNBackgroundPatternedView.xib */,
+			);
+			path = BackgroundPatternedView;
+			sourceTree = "<group>";
+		};
+		23A883AA1E1F6DAF0018CB4B /* SlidingImageView */ = {
+			isa = PBXGroup;
+			children = (
+				23A883A71E1F6DAF0018CB4B /* LUNSlidingImageView.h */,
+				23A883A81E1F6DAF0018CB4B /* LUNSlidingImageView.m */,
+				23A883A91E1F6DAF0018CB4B /* LUNSlidingImageView.xib */,
+			);
+			path = SlidingImageView;
+			sourceTree = "<group>";
+		};
+		23A883AB1E1F6DAF0018CB4B /* NewYearOnboarding */ = {
+			isa = PBXGroup;
+			children = (
+				23A883A41E1F6DAF0018CB4B /* BackgroundPatternedView */,
+				23A883A51E1F6DAF0018CB4B /* LUNNewYearViewController.h */,
+				23A883A61E1F6DAF0018CB4B /* LUNNewYearViewController.m */,
+				23A883AA1E1F6DAF0018CB4B /* SlidingImageView */,
+			);
+			name = NewYearOnboarding;
+			path = ../../Sample001/Sample001/Examples/NewYearOnboarding;
+			sourceTree = "<group>";
+		};
+		23A883B31E1F6DBE0018CB4B /* NSArray+LUNObjectAtIndex */ = {
+			isa = PBXGroup;
+			children = (
+				23A883B11E1F6DBE0018CB4B /* NSArray+LUNObjectAtIndex.h */,
+				23A883B21E1F6DBE0018CB4B /* NSArray+LUNObjectAtIndex.m */,
+			);
+			name = "NSArray+LUNObjectAtIndex";
+			path = "../../Sample001/Sample001/NSArray+LUNObjectAtIndex";
+			sourceTree = "<group>";
+		};
+		23A883B71E1F6DEF0018CB4B /* LUNXibView */ = {
+			isa = PBXGroup;
+			children = (
+				23A883B51E1F6DEF0018CB4B /* LUNXibView.h */,
+				23A883B61E1F6DEF0018CB4B /* LUNXibView.m */,
+			);
+			name = LUNXibView;
+			path = ../../Sample001/Sample001/LUNXibView;
+			sourceTree = "<group>";
+		};
+		23A883BB1E1F6E2E0018CB4B /* LUNTutorialViewController */ = {
+			isa = PBXGroup;
+			children = (
+				23A883B91E1F6E2E0018CB4B /* LUNTutorialViewController.h */,
+				23A883BA1E1F6E2E0018CB4B /* LUNTutorialViewController.m */,
+			);
+			path = LUNTutorialViewController;
+			sourceTree = "<group>";
+		};
+		23A883BC1E1F6E2E0018CB4B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				23A883BB1E1F6E2E0018CB4B /* LUNTutorialViewController */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		23A883BE1E1F6E2E0018CB4B /* LUNTutorialAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				23A883BD1E1F6E2E0018CB4B /* LUNTutorialAnimator.h */,
+			);
+			path = LUNTutorialAnimator;
+			sourceTree = "<group>";
+		};
+		23A883C01E1F6E2E0018CB4B /* LUNTutorialBackgroundAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				23A883BF1E1F6E2E0018CB4B /* LUNTutorialBackgroundAnimator.h */,
+			);
+			path = LUNTutorialBackgroundAnimator;
+			sourceTree = "<group>";
+		};
+		23A883C21E1F6E2E0018CB4B /* LUNTutorialIconAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				23A883C11E1F6E2E0018CB4B /* LUNTutorialIconAnimator.h */,
+			);
+			path = LUNTutorialIconAnimator;
+			sourceTree = "<group>";
+		};
+		23A883C41E1F6E2E0018CB4B /* LUNTutorialInnerWireframesAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				23A883C31E1F6E2E0018CB4B /* LUNTutorialInnerWirefamesAnimator.h */,
+			);
+			path = LUNTutorialInnerWireframesAnimator;
+			sourceTree = "<group>";
+		};
+		23A883C61E1F6E2E0018CB4B /* LUNTutorialLabelAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				23A883C51E1F6E2E0018CB4B /* LUNTutorialLabelAnimator.h */,
+			);
+			path = LUNTutorialLabelAnimator;
+			sourceTree = "<group>";
+		};
+		23A883C81E1F6E2E0018CB4B /* LUNTutorialWireframesAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				23A883C71E1F6E2E0018CB4B /* LUNTutorialWireframeAnimator.h */,
+			);
+			path = LUNTutorialWireframesAnimator;
+			sourceTree = "<group>";
+		};
+		23A883CA1E1F6E2E0018CB4B /* LUNTutroialScrollAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				23A883C91E1F6E2E0018CB4B /* LUNTutorialScrollAnimator.h */,
+			);
+			path = LUNTutroialScrollAnimator;
+			sourceTree = "<group>";
+		};
+		23A883CB1E1F6E2E0018CB4B /* LUNTutorialAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				23A883BE1E1F6E2E0018CB4B /* LUNTutorialAnimator */,
+				23A883C01E1F6E2E0018CB4B /* LUNTutorialBackgroundAnimator */,
+				23A883C21E1F6E2E0018CB4B /* LUNTutorialIconAnimator */,
+				23A883C41E1F6E2E0018CB4B /* LUNTutorialInnerWireframesAnimator */,
+				23A883C61E1F6E2E0018CB4B /* LUNTutorialLabelAnimator */,
+				23A883C81E1F6E2E0018CB4B /* LUNTutorialWireframesAnimator */,
+				23A883CA1E1F6E2E0018CB4B /* LUNTutroialScrollAnimator */,
+			);
+			path = LUNTutorialAnimator;
+			sourceTree = "<group>";
+		};
+		23A883CD1E1F6E2E0018CB4B /* LUNTutorialBackgroundDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				23A883CC1E1F6E2E0018CB4B /* LUNTutorialBackgroundDataSource.h */,
+			);
+			path = LUNTutorialBackgroundDataSource;
+			sourceTree = "<group>";
+		};
+		23A883CF1E1F6E2E0018CB4B /* LUNTutorialDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				23A883CE1E1F6E2E0018CB4B /* LUNTutorialDataSource.h */,
+			);
+			path = LUNTutorialDataSource;
+			sourceTree = "<group>";
+		};
+		23A883D11E1F6E2E0018CB4B /* LUNTutorialIconDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				23A883D01E1F6E2E0018CB4B /* LUNTutorialIconDataSource.h */,
+			);
+			path = LUNTutorialIconDataSource;
+			sourceTree = "<group>";
+		};
+		23A883D31E1F6E2E0018CB4B /* LUNTutorialInnerWireframesDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				23A883D21E1F6E2E0018CB4B /* LUNTutorialInnerWireframesDataSource.h */,
+			);
+			path = LUNTutorialInnerWireframesDataSource;
+			sourceTree = "<group>";
+		};
+		23A883D51E1F6E2E0018CB4B /* LUNTutorialLabelsDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				23A883D41E1F6E2E0018CB4B /* LUNTutorialLabelsDataSource.h */,
+			);
+			path = LUNTutorialLabelsDataSource;
+			sourceTree = "<group>";
+		};
+		23A883D71E1F6E2E0018CB4B /* LUNTutorialStaticContentViewDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				23A883D61E1F6E2E0018CB4B /* LUNTutorialStaticContentViewDataSource.h */,
+			);
+			path = LUNTutorialStaticContentViewDataSource;
+			sourceTree = "<group>";
+		};
+		23A883D91E1F6E2E0018CB4B /* LUNTutorialWireframesDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				23A883D81E1F6E2E0018CB4B /* LUNTutorialWireframesDataSource.h */,
+			);
+			path = LUNTutorialWireframesDataSource;
+			sourceTree = "<group>";
+		};
+		23A883DA1E1F6E2E0018CB4B /* LUNTutorialDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				23A883CD1E1F6E2E0018CB4B /* LUNTutorialBackgroundDataSource */,
+				23A883CF1E1F6E2E0018CB4B /* LUNTutorialDataSource */,
+				23A883D11E1F6E2E0018CB4B /* LUNTutorialIconDataSource */,
+				23A883D31E1F6E2E0018CB4B /* LUNTutorialInnerWireframesDataSource */,
+				23A883D51E1F6E2E0018CB4B /* LUNTutorialLabelsDataSource */,
+				23A883D71E1F6E2E0018CB4B /* LUNTutorialStaticContentViewDataSource */,
+				23A883D91E1F6E2E0018CB4B /* LUNTutorialWireframesDataSource */,
+			);
+			path = LUNTutorialDataSource;
+			sourceTree = "<group>";
+		};
+		23A883DC1E1F6E2E0018CB4B /* LUNTutorialDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				23A883DB1E1F6E2E0018CB4B /* LUNTutorialDelegate.h */,
+			);
+			path = LUNTutorialDelegate;
+			sourceTree = "<group>";
+		};
+		23A883DD1E1F6E2E0018CB4B /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				23A883CB1E1F6E2E0018CB4B /* LUNTutorialAnimator */,
+				23A883DA1E1F6E2E0018CB4B /* LUNTutorialDataSource */,
+				23A883DC1E1F6E2E0018CB4B /* LUNTutorialDelegate */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		23A883E01E1F6E2E0018CB4B /* RotatingWireframesAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				23A883DE1E1F6E2E0018CB4B /* LUNRotatingWireframesAnimator.h */,
+				23A883DF1E1F6E2E0018CB4B /* LUNRotatingWireframesAnimator.m */,
+			);
+			path = RotatingWireframesAnimator;
+			sourceTree = "<group>";
+		};
+		23A883E11E1F6E2E0018CB4B /* Realizations */ = {
+			isa = PBXGroup;
+			children = (
+				23A883E01E1F6E2E0018CB4B /* RotatingWireframesAnimator */,
+			);
+			path = Realizations;
+			sourceTree = "<group>";
+		};
+		23A883E21E1F6E2E0018CB4B /* LUNTutorial */ = {
+			isa = PBXGroup;
+			children = (
+				23A883BC1E1F6E2E0018CB4B /* Classes */,
+				23A883DD1E1F6E2E0018CB4B /* Interfaces */,
+				23A883E11E1F6E2E0018CB4B /* Realizations */,
+			);
+			name = LUNTutorial;
+			path = ../../Sample001/Sample001/LUNTutorial;
+			sourceTree = "<group>";
+		};
+		23A883E71E1F6E3A0018CB4B /* LUNTapPassingScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				23A883E51E1F6E3A0018CB4B /* LUNTapPassingScrollView.h */,
+				23A883E61E1F6E3A0018CB4B /* LUNTapPassingScrollView.m */,
+			);
+			path = LUNTapPassingScrollView;
+			sourceTree = "<group>";
+		};
+		23A883EA1E1F6E3A0018CB4B /* UIView+EnumerationForTest */ = {
+			isa = PBXGroup;
+			children = (
+				23A883E81E1F6E3A0018CB4B /* UIView+EnumerationForTest.h */,
+				23A883E91E1F6E3A0018CB4B /* UIView+EnumerationForTest.m */,
+			);
+			path = "UIView+EnumerationForTest";
+			sourceTree = "<group>";
+		};
+		23A883EB1E1F6E3A0018CB4B /* LUNTapPassingScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				23A883E71E1F6E3A0018CB4B /* LUNTapPassingScrollView */,
+				23A883EA1E1F6E3A0018CB4B /* UIView+EnumerationForTest */,
+			);
+			name = LUNTapPassingScrollView;
+			path = ../../Sample001/Sample001/LUNTapPassingScrollView;
+			sourceTree = "<group>";
+		};
 		374A38741DAE35D0008C8CC2 = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +591,14 @@
 		374A387F1DAE35D0008C8CC2 /* MisotenApp */ = {
 			isa = PBXGroup;
 			children = (
+				23A883EB1E1F6E3A0018CB4B /* LUNTapPassingScrollView */,
+				23A883E21E1F6E2E0018CB4B /* LUNTutorial */,
+				23A883B71E1F6DEF0018CB4B /* LUNXibView */,
+				23A883B31E1F6DBE0018CB4B /* NSArray+LUNObjectAtIndex */,
+				23A883AB1E1F6DAF0018CB4B /* NewYearOnboarding */,
+				23A8839D1E1F6DA90018CB4B /* NatureOnboarding */,
+				23A883911E1F6D9F0018CB4B /* GalaxyOnboarding */,
+				23A883841E1F6D8B0018CB4B /* AnimalsOnboarding */,
 				374A38831DAE35D0008C8CC2 /* AppDelegate.h */,
 				374A38841DAE35D0008C8CC2 /* AppDelegate.m */,
 				374A38A71DAF8C0A008C8CC2 /* Model */,
@@ -350,9 +782,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23A883931E1F6D9F0018CB4B /* LUNLabelsView.xib in Resources */,
 				374A38901DAE35D1008C8CC2 /* LaunchScreen.storyboard in Resources */,
+				23A883B01E1F6DAF0018CB4B /* LUNSlidingImageView.xib in Resources */,
 				237690311DD307920056ACF2 /* SearchResultCell.xib in Resources */,
+				23A883A01E1F6DA90018CB4B /* LUNNatureWireframeView.xib in Resources */,
+				23A883AD1E1F6DAF0018CB4B /* LUNBackgroundPatternedView.xib in Resources */,
 				374A38A11DAE37E1008C8CC2 /* GoogleService-Info.plist in Resources */,
+				23A883951E1F6D9F0018CB4B /* LUNStaticView.xib in Resources */,
 				378E70791E005E3A00137BCB /* mapstyle-retro.json in Resources */,
 				374A388D1DAE35D1008C8CC2 /* Assets.xcassets in Resources */,
 				374A388B1DAE35D0008C8CC2 /* Main.storyboard in Resources */,
@@ -374,7 +811,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7EEAE2058E6372ECD8BC350C /* [CP] Embed Pods Frameworks */ = {
@@ -414,7 +851,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23A883AC1E1F6DAF0018CB4B /* LUNBackgroundPatternedView.m in Sources */,
+				23A883E41E1F6E2E0018CB4B /* LUNRotatingWireframesAnimator.m in Sources */,
 				37737A151DE0A101004C761C /* Geometry.m in Sources */,
+				23A8839E1E1F6DA90018CB4B /* LUNNatureViewController.m in Sources */,
 				37FB793F1E013C3000C99CBB /* MISForgetItemsTableView.m in Sources */,
 				374A38881DAE35D0008C8CC2 /* ViewController.m in Sources */,
 				37109F0D1DB6EA9F004B626B /* MISMapSearchViewController.m in Sources */,
@@ -422,15 +862,25 @@
 				374A389F1DAE372D008C8CC2 /* MISMapViewController.m in Sources */,
 				37109EFB1DB271DA004B626B /* MISMapSearchItemCollectionViewCell.m in Sources */,
 				37FB79421E01483B00C99CBB /* MISNotificationView.m in Sources */,
+				23A883961E1F6D9F0018CB4B /* LUNGalaxyViewController.m in Sources */,
+				23A883851E1F6D8B0018CB4B /* LUNAnimalsViewController.m in Sources */,
+				23A883B81E1F6DEF0018CB4B /* LUNXibView.m in Sources */,
 				377758741DED276B00CFBA80 /* Close.m in Sources */,
 				374A389C1DAE3712008C8CC2 /* MISLoginViewController.m in Sources */,
+				23A883EC1E1F6E3A0018CB4B /* LUNTapPassingScrollView.m in Sources */,
+				23A883E31E1F6E2E0018CB4B /* LUNTutorialViewController.m in Sources */,
 				37620FA11DF7F52700B48776 /* MISTouristInformationViewController.m in Sources */,
 				37FC4C8A1E07B6E300CA3E52 /* MISTouristInformationDetailViewController.m in Sources */,
 				374A38851DAE35D0008C8CC2 /* AppDelegate.m in Sources */,
 				374A38991DAE36F4008C8CC2 /* MISSignUpViewController.m in Sources */,
+				23A883921E1F6D9F0018CB4B /* LUNLabelsView.m in Sources */,
+				23A883AE1E1F6DAF0018CB4B /* LUNNewYearViewController.m in Sources */,
+				23A883B41E1F6DBE0018CB4B /* NSArray+LUNObjectAtIndex.m in Sources */,
 				37FC4C871E0794D000CA3E52 /* MISRateDetailViewController.m in Sources */,
+				23A883ED1E1F6E3A0018CB4B /* UIView+EnumerationForTest.m in Sources */,
 				37109EF81DB26DC0004B626B /* MISMapSearchItem.m in Sources */,
 				37CD3DF61E0A5D3400F6D7BD /* MISTrancerationViewController.m in Sources */,
+				23A883AF1E1F6DAF0018CB4B /* LUNSlidingImageView.m in Sources */,
 				374A38821DAE35D0008C8CC2 /* main.m in Sources */,
 				374676B01DDC2E9A00E0EE1D /* MISSearchTableViewController.m in Sources */,
 				37737A181DE0A101004C761C /* Photo.m in Sources */,
@@ -438,8 +888,10 @@
 				37D8EAAF1DCA274900F4E8C5 /* MISMapSettingView.m in Sources */,
 				37D0390A1E057F880059B58B /* MISFavoriteListViewController.m in Sources */,
 				37D039071E05326C0059B58B /* MISPlaceDetailViewController.m in Sources */,
+				23A8839F1E1F6DA90018CB4B /* LUNNatureWireframeView.m in Sources */,
 				37737A161DE0A101004C761C /* Location.m in Sources */,
 				377758791DED299300CFBA80 /* MISPlaceSearchResult.m in Sources */,
+				23A883941E1F6D9F0018CB4B /* LUNStaticView.m in Sources */,
 				377758751DED276B00CFBA80 /* Period.m in Sources */,
 				374A38A41DAF38C0008C8CC2 /* MISLeftMenuViewController.m in Sources */,
 				37A3189E1E1EC81C00C7F64B /* MISReviewCell.m in Sources */,

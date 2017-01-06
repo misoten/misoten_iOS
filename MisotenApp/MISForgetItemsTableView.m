@@ -14,6 +14,7 @@
 @property (nonatomic,assign) NSIndexPath *lastIndexPath;
 @property (nonatomic,strong) UILabel *naviLabel;
 @property (nonatomic,assign) NSInteger num;
+@property (nonatomic,strong) UIButton *button;
 @end
 
 @implementation MISForgetItemsTableView
@@ -45,8 +46,9 @@
                               @"延長コード"] mutableCopy];
     //ナビゲーションバーのタイトル
     self.naviLabel = [[UILabel alloc] init];
-    self.num = self.dataSourceItems.count;
-    self.naviLabel.text = [NSString stringWithFormat:@"準備完了まで %ld個",(long)self.num];
+    //self.num = self.dataSourceItems.count;
+    //    self.naviLabel.text = [NSString stringWithFormat:@"準備完了まで %ld個",(long)self.num];
+    self.naviLabel.text = @"忘れ物は無いでござるか！";
     self.naviLabel.font = [UIFont fontWithName:@"Helvetica" size:16]; //フォントの設定。
     self.naviLabel.font = [UIFont boldSystemFontOfSize:16]; //フォントの設定。
     self.naviLabel.backgroundColor = [UIColor clearColor]; //背景色。透明が安定
@@ -55,26 +57,37 @@
     self.navigationItem.titleView = self.naviLabel;
     //編集モード
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    [self setButton];
+}
+//ボタン
+- (void)setButton
+{
+    //ボタンを作成
+    _button = [UIButton new];
+    _button.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 50);
+    //ボタンのテキストを設定
+    [_button setTitle:@"出発でござる！" forState:UIControlStateNormal];
+    _button.backgroundColor = [UIColor orangeColor];
+    
+    //ボタンをタップした時に指定のメソッドを呼ぶ
+    [_button addTarget:self
+                action:@selector(sendView)
+      forControlEvents:UIControlEventTouchUpInside];
+    
+    UIWindow *keywindow = [[UIApplication sharedApplication] keyWindow];
+    //ボタンを画面に追加
+    [keywindow addSubview:_button];
 }
 
-
-// 編集モードになった時に呼ばれるメソッド
-- (void)setEditing:(BOOL)editing animated:(BOOL)animated{
-    NSLog(@"%s", __func__);
-    [super setEditing:editing animated:animated];
-    if (editing) {
-        // 編集モードの処理
-        NSLog(@"編集モードに入りました。");
-        
-        
-//        [tableView deleteRowsAtIndexPaths:@[indexPath]withRowAnimation:UITableViewRowAnimationFade];
-        
-    }else{
-        // 編集モードから戻った時の処理
-        NSLog(@"編集モードから出ました。");
-    }
+//遷移処理
+-(void)sendView{
+    UITabBarController *nsc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainNav"];    [UIView animateWithDuration:0.55 animations:^{
+        CGRect frame = _button.frame;
+        frame.origin.y = self.view.frame.size.height+50;
+        _button.frame = frame;
+    }];
+    [self presentViewController:nsc animated:YES completion:nil];
 }
-
 
 //項目追加
 - (IBAction)add:(id)sender {
@@ -104,19 +117,18 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     
-//    NSLog(@"%@",textField.text);
+    //    NSLog(@"%@",textField.text);
     if(textField.text.length != 0){
         //配列に追加する
         [self.dataSourceItems addObject:textField.text];
         [self.tableView reloadData];
-        self.num += 1;
-        self.naviLabel.text = [NSString stringWithFormat:@"準備完了まで %ld個",(long)self.num];
+        //        self.num += 1;
+        //self.naviLabel.text = [NSString stringWithFormat:@"準備完了まで %ld個",(long)self.num];
         [self.naviLabel sizeToFit];
         //self.navigationItem.titleView = self.naviLabel;
         
     }
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -176,9 +188,14 @@
     
     _cell.textLabel.text = self.dataSourceItems[indexPath.row];
     
+    
     return _cell;
     
 }
+
+/*
+ * 忘れ物チェック
+ */
 
 //セルが選択された時
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -188,35 +205,63 @@
     _cell = [tableView cellForRowAtIndexPath:indexPath];
     _cell.accessoryType = UITableViewCellAccessoryCheckmark;
     self.num -= 1;
-    if(self.num == 0){
-        self.naviLabel.text = [NSString stringWithFormat:@"準備完了まで %ld個 出発できます！",(long)self.num];
-    }else{
-        self.naviLabel.text = [NSString stringWithFormat:@"準備完了まで %ld個",(long)self.num];
+    if(self.num != 0){
+        [UIView animateWithDuration:0.55 animations:^{
+            CGRect frame = _button.frame;
+            frame.origin.y = self.view.frame.size.height-50;
+            _button.frame = frame;
+        }];
     }
-    [self.naviLabel sizeToFit];
     self.navigationItem.titleView = self.naviLabel;
     
-    //    [tableView setEditing:YES animated:YES];
 }
 
 //セルが選択解除された時
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"Dtouch");
     self.lastIndexPath = indexPath;
-    
     _cell = [tableView cellForRowAtIndexPath:indexPath];
     _cell.accessoryType = UITableViewCellAccessoryNone;
     self.num += 1;
-    self.naviLabel.text = [NSString stringWithFormat:@"準備完了まで %ld個",(long)self.num];
     [self.naviLabel sizeToFit];
     self.navigationItem.titleView = self.naviLabel;
-    
-    //    [tableView setEditing:YES animated:YES];
 }
 
+//編集モード中の処理
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(tableView.editing){
+        self.num -= 1;
+        return UITableViewCellEditingStyleDelete;
+    }else{
+        return UITableViewCellEditingStyleNone;
+    }
     return 3;
 }
 
+/*
+ * cell削除
+ */
+
+//すべてのcellを削除可能にする
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return true;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.lastIndexPath = indexPath;
+    [self.dataSourceItems removeObjectAtIndex:self.lastIndexPath.row];
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+/*
+ * cellの並び替え
+ */
+-(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath{
+    return true;
+}
+
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
+    
+}
 
 @end

@@ -24,12 +24,37 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FCAlertView-FCAlertView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FCAlertView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FXPageControl.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FrameAccessor.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>HCSStarRatingView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>IQActionSheetPickerView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>NeetMSTranslator.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -72,7 +97,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>14F582D1077FEC69297436AFB8E92BC6</key>
+		<key>17DFCBC5A019689C15F8364857F77D75</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,17 +107,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>54EE571E02FD76F659795048AE5DADF6</key>
+		<key>2CA7172644ACEDA774239B7C410551BF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>738FFB5A0A7C642A6657EA5241C1FB7E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8BF9DF8DDFC967E9ECB89EB54A43F834</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,12 +127,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AB63D746D282FC621CB47BEB097A4C36</key>
+		<key>B0A7E3B83F34396DC9D77597B58B7A78</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C5A0B5852492B97E0184888016681318</key>
+		<key>BA73067A9D36F34F91F2F35C1563A5D3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BB7B9ED74C208588EEC0966D7DFD835F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CA398AF4A666C54B83B21D898C77EEF0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,7 +152,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F7FBBA5C8EC3B61D05970BF35DDC6F31</key>
+		<key>DD0460046ACF8A381F75D6015478752E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DEB12ED57C047520A2D43BF3047F830B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E4A183B710C3B852DF70AB2469C283E6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EA3C38B1905E592A2ACFDC9E8220D6EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F92D2FCEEEC80CA2334847D8377D4AC6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
